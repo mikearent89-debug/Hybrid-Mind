@@ -1,0 +1,26 @@
+{
+  "name": "@hybrid/memory-store",
+  "version": "0.0.0",
+  "private": true,
+  "description": "PostgreSQL persistence for the memory: the append-only event log, projection tables, chunks (pgvector + full-text), the claim edge table, migrations, and the fixture loader. An in-memory store with the same interface serves tests.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "migrate": "tsx src/cli.ts migrate",
+    "load-fixture": "tsx src/cli.ts load-fixture"
+  },
+  "dependencies": {
+    "@hybrid/memory-domain": "workspace:*",
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.16.1",
+    "tsx": "^4.20.6",
+    "vitest": "^5.0.5"
+  }
+}

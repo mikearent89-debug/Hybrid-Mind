@@ -1,0 +1,4086 @@
+{
+  "schemaVersion": 1,
+  "events": [
+    {
+      "position": 1,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity",
+        "record": {
+          "id": "site-mesa-ridge",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "site",
+          "name": "Mesa Ridge",
+          "attributes": {
+            "timezone": "America/Phoenix",
+            "region": "region-southwest-desert"
+          },
+          "externalRefs": [
+            {
+              "sourceSystem": "workbench",
+              "externalId": "site-mesa-ridge"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position": 2,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity",
+        "record": {
+          "id": "site-high-plains",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "site",
+          "name": "High Plains",
+          "attributes": {
+            "timezone": "America/Denver",
+            "region": "region-southwest-desert"
+          },
+          "externalRefs": [
+            {
+              "sourceSystem": "workbench",
+              "externalId": "site-high-plains"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position": 3,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity",
+        "record": {
+          "id": "site-river-bend",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "site",
+          "name": "River Bend",
+          "attributes": {
+            "timezone": "America/Chicago",
+            "region": "region-gulf-coast"
+          },
+          "externalRefs": [
+            {
+              "sourceSystem": "workbench",
+              "externalId": "site-river-bend"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position": 4,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity",
+        "record": {
+          "id": "site-coastal-flats",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "site",
+          "name": "Coastal Flats",
+          "attributes": {
+            "timezone": "America/Chicago",
+            "region": "region-gulf-coast"
+          },
+          "externalRefs": [
+            {
+              "sourceSystem": "workbench",
+              "externalId": "site-coastal-flats"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position": 5,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity",
+        "record": {
+          "id": "org-internal",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "organization",
+          "name": "Asset Management (internal)",
+          "attributes": {
+            "type": "internal"
+          },
+          "externalRefs": [
+            {
+              "sourceSystem": "workbench",
+              "externalId": "org-internal"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position": 6,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity",
+        "record": {
+          "id": "org-solaris",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "organization",
+          "name": "Solaris O&M",
+          "attributes": {
+            "type": "vendor"
+          },
+          "externalRefs": [
+            {
+              "sourceSystem": "workbench",
+              "externalId": "org-solaris"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position": 7,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity",
+        "record": {
+          "id": "org-gridline",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "organization",
+          "name": "Gridline Services",
+          "attributes": {
+            "type": "vendor"
+          },
+          "externalRefs": [
+            {
+              "sourceSystem": "workbench",
+              "externalId": "org-gridline"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position": 8,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity",
+        "record": {
+          "id": "org-gridline-llc",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "inferred",
+          "reviewState": "unreviewed",
+          "reviewedBy": null,
+          "reviewedAt": null,
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "organization",
+          "name": "Gridline Services LLC",
+          "attributes": {
+            "type": "vendor"
+          },
+          "externalRefs": []
+        }
+      }
+    },
+    {
+      "position": 9,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity",
+        "record": {
+          "id": "org-desert",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "organization",
+          "name": "Desert Field Co.",
+          "attributes": {
+            "type": "vendor"
+          },
+          "externalRefs": [
+            {
+              "sourceSystem": "workbench",
+              "externalId": "org-desert"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position": 10,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity",
+        "record": {
+          "id": "model-helion-x200",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "equipment-model",
+          "name": "Helion X200 string inverter",
+          "attributes": {
+            "manufacturer": "Helion (synthetic)",
+            "ratedKw": "200"
+          },
+          "externalRefs": [
+            {
+              "sourceSystem": "workbench",
+              "externalId": "model-helion-x200"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position": 11,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity",
+        "record": {
+          "id": "model-vantage-c1500",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "equipment-model",
+          "name": "Vantage C1500 central inverter",
+          "attributes": {
+            "manufacturer": "Vantage (synthetic)",
+            "ratedKw": "1500"
+          },
+          "externalRefs": [
+            {
+              "sourceSystem": "workbench",
+              "externalId": "model-vantage-c1500"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position": 12,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity",
+        "record": {
+          "id": "fw-helion-3.1.4",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "firmware",
+          "name": "Helion X200 firmware 3.1.4",
+          "attributes": {
+            "model": "model-helion-x200"
+          },
+          "externalRefs": [
+            {
+              "sourceSystem": "workbench",
+              "externalId": "fw-helion-3.1.4"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position": 13,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity",
+        "record": {
+          "id": "fw-helion-3.2.0",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "firmware",
+          "name": "Helion X200 firmware 3.2.0",
+          "attributes": {
+            "model": "model-helion-x200"
+          },
+          "externalRefs": [
+            {
+              "sourceSystem": "workbench",
+              "externalId": "fw-helion-3.2.0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position": 14,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity",
+        "record": {
+          "id": "fw-vantage-7.0.2",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "firmware",
+          "name": "Vantage C1500 firmware 7.0.2",
+          "attributes": {
+            "model": "model-vantage-c1500"
+          },
+          "externalRefs": [
+            {
+              "sourceSystem": "workbench",
+              "externalId": "fw-vantage-7.0.2"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position": 15,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity",
+        "record": {
+          "id": "fw-vantage-7.1.0",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "firmware",
+          "name": "Vantage C1500 firmware 7.1.0",
+          "attributes": {
+            "model": "model-vantage-c1500"
+          },
+          "externalRefs": [
+            {
+              "sourceSystem": "workbench",
+              "externalId": "fw-vantage-7.1.0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position": 16,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity",
+        "record": {
+          "id": "eq-inv-mr-03",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "equipment-unit",
+          "name": "INV-MR-03",
+          "attributes": {
+            "site": "site-mesa-ridge",
+            "model": "model-helion-x200"
+          },
+          "externalRefs": [
+            {
+              "sourceSystem": "workbench",
+              "externalId": "eq-inv-mr-03"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position": 17,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity",
+        "record": {
+          "id": "eq-inv-mr-07",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "equipment-unit",
+          "name": "INV-MR-07",
+          "attributes": {
+            "site": "site-mesa-ridge",
+            "model": "model-vantage-c1500"
+          },
+          "externalRefs": [
+            {
+              "sourceSystem": "workbench",
+              "externalId": "eq-inv-mr-07"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position": 18,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity",
+        "record": {
+          "id": "eq-inv-hp-02",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "equipment-unit",
+          "name": "INV-HP-02",
+          "attributes": {
+            "site": "site-high-plains",
+            "model": "model-helion-x200"
+          },
+          "externalRefs": [
+            {
+              "sourceSystem": "workbench",
+              "externalId": "eq-inv-hp-02"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position": 19,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity",
+        "record": {
+          "id": "eq-inv-rb-01",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "equipment-unit",
+          "name": "INV-RB-01",
+          "attributes": {
+            "site": "site-river-bend",
+            "model": "model-helion-x200"
+          },
+          "externalRefs": [
+            {
+              "sourceSystem": "workbench",
+              "externalId": "eq-inv-rb-01"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position": 20,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity",
+        "record": {
+          "id": "eq-inv-rb-04",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "equipment-unit",
+          "name": "INV-RB-04",
+          "attributes": {
+            "site": "site-river-bend",
+            "model": "model-vantage-c1500"
+          },
+          "externalRefs": [
+            {
+              "sourceSystem": "workbench",
+              "externalId": "eq-inv-rb-04"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position": 21,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity",
+        "record": {
+          "id": "eq-inv-cf-01",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "equipment-unit",
+          "name": "INV-CF-01",
+          "attributes": {
+            "site": "site-coastal-flats",
+            "model": "model-vantage-c1500"
+          },
+          "externalRefs": [
+            {
+              "sourceSystem": "workbench",
+              "externalId": "eq-inv-cf-01"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position": 22,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity",
+        "record": {
+          "id": "region-southwest-desert",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "region",
+          "name": "Southwest desert",
+          "attributes": {},
+          "externalRefs": []
+        }
+      }
+    },
+    {
+      "position": 23,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity",
+        "record": {
+          "id": "region-gulf-coast",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "region",
+          "name": "Gulf coast",
+          "attributes": {},
+          "externalRefs": []
+        }
+      }
+    },
+    {
+      "position": 24,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity",
+        "record": {
+          "id": "cond-ambient-over-40c",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "operating-condition",
+          "name": "Ambient above 40 °C",
+          "attributes": {},
+          "externalRefs": []
+        }
+      }
+    },
+    {
+      "position": 25,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity",
+        "record": {
+          "id": "contract-solaris-om-2025",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "contract",
+          "name": "Solaris O&M services agreement 2025",
+          "attributes": {
+            "vendor": "org-solaris"
+          },
+          "externalRefs": [
+            {
+              "sourceSystem": "workbench",
+              "externalId": "contract-solaris-om-2025"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position": 26,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity",
+        "record": {
+          "id": "person-morgan-hale",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "person",
+          "name": "Morgan Hale",
+          "attributes": {
+            "organization": "org-solaris"
+          },
+          "externalRefs": [
+            {
+              "sourceSystem": "workbench",
+              "externalId": "person-morgan-hale"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position": 27,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity-alias",
+        "record": {
+          "id": "alias-solaris-1",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "entityId": "org-solaris",
+          "alias": "Solaris",
+          "origin": "seed"
+        }
+      }
+    },
+    {
+      "position": 28,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity-alias",
+        "record": {
+          "id": "alias-solaris-2",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "entityId": "org-solaris",
+          "alias": "SunServ",
+          "origin": "seed"
+        }
+      }
+    },
+    {
+      "position": 29,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity-alias",
+        "record": {
+          "id": "alias-gridline-1",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "entityId": "org-gridline",
+          "alias": "Gridline",
+          "origin": "seed"
+        }
+      }
+    },
+    {
+      "position": 30,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity-alias",
+        "record": {
+          "id": "alias-desert-1",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "entityId": "org-desert",
+          "alias": "DFC",
+          "origin": "seed"
+        }
+      }
+    },
+    {
+      "position": 31,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity-alias",
+        "record": {
+          "id": "alias-mesa-1",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "entityId": "site-mesa-ridge",
+          "alias": "Mesa Ridge Solar",
+          "origin": "seed"
+        }
+      }
+    },
+    {
+      "position": 32,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity-alias",
+        "record": {
+          "id": "alias-mesa-2",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "entityId": "site-mesa-ridge",
+          "alias": "MRS",
+          "origin": "seed"
+        }
+      }
+    },
+    {
+      "position": 33,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity-alias",
+        "record": {
+          "id": "alias-high-1",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "entityId": "site-high-plains",
+          "alias": "HP1",
+          "origin": "seed"
+        }
+      }
+    },
+    {
+      "position": 34,
+      "recordedAt": "2026-09-01T15:00:00Z",
+      "effectiveAt": "2026-09-01T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "seed-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "entity-alias",
+        "record": {
+          "id": "alias-helion-1",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "entityId": "model-helion-x200",
+          "alias": "X200",
+          "origin": "seed"
+        }
+      }
+    },
+    {
+      "position": 35,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "source",
+        "record": {
+          "id": "src-01",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "work-order",
+          "title": "WO-1001 Mesa Ridge INV-MR-03 DC fuse replacement",
+          "originSystem": "manual-upload",
+          "externalId": "WO-1001",
+          "siteIds": [
+            "site-mesa-ridge"
+          ]
+        }
+      }
+    },
+    {
+      "position": 36,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "source",
+        "record": {
+          "id": "src-02",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "work-order",
+          "title": "WO-1002 Mesa Ridge INV-MR-03 firmware upgrade to 3.2.0",
+          "originSystem": "manual-upload",
+          "externalId": "WO-1002",
+          "siteIds": [
+            "site-mesa-ridge"
+          ]
+        }
+      }
+    },
+    {
+      "position": 37,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "source",
+        "record": {
+          "id": "src-03",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "email",
+          "title": "RE: High Plains INV-HP-02 still tripping",
+          "originSystem": "mailbox:om-inbox (synthetic)",
+          "externalId": null,
+          "siteIds": [
+            "site-high-plains"
+          ]
+        }
+      }
+    },
+    {
+      "position": 38,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "source",
+        "record": {
+          "id": "src-04",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "work-order",
+          "title": "WO-1004 High Plains INV-HP-02 firmware upgrade",
+          "originSystem": "manual-upload",
+          "externalId": "WO-1004",
+          "siteIds": [
+            "site-high-plains"
+          ]
+        }
+      }
+    },
+    {
+      "position": 39,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "source",
+        "record": {
+          "id": "src-05",
+          "recordVersion": 1,
+          "accessScope": "restricted",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "report",
+          "title": "Coastal Flats warranty claim review (confidential)",
+          "originSystem": "manual-upload",
+          "externalId": null,
+          "siteIds": [
+            "site-coastal-flats"
+          ]
+        }
+      }
+    },
+    {
+      "position": 40,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "source",
+        "record": {
+          "id": "src-06",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "csv",
+          "title": "River Bend monthly inverter export September 2026",
+          "originSystem": "manual-upload",
+          "externalId": null,
+          "siteIds": [
+            "site-river-bend"
+          ]
+        }
+      }
+    },
+    {
+      "position": 41,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "source",
+        "record": {
+          "id": "src-07",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "email",
+          "title": "Fw: Rodent damage suspected at River Bend combiner 4",
+          "originSystem": "mailbox:om-inbox (synthetic)",
+          "externalId": null,
+          "siteIds": [
+            "site-river-bend"
+          ]
+        }
+      }
+    },
+    {
+      "position": 42,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "source",
+        "record": {
+          "id": "src-08",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "report",
+          "title": "High Plains derate investigation, Helion X200 fleet",
+          "originSystem": "manual-upload",
+          "externalId": null,
+          "siteIds": [
+            "site-high-plains"
+          ]
+        }
+      }
+    },
+    {
+      "position": 43,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "source",
+        "record": {
+          "id": "src-09",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "report",
+          "title": "River Bend derate investigation, Helion X200 fleet",
+          "originSystem": "manual-upload",
+          "externalId": null,
+          "siteIds": [
+            "site-river-bend"
+          ]
+        }
+      }
+    },
+    {
+      "position": 44,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "source",
+        "record": {
+          "id": "src-10",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "work-order",
+          "title": "WO-1010 Mesa Ridge INV-MR-07 firmware upgrade to 7.1.0",
+          "originSystem": "manual-upload",
+          "externalId": "WO-1010",
+          "siteIds": [
+            "site-mesa-ridge"
+          ]
+        }
+      }
+    },
+    {
+      "position": 45,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "source",
+        "record": {
+          "id": "src-11",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "photo",
+          "title": "River Bend combiner 4 after inspection",
+          "originSystem": "manual-upload",
+          "externalId": null,
+          "siteIds": [
+            "site-river-bend"
+          ]
+        }
+      }
+    },
+    {
+      "position": 46,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "source",
+        "record": {
+          "id": "src-12",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "note",
+          "title": "Vendor call notes, 2026-10-05",
+          "originSystem": "manual-upload",
+          "externalId": null,
+          "siteIds": [
+            "site-high-plains",
+            "site-river-bend"
+          ]
+        }
+      }
+    },
+    {
+      "position": 47,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "source",
+        "record": {
+          "id": "src-13",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "report",
+          "title": "Proposal outcome: River Bend INV-RB-01 cooling retrofit",
+          "originSystem": "manual-upload",
+          "externalId": null,
+          "siteIds": [
+            "site-river-bend"
+          ]
+        }
+      }
+    },
+    {
+      "position": 48,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "source",
+        "record": {
+          "id": "src-14",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "kind": "email",
+          "title": "Gridline Services LLC invoice query",
+          "originSystem": "mailbox:om-inbox (synthetic)",
+          "externalId": null,
+          "siteIds": [
+            "site-coastal-flats"
+          ]
+        }
+      }
+    },
+    {
+      "position": 49,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "revision",
+        "record": {
+          "id": "rev-01",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "sourceId": "src-01",
+          "contentHash": "sha256:0101010101010101010101010101010101010101010101010101010101010101",
+          "mediaType": "application/pdf",
+          "byteLength": 10137,
+          "receivedAt": "2026-09-02T15:00:00Z",
+          "supersedesRevisionId": null
+        }
+      }
+    },
+    {
+      "position": 50,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "revision",
+        "record": {
+          "id": "rev-02",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "sourceId": "src-02",
+          "contentHash": "sha256:0202020202020202020202020202020202020202020202020202020202020202",
+          "mediaType": "application/pdf",
+          "byteLength": 10274,
+          "receivedAt": "2026-09-09T15:00:00Z",
+          "supersedesRevisionId": null
+        }
+      }
+    },
+    {
+      "position": 51,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "revision",
+        "record": {
+          "id": "rev-03",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "sourceId": "src-03",
+          "contentHash": "sha256:0303030303030303030303030303030303030303030303030303030303030303",
+          "mediaType": "application/pdf",
+          "byteLength": 10411,
+          "receivedAt": "2026-09-11T15:00:00Z",
+          "supersedesRevisionId": null
+        }
+      }
+    },
+    {
+      "position": 52,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "revision",
+        "record": {
+          "id": "rev-04",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "sourceId": "src-04",
+          "contentHash": "sha256:0404040404040404040404040404040404040404040404040404040404040404",
+          "mediaType": "application/pdf",
+          "byteLength": 10548,
+          "receivedAt": "2026-09-10T15:00:00Z",
+          "supersedesRevisionId": null
+        }
+      }
+    },
+    {
+      "position": 53,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "revision",
+        "record": {
+          "id": "rev-05",
+          "recordVersion": 1,
+          "accessScope": "restricted",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "sourceId": "src-05",
+          "contentHash": "sha256:0505050505050505050505050505050505050505050505050505050505050505",
+          "mediaType": "application/pdf",
+          "byteLength": 10685,
+          "receivedAt": "2026-09-12T15:00:00Z",
+          "supersedesRevisionId": null
+        }
+      }
+    },
+    {
+      "position": 54,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "revision",
+        "record": {
+          "id": "rev-06",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "sourceId": "src-06",
+          "contentHash": "sha256:0606060606060606060606060606060606060606060606060606060606060606",
+          "mediaType": "text/csv",
+          "byteLength": 10822,
+          "receivedAt": "2026-10-01T15:00:00Z",
+          "supersedesRevisionId": null
+        }
+      }
+    },
+    {
+      "position": 55,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "revision",
+        "record": {
+          "id": "rev-07",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "sourceId": "src-07",
+          "contentHash": "sha256:0707070707070707070707070707070707070707070707070707070707070707",
+          "mediaType": "application/pdf",
+          "byteLength": 10959,
+          "receivedAt": "2026-09-14T15:00:00Z",
+          "supersedesRevisionId": null
+        }
+      }
+    },
+    {
+      "position": 56,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "revision",
+        "record": {
+          "id": "rev-08",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "sourceId": "src-08",
+          "contentHash": "sha256:0808080808080808080808080808080808080808080808080808080808080808",
+          "mediaType": "application/pdf",
+          "byteLength": 11096,
+          "receivedAt": "2026-09-16T15:00:00Z",
+          "supersedesRevisionId": null
+        }
+      }
+    },
+    {
+      "position": 57,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "revision",
+        "record": {
+          "id": "rev-09",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "sourceId": "src-09",
+          "contentHash": "sha256:0909090909090909090909090909090909090909090909090909090909090909",
+          "mediaType": "application/pdf",
+          "byteLength": 11233,
+          "receivedAt": "2026-09-18T15:00:00Z",
+          "supersedesRevisionId": null
+        }
+      }
+    },
+    {
+      "position": 58,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "revision",
+        "record": {
+          "id": "rev-10",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "sourceId": "src-10",
+          "contentHash": "sha256:1010101010101010101010101010101010101010101010101010101010101010",
+          "mediaType": "application/pdf",
+          "byteLength": 11370,
+          "receivedAt": "2026-09-20T15:00:00Z",
+          "supersedesRevisionId": null
+        }
+      }
+    },
+    {
+      "position": 59,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "revision",
+        "record": {
+          "id": "rev-11",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "sourceId": "src-11",
+          "contentHash": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+          "mediaType": "image/jpeg",
+          "byteLength": 11507,
+          "receivedAt": "2026-09-21T15:00:00Z",
+          "supersedesRevisionId": null
+        }
+      }
+    },
+    {
+      "position": 60,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "revision",
+        "record": {
+          "id": "rev-12",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "sourceId": "src-12",
+          "contentHash": "sha256:1212121212121212121212121212121212121212121212121212121212121212",
+          "mediaType": "application/pdf",
+          "byteLength": 11644,
+          "receivedAt": "2026-10-05T15:00:00Z",
+          "supersedesRevisionId": null
+        }
+      }
+    },
+    {
+      "position": 61,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "revision",
+        "record": {
+          "id": "rev-13",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "sourceId": "src-13",
+          "contentHash": "sha256:1313131313131313131313131313131313131313131313131313131313131313",
+          "mediaType": "application/pdf",
+          "byteLength": 11781,
+          "receivedAt": "2026-10-10T15:00:00Z",
+          "supersedesRevisionId": null
+        }
+      }
+    },
+    {
+      "position": 62,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "revision",
+        "record": {
+          "id": "rev-14",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "sourceId": "src-14",
+          "contentHash": "sha256:1414141414141414141414141414141414141414141414141414141414141414",
+          "mediaType": "application/pdf",
+          "byteLength": 11918,
+          "receivedAt": "2026-09-22T15:00:00Z",
+          "supersedesRevisionId": null
+        }
+      }
+    },
+    {
+      "position": 63,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "anchor",
+        "record": {
+          "id": "anc-01",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "revisionId": "rev-01",
+          "locator": {
+            "type": "page",
+            "page": 1
+          }
+        }
+      }
+    },
+    {
+      "position": 64,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "anchor",
+        "record": {
+          "id": "anc-02",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "revisionId": "rev-02",
+          "locator": {
+            "type": "page",
+            "page": 2
+          }
+        }
+      }
+    },
+    {
+      "position": 65,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "anchor",
+        "record": {
+          "id": "anc-03",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "revisionId": "rev-03",
+          "locator": {
+            "type": "span",
+            "start": 220,
+            "end": 290,
+            "quote": "the unit is on 3.1.4, same as before the visit"
+          }
+        }
+      }
+    },
+    {
+      "position": 66,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "anchor",
+        "record": {
+          "id": "anc-04",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "revisionId": "rev-04",
+          "locator": {
+            "type": "row",
+            "row": 7,
+            "column": "firmware_after"
+          }
+        }
+      }
+    },
+    {
+      "position": 67,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "anchor",
+        "record": {
+          "id": "anc-05",
+          "recordVersion": 1,
+          "accessScope": "restricted",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "revisionId": "rev-05",
+          "locator": {
+            "type": "page",
+            "page": 3
+          }
+        }
+      }
+    },
+    {
+      "position": 68,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "anchor",
+        "record": {
+          "id": "anc-06",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "revisionId": "rev-06",
+          "locator": {
+            "type": "row",
+            "row": 1,
+            "column": "firmware"
+          }
+        }
+      }
+    },
+    {
+      "position": 69,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "anchor",
+        "record": {
+          "id": "anc-07",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "revisionId": "rev-07",
+          "locator": {
+            "type": "span",
+            "start": 40,
+            "end": 120,
+            "quote": "tech thinks it is rodents again but did not open the box"
+          }
+        }
+      }
+    },
+    {
+      "position": 70,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "anchor",
+        "record": {
+          "id": "anc-08",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "revisionId": "rev-08",
+          "locator": {
+            "type": "page",
+            "page": 4
+          }
+        }
+      }
+    },
+    {
+      "position": 71,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "anchor",
+        "record": {
+          "id": "anc-09",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "revisionId": "rev-09",
+          "locator": {
+            "type": "page",
+            "page": 2
+          }
+        }
+      }
+    },
+    {
+      "position": 72,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "anchor",
+        "record": {
+          "id": "anc-10",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "revisionId": "rev-10",
+          "locator": {
+            "type": "page",
+            "page": 1
+          }
+        }
+      }
+    },
+    {
+      "position": 73,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "anchor",
+        "record": {
+          "id": "anc-11",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "revisionId": "rev-11",
+          "locator": {
+            "type": "image-region",
+            "x": 120,
+            "y": 80,
+            "w": 400,
+            "h": 300
+          }
+        }
+      }
+    },
+    {
+      "position": 74,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "anchor",
+        "record": {
+          "id": "anc-12",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "revisionId": "rev-12",
+          "locator": {
+            "type": "whole"
+          }
+        }
+      }
+    },
+    {
+      "position": 75,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "anchor",
+        "record": {
+          "id": "anc-13",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "revisionId": "rev-13",
+          "locator": {
+            "type": "page",
+            "page": 1
+          }
+        }
+      }
+    },
+    {
+      "position": 76,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "anchor",
+        "record": {
+          "id": "anc-14",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "revisionId": "rev-14",
+          "locator": {
+            "type": "whole"
+          }
+        }
+      }
+    },
+    {
+      "position": 77,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "episode",
+        "record": {
+          "id": "ep-seed",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "startedAt": "2026-09-01T15:00:00Z",
+          "actorId": "u-avery",
+          "method": {
+            "name": "seed",
+            "version": "1"
+          },
+          "correlationId": "seed-1",
+          "revisionIds": []
+        }
+      }
+    },
+    {
+      "position": 78,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "episode",
+        "record": {
+          "id": "ep-intake-1",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "startedAt": "2026-09-23T15:00:00Z",
+          "actorId": "u-avery",
+          "method": {
+            "name": "intake-extract",
+            "version": "0.1"
+          },
+          "correlationId": "intake-1",
+          "revisionIds": [
+            "rev-01",
+            "rev-02",
+            "rev-03",
+            "rev-04",
+            "rev-06",
+            "rev-07",
+            "rev-08",
+            "rev-09",
+            "rev-10",
+            "rev-11",
+            "rev-12",
+            "rev-13",
+            "rev-14"
+          ]
+        }
+      }
+    },
+    {
+      "position": 79,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "episode",
+        "record": {
+          "id": "ep-intake-restricted",
+          "recordVersion": 1,
+          "accessScope": "restricted",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "startedAt": "2026-09-24T15:00:00Z",
+          "actorId": "u-avery",
+          "method": {
+            "name": "intake-extract",
+            "version": "0.1"
+          },
+          "correlationId": "intake-2",
+          "revisionIds": [
+            "rev-05"
+          ]
+        }
+      }
+    },
+    {
+      "position": 80,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "claim",
+        "record": {
+          "id": "cl-01",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": "2026-09-01T15:00:00Z",
+          "effectiveTo": null,
+          "subjectId": "eq-inv-mr-03",
+          "relation": "runs-firmware",
+          "object": {
+            "type": "entity",
+            "entityId": "fw-helion-3.1.4"
+          },
+          "anchors": [
+            {
+              "anchorId": "anc-01",
+              "role": "supporting"
+            }
+          ],
+          "episodeId": "ep-intake-1",
+          "supersedesClaimId": null,
+          "invalidatedAt": null
+        }
+      }
+    },
+    {
+      "position": 81,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "claim",
+        "record": {
+          "id": "cl-02",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": "2026-09-09T15:00:00Z",
+          "effectiveTo": null,
+          "subjectId": "eq-inv-mr-03",
+          "relation": "runs-firmware",
+          "object": {
+            "type": "entity",
+            "entityId": "fw-helion-3.2.0"
+          },
+          "anchors": [
+            {
+              "anchorId": "anc-02",
+              "role": "supporting"
+            }
+          ],
+          "episodeId": "ep-intake-1",
+          "supersedesClaimId": null,
+          "invalidatedAt": null
+        }
+      }
+    },
+    {
+      "position": 82,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "claim",
+        "record": {
+          "id": "cl-03",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": "2026-09-01T15:00:00Z",
+          "effectiveTo": "2026-09-09T15:00:00Z",
+          "subjectId": "eq-inv-mr-03",
+          "relation": "had-fault",
+          "object": {
+            "type": "value",
+            "value": "nuisance DC overcurrent trip",
+            "unit": null
+          },
+          "anchors": [
+            {
+              "anchorId": "anc-01",
+              "role": "supporting"
+            }
+          ],
+          "episodeId": "ep-intake-1",
+          "supersedesClaimId": null,
+          "invalidatedAt": null
+        }
+      }
+    },
+    {
+      "position": 83,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "claim",
+        "record": {
+          "id": "cl-04",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": "2026-09-10T15:00:00Z",
+          "effectiveTo": null,
+          "subjectId": "eq-inv-hp-02",
+          "relation": "runs-firmware",
+          "object": {
+            "type": "entity",
+            "entityId": "fw-helion-3.2.0"
+          },
+          "anchors": [
+            {
+              "anchorId": "anc-04",
+              "role": "supporting"
+            }
+          ],
+          "episodeId": "ep-intake-1",
+          "supersedesClaimId": null,
+          "invalidatedAt": null
+        }
+      }
+    },
+    {
+      "position": 84,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "claim",
+        "record": {
+          "id": "cl-05",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "unreviewed",
+          "reviewedBy": null,
+          "reviewedAt": null,
+          "effectiveFrom": "2026-09-10T15:00:00Z",
+          "effectiveTo": null,
+          "subjectId": "eq-inv-hp-02",
+          "relation": "runs-firmware",
+          "object": {
+            "type": "entity",
+            "entityId": "fw-helion-3.1.4"
+          },
+          "anchors": [
+            {
+              "anchorId": "anc-03",
+              "role": "supporting"
+            }
+          ],
+          "episodeId": "ep-intake-1",
+          "supersedesClaimId": null,
+          "invalidatedAt": null
+        }
+      }
+    },
+    {
+      "position": 85,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "claim",
+        "record": {
+          "id": "cl-06",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "unreviewed",
+          "reviewedBy": null,
+          "reviewedAt": null,
+          "effectiveFrom": "2026-10-01T15:00:00Z",
+          "effectiveTo": null,
+          "subjectId": "eq-inv-rb-01",
+          "relation": "runs-firmware",
+          "object": {
+            "type": "entity",
+            "entityId": "fw-helion-3.2.0"
+          },
+          "anchors": [
+            {
+              "anchorId": "anc-06",
+              "role": "supporting"
+            }
+          ],
+          "episodeId": "ep-intake-1",
+          "supersedesClaimId": null,
+          "invalidatedAt": null
+        }
+      }
+    },
+    {
+      "position": 86,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "claim",
+        "record": {
+          "id": "cl-07",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "inferred",
+          "reviewState": "unreviewed",
+          "reviewedBy": null,
+          "reviewedAt": null,
+          "effectiveFrom": "2026-09-14T15:00:00Z",
+          "effectiveTo": null,
+          "subjectId": "eq-inv-rb-04",
+          "relation": "had-fault-cause",
+          "object": {
+            "type": "value",
+            "value": "rodent damage to combiner wiring",
+            "unit": null
+          },
+          "anchors": [
+            {
+              "anchorId": "anc-07",
+              "role": "supporting"
+            }
+          ],
+          "episodeId": "ep-intake-1",
+          "supersedesClaimId": null,
+          "invalidatedAt": null
+        }
+      }
+    },
+    {
+      "position": 87,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "claim",
+        "record": {
+          "id": "cl-08",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": "2026-06-01T00:00:00Z",
+          "effectiveTo": "2026-09-30T00:00:00Z",
+          "subjectId": "site-high-plains",
+          "relation": "operates-under",
+          "object": {
+            "type": "entity",
+            "entityId": "cond-ambient-over-40c"
+          },
+          "anchors": [
+            {
+              "anchorId": "anc-08",
+              "role": "supporting"
+            }
+          ],
+          "episodeId": "ep-intake-1",
+          "supersedesClaimId": null,
+          "invalidatedAt": null
+        }
+      }
+    },
+    {
+      "position": 88,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "claim",
+        "record": {
+          "id": "cl-09",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": "2026-06-01T00:00:00Z",
+          "effectiveTo": "2026-09-30T00:00:00Z",
+          "subjectId": "site-river-bend",
+          "relation": "operates-under",
+          "object": {
+            "type": "entity",
+            "entityId": "cond-ambient-over-40c"
+          },
+          "anchors": [
+            {
+              "anchorId": "anc-09",
+              "role": "supporting"
+            }
+          ],
+          "episodeId": "ep-intake-1",
+          "supersedesClaimId": null,
+          "invalidatedAt": null
+        }
+      }
+    },
+    {
+      "position": 89,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "claim",
+        "record": {
+          "id": "cl-10",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": "2026-09-20T15:00:00Z",
+          "effectiveTo": null,
+          "subjectId": "eq-inv-mr-07",
+          "relation": "runs-firmware",
+          "object": {
+            "type": "entity",
+            "entityId": "fw-vantage-7.1.0"
+          },
+          "anchors": [
+            {
+              "anchorId": "anc-10",
+              "role": "supporting"
+            }
+          ],
+          "episodeId": "ep-intake-1",
+          "supersedesClaimId": null,
+          "invalidatedAt": null
+        }
+      }
+    },
+    {
+      "position": 90,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "claim",
+        "record": {
+          "id": "cl-11",
+          "recordVersion": 1,
+          "accessScope": "restricted",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": "2026-09-12T15:00:00Z",
+          "effectiveTo": null,
+          "subjectId": "eq-inv-cf-01",
+          "relation": "runs-firmware",
+          "object": {
+            "type": "entity",
+            "entityId": "fw-vantage-7.0.2"
+          },
+          "anchors": [
+            {
+              "anchorId": "anc-05",
+              "role": "supporting"
+            }
+          ],
+          "episodeId": "ep-intake-restricted",
+          "supersedesClaimId": null,
+          "invalidatedAt": null
+        }
+      }
+    },
+    {
+      "position": 91,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "claim",
+        "record": {
+          "id": "cl-12",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": "2025-01-01T00:00:00Z",
+          "effectiveTo": null,
+          "subjectId": "site-mesa-ridge",
+          "relation": "serviced-by",
+          "object": {
+            "type": "entity",
+            "entityId": "org-solaris"
+          },
+          "anchors": [
+            {
+              "anchorId": "anc-01",
+              "role": "supporting"
+            }
+          ],
+          "episodeId": "ep-intake-1",
+          "supersedesClaimId": null,
+          "invalidatedAt": null
+        }
+      }
+    },
+    {
+      "position": 92,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "claim",
+        "record": {
+          "id": "cl-13",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "inferred",
+          "reviewState": "unreviewed",
+          "reviewedBy": null,
+          "reviewedAt": null,
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "subjectId": "site-coastal-flats",
+          "relation": "serviced-by",
+          "object": {
+            "type": "entity",
+            "entityId": "org-gridline-llc"
+          },
+          "anchors": [
+            {
+              "anchorId": "anc-14",
+              "role": "supporting"
+            }
+          ],
+          "episodeId": "ep-intake-1",
+          "supersedesClaimId": null,
+          "invalidatedAt": null
+        }
+      }
+    },
+    {
+      "position": 93,
+      "recordedAt": "2026-09-25T15:00:00Z",
+      "effectiveAt": "2026-09-25T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "case",
+        "record": {
+          "id": "case-01",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "title": "Mesa Ridge INV-MR-03 nuisance DC overcurrent trips",
+          "symptom": "INV-MR-03 trips on DC overcurrent two to four times per afternoon with no measured overcurrent",
+          "context": {
+            "entityIds": [
+              "site-mesa-ridge",
+              "eq-inv-mr-03",
+              "model-helion-x200",
+              "fw-helion-3.1.4",
+              "org-solaris"
+            ],
+            "conditions": [
+              "Helion X200",
+              "firmware 3.1.4",
+              "ambient above 40 °C"
+            ]
+          },
+          "investigation": {
+            "hypotheses": [
+              "DC fuse fatigue",
+              "firmware 3.1.4 overcurrent threshold bug"
+            ],
+            "diagnosticActions": [
+              "fuse resistance check",
+              "event log export",
+              "vendor bulletin review"
+            ],
+            "unresolvedQuestions": []
+          },
+          "actionsTried": [
+            {
+              "description": "Replaced all DC string fuses (WO-1001)",
+              "result": "failed",
+              "occurredAt": "2026-09-02T15:00:00Z",
+              "claimIds": [
+                "cl-03"
+              ]
+            },
+            {
+              "description": "Upgraded firmware 3.1.4 → 3.2.0 (WO-1002)",
+              "result": "succeeded",
+              "occurredAt": "2026-09-09T15:00:00Z",
+              "claimIds": [
+                "cl-02"
+              ]
+            }
+          ],
+          "fix": "Firmware 3.2.0 raised the DC overcurrent debounce; trips stopped the same day",
+          "cost": {
+            "amount": 1850,
+            "currency": "USD"
+          },
+          "downtimeHours": 14,
+          "outcome": "No trips in the 30 days after the upgrade",
+          "limitations": [
+            "Only one unit; fuses were replaced first, so their effect cannot be separated"
+          ],
+          "ownerId": "u-avery",
+          "claimIds": [
+            "cl-01",
+            "cl-02",
+            "cl-03"
+          ],
+          "anchors": [
+            {
+              "anchorId": "anc-01",
+              "role": "supporting"
+            },
+            {
+              "anchorId": "anc-02",
+              "role": "supporting"
+            }
+          ],
+          "openedAt": "2026-09-01T15:00:00Z",
+          "closedAt": "2026-09-12T15:00:00Z"
+        }
+      }
+    },
+    {
+      "position": 94,
+      "recordedAt": "2026-09-25T15:00:00Z",
+      "effectiveAt": "2026-09-25T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "case",
+        "record": {
+          "id": "case-02",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "unreviewed",
+          "reviewedBy": null,
+          "reviewedAt": null,
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "title": "High Plains INV-HP-02 keeps tripping after firmware visit",
+          "symptom": "INV-HP-02 trips continued after WO-1004; the email and the work order disagree on firmware",
+          "context": {
+            "entityIds": [
+              "site-high-plains",
+              "eq-inv-hp-02",
+              "model-helion-x200",
+              "org-solaris"
+            ],
+            "conditions": [
+              "Helion X200",
+              "firmware disputed",
+              "ambient above 40 °C"
+            ]
+          },
+          "investigation": {
+            "hypotheses": [
+              "upgrade was not applied",
+              "upgrade applied but trips have another cause"
+            ],
+            "diagnosticActions": [
+              "request firmware screenshot from site"
+            ],
+            "unresolvedQuestions": [
+              "Which firmware is INV-HP-02 actually running?"
+            ]
+          },
+          "actionsTried": [],
+          "fix": null,
+          "cost": null,
+          "downtimeHours": null,
+          "outcome": null,
+          "limitations": [
+            "Conflicting sources; nothing concluded until the firmware is confirmed"
+          ],
+          "ownerId": "u-avery",
+          "claimIds": [
+            "cl-04",
+            "cl-05"
+          ],
+          "anchors": [
+            {
+              "anchorId": "anc-03",
+              "role": "supporting"
+            },
+            {
+              "anchorId": "anc-04",
+              "role": "supporting"
+            }
+          ],
+          "openedAt": "2026-09-01T15:00:00Z",
+          "closedAt": null
+        }
+      }
+    },
+    {
+      "position": 95,
+      "recordedAt": "2026-09-25T15:00:00Z",
+      "effectiveAt": "2026-09-25T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "case",
+        "record": {
+          "id": "case-03",
+          "recordVersion": 1,
+          "accessScope": "restricted",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "title": "Coastal Flats INV-CF-01 warranty dispute",
+          "symptom": "Vantage C1500 IGBT failure within warranty; vendor disputes coverage",
+          "context": {
+            "entityIds": [
+              "site-coastal-flats",
+              "eq-inv-cf-01",
+              "model-vantage-c1500",
+              "fw-vantage-7.0.2",
+              "org-gridline"
+            ],
+            "conditions": [
+              "Vantage C1500",
+              "firmware 7.0.2",
+              "warranty"
+            ]
+          },
+          "investigation": {
+            "hypotheses": [],
+            "diagnosticActions": [],
+            "unresolvedQuestions": []
+          },
+          "actionsTried": [],
+          "fix": null,
+          "cost": null,
+          "downtimeHours": null,
+          "outcome": null,
+          "limitations": [],
+          "ownerId": "u-avery",
+          "claimIds": [
+            "cl-11"
+          ],
+          "anchors": [
+            {
+              "anchorId": "anc-05",
+              "role": "supporting"
+            }
+          ],
+          "openedAt": "2026-09-01T15:00:00Z",
+          "closedAt": null
+        }
+      }
+    },
+    {
+      "position": 96,
+      "recordedAt": "2026-09-25T15:00:00Z",
+      "effectiveAt": "2026-09-25T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "case",
+        "record": {
+          "id": "case-04",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "title": "High Plains Helion X200 afternoon derate",
+          "symptom": "Helion X200 derates to 60 % output on afternoons above 40 °C",
+          "context": {
+            "entityIds": [
+              "site-high-plains",
+              "model-helion-x200",
+              "fw-helion-3.1.4",
+              "cond-ambient-over-40c",
+              "org-solaris"
+            ],
+            "conditions": [
+              "Helion X200",
+              "firmware 3.1.4",
+              "ambient above 40 °C",
+              "Southwest desert"
+            ]
+          },
+          "investigation": {
+            "hypotheses": [],
+            "diagnosticActions": [],
+            "unresolvedQuestions": []
+          },
+          "actionsTried": [
+            {
+              "description": "Upgraded fleet firmware to 3.2.0",
+              "result": "succeeded",
+              "occurredAt": "2026-09-17T15:00:00Z",
+              "claimIds": []
+            }
+          ],
+          "fix": "Firmware 3.2.0 changed the thermal derate curve",
+          "cost": null,
+          "downtimeHours": null,
+          "outcome": "Afternoon derate reduced from 40 % to 8 %",
+          "limitations": [],
+          "ownerId": "u-avery",
+          "claimIds": [
+            "cl-08"
+          ],
+          "anchors": [
+            {
+              "anchorId": "anc-08",
+              "role": "supporting"
+            }
+          ],
+          "openedAt": "2026-09-01T15:00:00Z",
+          "closedAt": "2026-09-19T15:00:00Z"
+        }
+      }
+    },
+    {
+      "position": 97,
+      "recordedAt": "2026-09-25T15:00:00Z",
+      "effectiveAt": "2026-09-25T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "case",
+        "record": {
+          "id": "case-05",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "title": "River Bend Helion X200 afternoon derate",
+          "symptom": "Helion X200 derates to 60 % output on afternoons above 40 °C",
+          "context": {
+            "entityIds": [
+              "site-river-bend",
+              "eq-inv-rb-01",
+              "model-helion-x200",
+              "fw-helion-3.1.4",
+              "cond-ambient-over-40c",
+              "org-gridline"
+            ],
+            "conditions": [
+              "Helion X200",
+              "firmware 3.1.4",
+              "ambient above 40 °C",
+              "Gulf coast"
+            ]
+          },
+          "investigation": {
+            "hypotheses": [
+              "same thermal derate as High Plains",
+              "blocked enclosure filters"
+            ],
+            "diagnosticActions": [
+              "filter inspection",
+              "compare curves with High Plains"
+            ],
+            "unresolvedQuestions": [
+              "Does humidity change the result?"
+            ]
+          },
+          "actionsTried": [],
+          "fix": null,
+          "cost": null,
+          "downtimeHours": null,
+          "outcome": null,
+          "limitations": [],
+          "ownerId": "u-avery",
+          "claimIds": [
+            "cl-06",
+            "cl-09"
+          ],
+          "anchors": [
+            {
+              "anchorId": "anc-09",
+              "role": "supporting"
+            }
+          ],
+          "openedAt": "2026-09-01T15:00:00Z",
+          "closedAt": null
+        }
+      }
+    },
+    {
+      "position": 98,
+      "recordedAt": "2026-09-25T15:00:00Z",
+      "effectiveAt": "2026-09-25T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "case",
+        "record": {
+          "id": "case-06",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "title": "River Bend combiner 4 ground fault",
+          "symptom": "Recurring ground fault on INV-RB-04 string 4",
+          "context": {
+            "entityIds": [
+              "site-river-bend",
+              "eq-inv-rb-04",
+              "model-vantage-c1500",
+              "org-gridline"
+            ],
+            "conditions": [
+              "Vantage C1500",
+              "combiner",
+              "rodents suspected"
+            ]
+          },
+          "investigation": {
+            "hypotheses": [
+              "rodent damage",
+              "water ingress"
+            ],
+            "diagnosticActions": [
+              "open combiner 4 and photograph wiring"
+            ],
+            "unresolvedQuestions": [
+              "Was the box opened?"
+            ]
+          },
+          "actionsTried": [],
+          "fix": null,
+          "cost": null,
+          "downtimeHours": null,
+          "outcome": null,
+          "limitations": [],
+          "ownerId": "u-avery",
+          "claimIds": [
+            "cl-07"
+          ],
+          "anchors": [
+            {
+              "anchorId": "anc-07",
+              "role": "supporting"
+            },
+            {
+              "anchorId": "anc-11",
+              "role": "supporting"
+            }
+          ],
+          "openedAt": "2026-09-01T15:00:00Z",
+          "closedAt": null
+        }
+      }
+    },
+    {
+      "position": 99,
+      "recordedAt": "2026-09-25T15:00:00Z",
+      "effectiveAt": "2026-09-25T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "case",
+        "record": {
+          "id": "case-07",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "title": "Mesa Ridge INV-MR-07 afternoon derate (Vantage)",
+          "symptom": "Vantage C1500 derates on hot afternoons",
+          "context": {
+            "entityIds": [
+              "site-mesa-ridge",
+              "eq-inv-mr-07",
+              "model-vantage-c1500",
+              "fw-vantage-7.1.0",
+              "cond-ambient-over-40c",
+              "org-solaris"
+            ],
+            "conditions": [
+              "Vantage C1500",
+              "firmware 7.1.0",
+              "ambient above 40 °C"
+            ]
+          },
+          "investigation": {
+            "hypotheses": [],
+            "diagnosticActions": [],
+            "unresolvedQuestions": []
+          },
+          "actionsTried": [
+            {
+              "description": "Upgraded firmware 7.0.2 → 7.1.0 (WO-1010)",
+              "result": "failed",
+              "occurredAt": "2026-09-20T15:00:00Z",
+              "claimIds": [
+                "cl-10"
+              ]
+            }
+          ],
+          "fix": null,
+          "cost": null,
+          "downtimeHours": null,
+          "outcome": "Derate unchanged; cooling fan replacement planned",
+          "limitations": [],
+          "ownerId": "u-avery",
+          "claimIds": [
+            "cl-10"
+          ],
+          "anchors": [
+            {
+              "anchorId": "anc-10",
+              "role": "supporting"
+            }
+          ],
+          "openedAt": "2026-09-01T15:00:00Z",
+          "closedAt": null
+        }
+      }
+    },
+    {
+      "position": 100,
+      "recordedAt": "2026-09-25T15:00:00Z",
+      "effectiveAt": "2026-09-25T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "case",
+        "record": {
+          "id": "case-08",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "title": "River Bend INV-RB-01 cooling retrofit",
+          "symptom": "Follow-up to case-05: enclosure cooling as the second lever",
+          "context": {
+            "entityIds": [
+              "site-river-bend",
+              "eq-inv-rb-01",
+              "model-helion-x200",
+              "org-gridline"
+            ],
+            "conditions": [
+              "Helion X200",
+              "cooling"
+            ]
+          },
+          "investigation": {
+            "hypotheses": [],
+            "diagnosticActions": [],
+            "unresolvedQuestions": []
+          },
+          "actionsTried": [],
+          "fix": null,
+          "cost": null,
+          "downtimeHours": null,
+          "outcome": null,
+          "limitations": [],
+          "ownerId": "u-avery",
+          "claimIds": [],
+          "anchors": [
+            {
+              "anchorId": "anc-13",
+              "role": "supporting"
+            }
+          ],
+          "openedAt": "2026-09-01T15:00:00Z",
+          "closedAt": null
+        }
+      }
+    },
+    {
+      "position": 101,
+      "recordedAt": "2026-09-25T15:00:00Z",
+      "effectiveAt": "2026-09-25T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "case",
+        "record": {
+          "id": "case-09",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "title": "High Plains tracker communication dropouts",
+          "symptom": "Tracker controllers lose communication after storms",
+          "context": {
+            "entityIds": [
+              "site-high-plains",
+              "org-solaris"
+            ],
+            "conditions": [
+              "trackers",
+              "storm"
+            ]
+          },
+          "investigation": {
+            "hypotheses": [],
+            "diagnosticActions": [],
+            "unresolvedQuestions": []
+          },
+          "actionsTried": [],
+          "fix": null,
+          "cost": null,
+          "downtimeHours": null,
+          "outcome": null,
+          "limitations": [],
+          "ownerId": "u-avery",
+          "claimIds": [],
+          "anchors": [],
+          "openedAt": "2026-09-01T15:00:00Z",
+          "closedAt": null
+        }
+      }
+    },
+    {
+      "position": 102,
+      "recordedAt": "2026-09-25T15:00:00Z",
+      "effectiveAt": "2026-09-25T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "case",
+        "record": {
+          "id": "case-10",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "title": "Coastal Flats vegetation shading row 12",
+          "symptom": "Row 12 string currents 20 % below neighbors in the morning",
+          "context": {
+            "entityIds": [
+              "site-coastal-flats",
+              "org-gridline"
+            ],
+            "conditions": [
+              "vegetation",
+              "shading"
+            ]
+          },
+          "investigation": {
+            "hypotheses": [],
+            "diagnosticActions": [],
+            "unresolvedQuestions": []
+          },
+          "actionsTried": [],
+          "fix": null,
+          "cost": null,
+          "downtimeHours": null,
+          "outcome": null,
+          "limitations": [],
+          "ownerId": "u-avery",
+          "claimIds": [],
+          "anchors": [],
+          "openedAt": "2026-09-01T15:00:00Z",
+          "closedAt": null
+        }
+      }
+    },
+    {
+      "position": 103,
+      "recordedAt": "2026-09-25T15:00:00Z",
+      "effectiveAt": "2026-09-25T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "case",
+        "record": {
+          "id": "case-11",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "title": "Mesa Ridge meter drift",
+          "symptom": "Revenue meter reads 1.2 % below inverter sum",
+          "context": {
+            "entityIds": [
+              "site-mesa-ridge",
+              "org-desert"
+            ],
+            "conditions": [
+              "metering"
+            ]
+          },
+          "investigation": {
+            "hypotheses": [],
+            "diagnosticActions": [],
+            "unresolvedQuestions": []
+          },
+          "actionsTried": [],
+          "fix": null,
+          "cost": null,
+          "downtimeHours": null,
+          "outcome": null,
+          "limitations": [],
+          "ownerId": "u-avery",
+          "claimIds": [],
+          "anchors": [],
+          "openedAt": "2026-09-01T15:00:00Z",
+          "closedAt": null
+        }
+      }
+    },
+    {
+      "position": 104,
+      "recordedAt": "2026-09-25T15:00:00Z",
+      "effectiveAt": "2026-09-25T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "case",
+        "record": {
+          "id": "case-12",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "title": "River Bend vendor response time",
+          "symptom": "Gridline response to P2 work exceeds the contract target",
+          "context": {
+            "entityIds": [
+              "site-river-bend",
+              "org-gridline"
+            ],
+            "conditions": [
+              "contract",
+              "response time"
+            ]
+          },
+          "investigation": {
+            "hypotheses": [],
+            "diagnosticActions": [],
+            "unresolvedQuestions": []
+          },
+          "actionsTried": [],
+          "fix": null,
+          "cost": null,
+          "downtimeHours": null,
+          "outcome": null,
+          "limitations": [],
+          "ownerId": "u-avery",
+          "claimIds": [],
+          "anchors": [
+            {
+              "anchorId": "anc-12",
+              "role": "supporting"
+            }
+          ],
+          "openedAt": "2026-09-01T15:00:00Z",
+          "closedAt": null
+        }
+      }
+    },
+    {
+      "position": 105,
+      "recordedAt": "2026-09-26T15:00:00Z",
+      "effectiveAt": "2026-09-26T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "review-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "lesson",
+        "record": {
+          "id": "lesson-01",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "statement": "On Helion X200 units running 3.1.4 in ambient above 40 °C, upgrading to 3.2.0 removes afternoon derates and nuisance trips",
+          "conditions": [
+            "Helion X200",
+            "firmware 3.1.4",
+            "ambient above 40 °C"
+          ],
+          "action": "Upgrade firmware to 3.2.0",
+          "expectedOutcome": "Derate and trips stop within a day",
+          "supportingCaseIds": [
+            "case-01",
+            "case-04"
+          ],
+          "counterEvidenceCaseIds": [
+            "case-07"
+          ],
+          "status": "reviewed",
+          "ownerId": "u-avery"
+        }
+      }
+    },
+    {
+      "position": 106,
+      "recordedAt": "2026-09-26T15:00:00Z",
+      "effectiveAt": "2026-09-26T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "review-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "lesson",
+        "record": {
+          "id": "lesson-02",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "proposed",
+          "reviewState": "unreviewed",
+          "reviewedBy": null,
+          "reviewedAt": null,
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "statement": "Combiner ground faults near tree lines are usually rodent damage",
+          "conditions": [
+            "combiner",
+            "tree line within 20 m"
+          ],
+          "action": "Open the box and photograph before replacing fuses",
+          "expectedOutcome": "Visible insulation damage",
+          "supportingCaseIds": [
+            "case-06"
+          ],
+          "counterEvidenceCaseIds": [],
+          "status": "candidate",
+          "ownerId": "u-jordan"
+        }
+      }
+    },
+    {
+      "position": 107,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "candidate",
+        "record": {
+          "id": "cand-01",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "inferred",
+          "reviewState": "unreviewed",
+          "reviewedBy": null,
+          "reviewedAt": null,
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "operation": "merge",
+          "targetType": "entity",
+          "targetId": "site-mesa-ridge",
+          "mergeSourceId": null,
+          "payload": {
+            "alias": "Mesa Ridge Solar Park"
+          },
+          "method": {
+            "name": "entity-resolution",
+            "version": "0.1"
+          },
+          "uncertainty": {
+            "level": "medium",
+            "reasons": "Name differs from the known alias \"Mesa Ridge Solar\" by one word"
+          },
+          "episodeId": "ep-intake-1",
+          "decision": null
+        }
+      }
+    },
+    {
+      "position": 108,
+      "recordedAt": "2026-09-23T15:00:00Z",
+      "effectiveAt": "2026-09-23T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "candidate",
+        "record": {
+          "id": "cand-02",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "inferred",
+          "reviewState": "unreviewed",
+          "reviewedBy": null,
+          "reviewedAt": null,
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "operation": "add",
+          "targetType": "claim",
+          "targetId": null,
+          "mergeSourceId": null,
+          "payload": {
+            "claimId": "cl-07"
+          },
+          "method": {
+            "name": "intake-extract",
+            "version": "0.1"
+          },
+          "uncertainty": {
+            "level": "low",
+            "reasons": "Technician did not open the box; cause is a guess"
+          },
+          "episodeId": "ep-intake-1",
+          "decision": null
+        }
+      }
+    },
+    {
+      "position": 109,
+      "recordedAt": "2026-09-27T15:00:00Z",
+      "effectiveAt": "2026-09-27T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "review-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "proposal",
+        "record": {
+          "id": "prop-01",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "unreviewed",
+          "reviewedBy": null,
+          "reviewedAt": null,
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "caseId": "case-05",
+          "stage": "assessment",
+          "assessment": {
+            "similarCaseIds": [
+              "case-04",
+              "case-01"
+            ],
+            "keyDifferences": [
+              "Gulf coast humidity",
+              "single unit, not fleet",
+              "vendor is Gridline, not Solaris"
+            ],
+            "evidenceGaps": [
+              "no filter inspection record"
+            ],
+            "nextSteps": [
+              "upgrade INV-RB-01 to 3.2.0",
+              "inspect enclosure filters"
+            ],
+            "causeConfidence": {
+              "level": "high",
+              "reasons": "Same model, firmware, symptom and temperature band as case-04"
+            },
+            "nextStepConfidence": {
+              "level": "medium",
+              "reasons": "Humidity is not covered by the High Plains result"
+            }
+          },
+          "draft": null,
+          "publishedAt": null,
+          "workbenchLogPosition": null
+        }
+      }
+    },
+    {
+      "position": 110,
+      "recordedAt": "2026-09-27T15:00:00Z",
+      "effectiveAt": "2026-09-27T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "review-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "proposal",
+        "record": {
+          "id": "prop-02",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "unreviewed",
+          "reviewedBy": null,
+          "reviewedAt": null,
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "caseId": "case-02",
+          "stage": "assessment",
+          "assessment": {
+            "similarCaseIds": [
+              "case-01"
+            ],
+            "keyDifferences": [
+              "firmware not confirmed"
+            ],
+            "evidenceGaps": [
+              "firmware screenshot"
+            ],
+            "nextSteps": [
+              "confirm firmware before any further action"
+            ],
+            "causeConfidence": {
+              "level": "low",
+              "reasons": "Sources conflict on the one fact the diagnosis depends on"
+            },
+            "nextStepConfidence": {
+              "level": "high",
+              "reasons": "A screenshot settles it"
+            }
+          },
+          "draft": null,
+          "publishedAt": null,
+          "workbenchLogPosition": null
+        }
+      }
+    },
+    {
+      "position": 111,
+      "recordedAt": "2026-09-23T16:00:00Z",
+      "effectiveAt": "2026-09-23T16:00:00Z",
+      "actorId": "system:auto-accept",
+      "correlationId": "intake-1",
+      "event": {
+        "type": "claim-auto-accepted",
+        "claimId": "cl-06",
+        "rule": "auto-accept/v1"
+      }
+    },
+    {
+      "position": 112,
+      "recordedAt": "2026-09-25T15:00:00Z",
+      "effectiveAt": "2026-09-25T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "review-1",
+      "event": {
+        "type": "claim-invalidated",
+        "claimId": "cl-01",
+        "invalidatedAt": "2026-09-09T15:00:00Z",
+        "reason": "Superseded by WO-1002 firmware upgrade",
+        "supersededByClaimId": "cl-02"
+      }
+    },
+    {
+      "position": 113,
+      "recordedAt": "2026-09-26T15:00:00Z",
+      "effectiveAt": "2026-09-26T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "review-1",
+      "event": {
+        "type": "entities-merged",
+        "survivorId": "org-gridline",
+        "mergedId": "org-gridline-llc",
+        "reason": "Same vendor; \"LLC\" suffix from an invoice email"
+      }
+    },
+    {
+      "position": 114,
+      "recordedAt": "2026-09-26T15:00:00Z",
+      "effectiveAt": "2026-09-26T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "review-1",
+      "event": {
+        "type": "candidate-decided",
+        "candidateId": "cand-02",
+        "decision": "accepted",
+        "reason": "Photo in rev-11 shows chewed insulation",
+        "resultingId": "cl-07"
+      }
+    },
+    {
+      "position": 115,
+      "recordedAt": "2026-09-28T15:00:00Z",
+      "effectiveAt": "2026-09-28T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "review-1",
+      "event": {
+        "type": "review-recorded",
+        "proposalId": "prop-01",
+        "gate": 1,
+        "decision": "approve",
+        "notes": "Direction agreed; include the filter inspection"
+      }
+    },
+    {
+      "position": 116,
+      "recordedAt": "2026-09-29T15:00:00Z",
+      "effectiveAt": "2026-09-29T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "review-2",
+      "event": {
+        "type": "record-superseded",
+        "recordType": "proposal",
+        "record": {
+          "id": "prop-01",
+          "recordVersion": 2,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "unreviewed",
+          "reviewedBy": null,
+          "reviewedAt": null,
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "caseId": "case-05",
+          "stage": "review-2",
+          "assessment": {
+            "similarCaseIds": [
+              "case-04",
+              "case-01"
+            ],
+            "keyDifferences": [
+              "Gulf coast humidity",
+              "single unit, not fleet",
+              "vendor is Gridline, not Solaris"
+            ],
+            "evidenceGaps": [
+              "no filter inspection record"
+            ],
+            "nextSteps": [
+              "upgrade INV-RB-01 to 3.2.0",
+              "inspect enclosure filters"
+            ],
+            "causeConfidence": {
+              "level": "high",
+              "reasons": "Same model, firmware, symptom and temperature band as case-04"
+            },
+            "nextStepConfidence": {
+              "level": "medium",
+              "reasons": "Humidity is not covered by the High Plains result"
+            }
+          },
+          "draft": {
+            "scope": "Upgrade INV-RB-01 to firmware 3.2.0 and inspect enclosure filters on the same visit",
+            "ownerIds": [
+              "person-morgan-hale",
+              "u-avery"
+            ],
+            "targetDates": [
+              {
+                "label": "site visit",
+                "date": "2026-10-08"
+              }
+            ],
+            "dependencies": [
+              "Gridline schedules a technician",
+              "firmware package from Helion"
+            ],
+            "costBasis": [
+              {
+                "description": "Technician day rate per contract",
+                "amount": 950,
+                "currency": "USD",
+                "anchorId": "anc-12"
+              }
+            ],
+            "successCriteria": [
+              "Afternoon derate below 10 % for 14 days"
+            ],
+            "anchors": [
+              {
+                "anchorId": "anc-09",
+                "role": "supporting"
+              },
+              {
+                "anchorId": "anc-12",
+                "role": "supporting"
+              }
+            ]
+          },
+          "publishedAt": null,
+          "workbenchLogPosition": null
+        },
+        "basedOnVersion": 1,
+        "reason": "Draft prepared after review 1"
+      }
+    },
+    {
+      "position": 117,
+      "recordedAt": "2026-09-30T15:00:00Z",
+      "effectiveAt": "2026-09-30T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "review-2",
+      "event": {
+        "type": "review-recorded",
+        "proposalId": "prop-01",
+        "gate": 2,
+        "decision": "approve",
+        "notes": "Approved as drafted"
+      }
+    },
+    {
+      "position": 118,
+      "recordedAt": "2026-09-30T16:00:00Z",
+      "effectiveAt": "2026-09-30T16:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "review-2",
+      "event": {
+        "type": "proposal-published",
+        "proposalId": "prop-01",
+        "publishedAt": "2026-09-30T16:00:00Z",
+        "workbenchLogPosition": null
+      }
+    },
+    {
+      "position": 119,
+      "recordedAt": "2026-10-10T15:00:00Z",
+      "effectiveAt": "2026-10-10T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "outcome-1",
+      "event": {
+        "type": "record-added",
+        "recordType": "outcome",
+        "record": {
+          "id": "out-01",
+          "recordVersion": 1,
+          "accessScope": "standard",
+          "evidenceClass": "documented",
+          "reviewState": "accepted",
+          "reviewedBy": "u-avery",
+          "reviewedAt": "2026-09-01T15:00:00Z",
+          "effectiveFrom": null,
+          "effectiveTo": null,
+          "proposalId": "prop-01",
+          "description": "Upgrade applied 2026-10-08; derate fell to 6 % over the following 14 days",
+          "result": "succeeded",
+          "lessonIds": [
+            "lesson-01"
+          ],
+          "recordedBy": "u-avery",
+          "occurredAt": "2026-10-08T15:00:00Z",
+          "anchors": [
+            {
+              "anchorId": "anc-13",
+              "role": "supporting"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "position": 120,
+      "recordedAt": "2026-10-10T15:00:00Z",
+      "effectiveAt": "2026-10-10T15:00:00Z",
+      "actorId": "u-avery",
+      "correlationId": "outcome-1",
+      "event": {
+        "type": "lesson-status-changed",
+        "lessonId": "lesson-01",
+        "status": "qualified",
+        "reason": "Holds on Helion X200 only; case-07 shows it does not transfer to Vantage C1500"
+      }
+    }
+  ]
+}

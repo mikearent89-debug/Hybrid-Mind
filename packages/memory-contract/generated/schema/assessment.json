@@ -1,0 +1,84 @@
+{
+  "$id": "https://hybrid-mind.local/schema/assessment.json",
+  "title": "assessment",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "similarCaseIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "keyDifferences": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidenceGaps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "nextSteps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "causeConfidence": {
+      "type": "object",
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "reasons": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "level",
+        "reasons"
+      ],
+      "additionalProperties": false
+    },
+    "nextStepConfidence": {
+      "type": "object",
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "reasons": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "level",
+        "reasons"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "similarCaseIds",
+    "keyDifferences",
+    "evidenceGaps",
+    "nextSteps",
+    "causeConfidence",
+    "nextStepConfidence"
+  ],
+  "additionalProperties": false
+}

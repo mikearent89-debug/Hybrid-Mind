@@ -1,0 +1,351 @@
+{
+  "$id": "https://hybrid-mind.local/schema/proposal.json",
+  "title": "proposal",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "recordVersion": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991
+    },
+    "accessScope": {
+      "type": "string",
+      "enum": [
+        "standard",
+        "restricted"
+      ]
+    },
+    "evidenceClass": {
+      "type": "string",
+      "enum": [
+        "documented",
+        "field-verified",
+        "inferred",
+        "illustrative",
+        "proposed",
+        "unknown"
+      ]
+    },
+    "reviewState": {
+      "type": "string",
+      "enum": [
+        "unreviewed",
+        "accepted",
+        "rejected",
+        "superseded"
+      ]
+    },
+    "reviewedBy": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "reviewedAt": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "effectiveFrom": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "effectiveTo": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "caseId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "assessment",
+        "review-1",
+        "draft",
+        "review-2",
+        "published",
+        "returned",
+        "rejected"
+      ]
+    },
+    "assessment": {
+      "type": "object",
+      "properties": {
+        "similarCaseIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "keyDifferences": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidenceGaps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "nextSteps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "causeConfidence": {
+          "type": "object",
+          "properties": {
+            "level": {
+              "type": "string",
+              "enum": [
+                "low",
+                "medium",
+                "high"
+              ]
+            },
+            "reasons": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "level",
+            "reasons"
+          ],
+          "additionalProperties": false
+        },
+        "nextStepConfidence": {
+          "type": "object",
+          "properties": {
+            "level": {
+              "type": "string",
+              "enum": [
+                "low",
+                "medium",
+                "high"
+              ]
+            },
+            "reasons": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "level",
+            "reasons"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "similarCaseIds",
+        "keyDifferences",
+        "evidenceGaps",
+        "nextSteps",
+        "causeConfidence",
+        "nextStepConfidence"
+      ],
+      "additionalProperties": false
+    },
+    "draft": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "scope": {
+              "type": "string"
+            },
+            "ownerIds": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "targetDates": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "date": {
+                    "type": "string",
+                    "format": "date",
+                    "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+                  }
+                },
+                "required": [
+                  "label",
+                  "date"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "dependencies": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "costBasis": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string"
+                  },
+                  "amount": {
+                    "type": "number"
+                  },
+                  "currency": {
+                    "type": "string",
+                    "minLength": 3,
+                    "maxLength": 3
+                  },
+                  "anchorId": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "description",
+                  "amount",
+                  "currency",
+                  "anchorId"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "successCriteria": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "anchors": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "anchorId": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "role": {
+                    "type": "string",
+                    "enum": [
+                      "supporting",
+                      "conflicting",
+                      "contextual",
+                      "superseding"
+                    ]
+                  }
+                },
+                "required": [
+                  "anchorId",
+                  "role"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "scope",
+            "ownerIds",
+            "targetDates",
+            "dependencies",
+            "costBasis",
+            "successCriteria",
+            "anchors"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "publishedAt": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "workbenchLogPosition": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "recordVersion",
+    "accessScope",
+    "evidenceClass",
+    "reviewState",
+    "reviewedBy",
+    "reviewedAt",
+    "effectiveFrom",
+    "effectiveTo",
+    "caseId",
+    "stage",
+    "assessment",
+    "draft",
+    "publishedAt",
+    "workbenchLogPosition"
+  ],
+  "additionalProperties": false
+}

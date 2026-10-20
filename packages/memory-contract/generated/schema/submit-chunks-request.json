@@ -1,0 +1,222 @@
+{
+  "$id": "https://hybrid-mind.local/schema/submit-chunks-request.json",
+  "title": "submit-chunks-request",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "revisionId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "episodeId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "chunks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "text": {
+            "type": "string"
+          },
+          "contextPrefix": {
+            "type": "string"
+          },
+          "locator": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "const": "page"
+                  },
+                  "page": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 9007199254740991
+                  },
+                  "region": {
+                    "type": "object",
+                    "properties": {
+                      "x": {
+                        "type": "number"
+                      },
+                      "y": {
+                        "type": "number"
+                      },
+                      "w": {
+                        "type": "number"
+                      },
+                      "h": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "x",
+                      "y",
+                      "w",
+                      "h"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "type",
+                  "page"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "const": "span"
+                  },
+                  "start": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "end": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "quote": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "start",
+                  "end",
+                  "quote"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "const": "row"
+                  },
+                  "row": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "column": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "row"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "const": "time"
+                  },
+                  "startSeconds": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "endSeconds": {
+                    "type": "number",
+                    "minimum": 0
+                  }
+                },
+                "required": [
+                  "type",
+                  "startSeconds",
+                  "endSeconds"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "const": "image-region"
+                  },
+                  "x": {
+                    "type": "number"
+                  },
+                  "y": {
+                    "type": "number"
+                  },
+                  "w": {
+                    "type": "number"
+                  },
+                  "h": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "type",
+                  "x",
+                  "y",
+                  "w",
+                  "h"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "const": "whole"
+                  }
+                },
+                "required": [
+                  "type"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          },
+          "embedding": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "embeddingModel": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "index",
+          "text",
+          "contextPrefix",
+          "locator",
+          "embedding",
+          "embeddingModel"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "revisionId",
+    "episodeId",
+    "chunks"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,3690 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hybrid-mind.local/schema/contract.json",
+  "title": "Hybrid-Mind memory contract",
+  "$defs": {
+    "Confidence": {
+      "type": "object",
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "reasons": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "level",
+        "reasons"
+      ],
+      "additionalProperties": false
+    },
+    "RecordBase": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recordVersion": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "accessScope": {
+          "type": "string",
+          "enum": [
+            "standard",
+            "restricted"
+          ]
+        },
+        "evidenceClass": {
+          "type": "string",
+          "enum": [
+            "documented",
+            "field-verified",
+            "inferred",
+            "illustrative",
+            "proposed",
+            "unknown"
+          ]
+        },
+        "reviewState": {
+          "type": "string",
+          "enum": [
+            "unreviewed",
+            "accepted",
+            "rejected",
+            "superseded"
+          ]
+        },
+        "reviewedBy": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reviewedAt": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effectiveFrom": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effectiveTo": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "recordVersion",
+        "accessScope",
+        "evidenceClass",
+        "reviewState",
+        "reviewedBy",
+        "reviewedAt",
+        "effectiveFrom",
+        "effectiveTo"
+      ],
+      "additionalProperties": false
+    },
+    "Locator": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "page"
+            },
+            "page": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9007199254740991
+            },
+            "region": {
+              "type": "object",
+              "properties": {
+                "x": {
+                  "type": "number"
+                },
+                "y": {
+                  "type": "number"
+                },
+                "w": {
+                  "type": "number"
+                },
+                "h": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "x",
+                "y",
+                "w",
+                "h"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "type",
+            "page"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "span"
+            },
+            "start": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "end": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "quote": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "start",
+            "end",
+            "quote"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "row"
+            },
+            "row": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "column": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "row"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "time"
+            },
+            "startSeconds": {
+              "type": "number",
+              "minimum": 0
+            },
+            "endSeconds": {
+              "type": "number",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "type",
+            "startSeconds",
+            "endSeconds"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "image-region"
+            },
+            "x": {
+              "type": "number"
+            },
+            "y": {
+              "type": "number"
+            },
+            "w": {
+              "type": "number"
+            },
+            "h": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "type",
+            "x",
+            "y",
+            "w",
+            "h"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "whole"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "Method": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "version"
+      ],
+      "additionalProperties": false
+    },
+    "ExternalRef": {
+      "type": "object",
+      "properties": {
+        "sourceSystem": {
+          "type": "string"
+        },
+        "externalId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "sourceSystem",
+        "externalId"
+      ],
+      "additionalProperties": false
+    },
+    "ClaimObject": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "entity"
+            },
+            "entityId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "type",
+            "entityId"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "value"
+            },
+            "value": {
+              "type": "string"
+            },
+            "unit": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "type",
+            "value",
+            "unit"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "AnchorLink": {
+      "type": "object",
+      "properties": {
+        "anchorId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "supporting",
+            "conflicting",
+            "contextual",
+            "superseding"
+          ]
+        }
+      },
+      "required": [
+        "anchorId",
+        "role"
+      ],
+      "additionalProperties": false
+    },
+    "ActionTried": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "result": {
+          "type": "string",
+          "enum": [
+            "succeeded",
+            "failed",
+            "partial",
+            "unknown"
+          ]
+        },
+        "occurredAt": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "claimIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "description",
+        "result",
+        "occurredAt",
+        "claimIds"
+      ],
+      "additionalProperties": false
+    },
+    "Assessment": {
+      "type": "object",
+      "properties": {
+        "similarCaseIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "keyDifferences": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidenceGaps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "nextSteps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "causeConfidence": {
+          "$ref": "#/$defs/Confidence"
+        },
+        "nextStepConfidence": {
+          "$ref": "#/$defs/Confidence"
+        }
+      },
+      "required": [
+        "similarCaseIds",
+        "keyDifferences",
+        "evidenceGaps",
+        "nextSteps",
+        "causeConfidence",
+        "nextStepConfidence"
+      ],
+      "additionalProperties": false
+    },
+    "ProposalDraft": {
+      "type": "object",
+      "properties": {
+        "scope": {
+          "type": "string"
+        },
+        "ownerIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "targetDates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+              }
+            },
+            "required": [
+              "label",
+              "date"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "costBasis": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "number"
+              },
+              "currency": {
+                "type": "string",
+                "minLength": 3,
+                "maxLength": 3
+              },
+              "anchorId": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "description",
+              "amount",
+              "currency",
+              "anchorId"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "successCriteria": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "anchors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/AnchorLink"
+          }
+        }
+      },
+      "required": [
+        "scope",
+        "ownerIds",
+        "targetDates",
+        "dependencies",
+        "costBasis",
+        "successCriteria",
+        "anchors"
+      ],
+      "additionalProperties": false
+    },
+    "Chunk": {
+      "type": "object",
+      "properties": {
+        "index": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "text": {
+          "type": "string"
+        },
+        "contextPrefix": {
+          "type": "string"
+        },
+        "locator": {
+          "$ref": "#/$defs/Locator"
+        },
+        "embedding": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "embeddingModel": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "index",
+        "text",
+        "contextPrefix",
+        "locator",
+        "embedding",
+        "embeddingModel"
+      ],
+      "additionalProperties": false
+    },
+    "Source": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recordVersion": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "accessScope": {
+          "type": "string",
+          "enum": [
+            "standard",
+            "restricted"
+          ]
+        },
+        "evidenceClass": {
+          "type": "string",
+          "enum": [
+            "documented",
+            "field-verified",
+            "inferred",
+            "illustrative",
+            "proposed",
+            "unknown"
+          ]
+        },
+        "reviewState": {
+          "type": "string",
+          "enum": [
+            "unreviewed",
+            "accepted",
+            "rejected",
+            "superseded"
+          ]
+        },
+        "reviewedBy": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reviewedAt": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effectiveFrom": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effectiveTo": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "email",
+            "work-order",
+            "report",
+            "photo",
+            "csv",
+            "note",
+            "document"
+          ]
+        },
+        "title": {
+          "type": "string"
+        },
+        "originSystem": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "externalId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "siteIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "id",
+        "recordVersion",
+        "accessScope",
+        "evidenceClass",
+        "reviewState",
+        "reviewedBy",
+        "reviewedAt",
+        "effectiveFrom",
+        "effectiveTo",
+        "kind",
+        "title",
+        "originSystem",
+        "externalId",
+        "siteIds"
+      ],
+      "additionalProperties": false
+    },
+    "Revision": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recordVersion": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "accessScope": {
+          "type": "string",
+          "enum": [
+            "standard",
+            "restricted"
+          ]
+        },
+        "evidenceClass": {
+          "type": "string",
+          "enum": [
+            "documented",
+            "field-verified",
+            "inferred",
+            "illustrative",
+            "proposed",
+            "unknown"
+          ]
+        },
+        "reviewState": {
+          "type": "string",
+          "enum": [
+            "unreviewed",
+            "accepted",
+            "rejected",
+            "superseded"
+          ]
+        },
+        "reviewedBy": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reviewedAt": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effectiveFrom": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effectiveTo": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "sourceId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "contentHash": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "mediaType": {
+          "type": "string"
+        },
+        "byteLength": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "receivedAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+        },
+        "supersedesRevisionId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "recordVersion",
+        "accessScope",
+        "evidenceClass",
+        "reviewState",
+        "reviewedBy",
+        "reviewedAt",
+        "effectiveFrom",
+        "effectiveTo",
+        "sourceId",
+        "contentHash",
+        "mediaType",
+        "byteLength",
+        "receivedAt",
+        "supersedesRevisionId"
+      ],
+      "additionalProperties": false
+    },
+    "Anchor": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recordVersion": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "accessScope": {
+          "type": "string",
+          "enum": [
+            "standard",
+            "restricted"
+          ]
+        },
+        "evidenceClass": {
+          "type": "string",
+          "enum": [
+            "documented",
+            "field-verified",
+            "inferred",
+            "illustrative",
+            "proposed",
+            "unknown"
+          ]
+        },
+        "reviewState": {
+          "type": "string",
+          "enum": [
+            "unreviewed",
+            "accepted",
+            "rejected",
+            "superseded"
+          ]
+        },
+        "reviewedBy": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reviewedAt": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effectiveFrom": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effectiveTo": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "revisionId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locator": {
+          "$ref": "#/$defs/Locator"
+        }
+      },
+      "required": [
+        "id",
+        "recordVersion",
+        "accessScope",
+        "evidenceClass",
+        "reviewState",
+        "reviewedBy",
+        "reviewedAt",
+        "effectiveFrom",
+        "effectiveTo",
+        "revisionId",
+        "locator"
+      ],
+      "additionalProperties": false
+    },
+    "Episode": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recordVersion": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "accessScope": {
+          "type": "string",
+          "enum": [
+            "standard",
+            "restricted"
+          ]
+        },
+        "evidenceClass": {
+          "type": "string",
+          "enum": [
+            "documented",
+            "field-verified",
+            "inferred",
+            "illustrative",
+            "proposed",
+            "unknown"
+          ]
+        },
+        "reviewState": {
+          "type": "string",
+          "enum": [
+            "unreviewed",
+            "accepted",
+            "rejected",
+            "superseded"
+          ]
+        },
+        "reviewedBy": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reviewedAt": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effectiveFrom": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effectiveTo": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "startedAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+        },
+        "actorId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "method": {
+          "$ref": "#/$defs/Method"
+        },
+        "correlationId": {
+          "type": "string"
+        },
+        "revisionIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "id",
+        "recordVersion",
+        "accessScope",
+        "evidenceClass",
+        "reviewState",
+        "reviewedBy",
+        "reviewedAt",
+        "effectiveFrom",
+        "effectiveTo",
+        "startedAt",
+        "actorId",
+        "method",
+        "correlationId",
+        "revisionIds"
+      ],
+      "additionalProperties": false
+    },
+    "Entity": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recordVersion": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "accessScope": {
+          "type": "string",
+          "enum": [
+            "standard",
+            "restricted"
+          ]
+        },
+        "evidenceClass": {
+          "type": "string",
+          "enum": [
+            "documented",
+            "field-verified",
+            "inferred",
+            "illustrative",
+            "proposed",
+            "unknown"
+          ]
+        },
+        "reviewState": {
+          "type": "string",
+          "enum": [
+            "unreviewed",
+            "accepted",
+            "rejected",
+            "superseded"
+          ]
+        },
+        "reviewedBy": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reviewedAt": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effectiveFrom": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effectiveTo": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "site",
+            "equipment-unit",
+            "equipment-model",
+            "firmware",
+            "organization",
+            "person",
+            "contract",
+            "region",
+            "operating-condition"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "attributes": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "externalRefs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ExternalRef"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "recordVersion",
+        "accessScope",
+        "evidenceClass",
+        "reviewState",
+        "reviewedBy",
+        "reviewedAt",
+        "effectiveFrom",
+        "effectiveTo",
+        "kind",
+        "name",
+        "attributes",
+        "externalRefs"
+      ],
+      "additionalProperties": false
+    },
+    "EntityAlias": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recordVersion": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "accessScope": {
+          "type": "string",
+          "enum": [
+            "standard",
+            "restricted"
+          ]
+        },
+        "evidenceClass": {
+          "type": "string",
+          "enum": [
+            "documented",
+            "field-verified",
+            "inferred",
+            "illustrative",
+            "proposed",
+            "unknown"
+          ]
+        },
+        "reviewState": {
+          "type": "string",
+          "enum": [
+            "unreviewed",
+            "accepted",
+            "rejected",
+            "superseded"
+          ]
+        },
+        "reviewedBy": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reviewedAt": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effectiveFrom": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effectiveTo": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "entityId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "alias": {
+          "type": "string"
+        },
+        "origin": {
+          "type": "string",
+          "enum": [
+            "seed",
+            "reviewed",
+            "proposed"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "recordVersion",
+        "accessScope",
+        "evidenceClass",
+        "reviewState",
+        "reviewedBy",
+        "reviewedAt",
+        "effectiveFrom",
+        "effectiveTo",
+        "entityId",
+        "alias",
+        "origin"
+      ],
+      "additionalProperties": false
+    },
+    "Claim": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recordVersion": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "accessScope": {
+          "type": "string",
+          "enum": [
+            "standard",
+            "restricted"
+          ]
+        },
+        "evidenceClass": {
+          "type": "string",
+          "enum": [
+            "documented",
+            "field-verified",
+            "inferred",
+            "illustrative",
+            "proposed",
+            "unknown"
+          ]
+        },
+        "reviewState": {
+          "type": "string",
+          "enum": [
+            "unreviewed",
+            "accepted",
+            "rejected",
+            "superseded"
+          ]
+        },
+        "reviewedBy": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reviewedAt": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effectiveFrom": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effectiveTo": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "subjectId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "relation": {
+          "type": "string"
+        },
+        "object": {
+          "$ref": "#/$defs/ClaimObject"
+        },
+        "anchors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/AnchorLink"
+          }
+        },
+        "episodeId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "supersedesClaimId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "invalidatedAt": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "recordVersion",
+        "accessScope",
+        "evidenceClass",
+        "reviewState",
+        "reviewedBy",
+        "reviewedAt",
+        "effectiveFrom",
+        "effectiveTo",
+        "subjectId",
+        "relation",
+        "object",
+        "anchors",
+        "episodeId",
+        "supersedesClaimId",
+        "invalidatedAt"
+      ],
+      "additionalProperties": false
+    },
+    "Case": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recordVersion": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "accessScope": {
+          "type": "string",
+          "enum": [
+            "standard",
+            "restricted"
+          ]
+        },
+        "evidenceClass": {
+          "type": "string",
+          "enum": [
+            "documented",
+            "field-verified",
+            "inferred",
+            "illustrative",
+            "proposed",
+            "unknown"
+          ]
+        },
+        "reviewState": {
+          "type": "string",
+          "enum": [
+            "unreviewed",
+            "accepted",
+            "rejected",
+            "superseded"
+          ]
+        },
+        "reviewedBy": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reviewedAt": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effectiveFrom": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effectiveTo": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "title": {
+          "type": "string"
+        },
+        "symptom": {
+          "type": "string"
+        },
+        "context": {
+          "type": "object",
+          "properties": {
+            "entityIds": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "conditions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "entityIds",
+            "conditions"
+          ],
+          "additionalProperties": false
+        },
+        "investigation": {
+          "type": "object",
+          "properties": {
+            "hypotheses": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "diagnosticActions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "unresolvedQuestions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "hypotheses",
+            "diagnosticActions",
+            "unresolvedQuestions"
+          ],
+          "additionalProperties": false
+        },
+        "actionsTried": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ActionTried"
+          }
+        },
+        "fix": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "cost": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "amount": {
+                  "type": "number"
+                },
+                "currency": {
+                  "type": "string",
+                  "minLength": 3,
+                  "maxLength": 3
+                }
+              },
+              "required": [
+                "amount",
+                "currency"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "downtimeHours": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "outcome": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ownerId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "claimIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "anchors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/AnchorLink"
+          }
+        },
+        "openedAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+        },
+        "closedAt": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "recordVersion",
+        "accessScope",
+        "evidenceClass",
+        "reviewState",
+        "reviewedBy",
+        "reviewedAt",
+        "effectiveFrom",
+        "effectiveTo",
+        "title",
+        "symptom",
+        "context",
+        "investigation",
+        "actionsTried",
+        "fix",
+        "cost",
+        "downtimeHours",
+        "outcome",
+        "limitations",
+        "ownerId",
+        "claimIds",
+        "anchors",
+        "openedAt",
+        "closedAt"
+      ],
+      "additionalProperties": false
+    },
+    "Lesson": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recordVersion": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "accessScope": {
+          "type": "string",
+          "enum": [
+            "standard",
+            "restricted"
+          ]
+        },
+        "evidenceClass": {
+          "type": "string",
+          "enum": [
+            "documented",
+            "field-verified",
+            "inferred",
+            "illustrative",
+            "proposed",
+            "unknown"
+          ]
+        },
+        "reviewState": {
+          "type": "string",
+          "enum": [
+            "unreviewed",
+            "accepted",
+            "rejected",
+            "superseded"
+          ]
+        },
+        "reviewedBy": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reviewedAt": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effectiveFrom": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effectiveTo": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "statement": {
+          "type": "string"
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "action": {
+          "type": "string"
+        },
+        "expectedOutcome": {
+          "type": "string"
+        },
+        "supportingCaseIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "counterEvidenceCaseIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "candidate",
+            "reviewed",
+            "qualified",
+            "retired"
+          ]
+        },
+        "ownerId": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "recordVersion",
+        "accessScope",
+        "evidenceClass",
+        "reviewState",
+        "reviewedBy",
+        "reviewedAt",
+        "effectiveFrom",
+        "effectiveTo",
+        "statement",
+        "conditions",
+        "action",
+        "expectedOutcome",
+        "supportingCaseIds",
+        "counterEvidenceCaseIds",
+        "status",
+        "ownerId"
+      ],
+      "additionalProperties": false
+    },
+    "Candidate": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recordVersion": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "accessScope": {
+          "type": "string",
+          "enum": [
+            "standard",
+            "restricted"
+          ]
+        },
+        "evidenceClass": {
+          "type": "string",
+          "enum": [
+            "documented",
+            "field-verified",
+            "inferred",
+            "illustrative",
+            "proposed",
+            "unknown"
+          ]
+        },
+        "reviewState": {
+          "type": "string",
+          "enum": [
+            "unreviewed",
+            "accepted",
+            "rejected",
+            "superseded"
+          ]
+        },
+        "reviewedBy": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reviewedAt": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effectiveFrom": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effectiveTo": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "operation": {
+          "type": "string",
+          "enum": [
+            "add",
+            "update",
+            "merge",
+            "invalidate"
+          ]
+        },
+        "targetType": {
+          "type": "string",
+          "enum": [
+            "source",
+            "revision",
+            "anchor",
+            "episode",
+            "entity",
+            "entity-alias",
+            "claim",
+            "case",
+            "lesson",
+            "candidate",
+            "proposal",
+            "outcome"
+          ]
+        },
+        "targetId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mergeSourceId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "payload": {},
+        "method": {
+          "$ref": "#/$defs/Method"
+        },
+        "uncertainty": {
+          "$ref": "#/$defs/Confidence"
+        },
+        "episodeId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "decision": {
+                  "type": "string",
+                  "enum": [
+                    "accepted",
+                    "rejected"
+                  ]
+                },
+                "by": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "at": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+                },
+                "reason": {
+                  "type": "string"
+                },
+                "resultingId": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "decision",
+                "by",
+                "at",
+                "reason",
+                "resultingId"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "recordVersion",
+        "accessScope",
+        "evidenceClass",
+        "reviewState",
+        "reviewedBy",
+        "reviewedAt",
+        "effectiveFrom",
+        "effectiveTo",
+        "operation",
+        "targetType",
+        "targetId",
+        "mergeSourceId",
+        "payload",
+        "method",
+        "uncertainty",
+        "episodeId",
+        "decision"
+      ],
+      "additionalProperties": false
+    },
+    "Proposal": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recordVersion": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "accessScope": {
+          "type": "string",
+          "enum": [
+            "standard",
+            "restricted"
+          ]
+        },
+        "evidenceClass": {
+          "type": "string",
+          "enum": [
+            "documented",
+            "field-verified",
+            "inferred",
+            "illustrative",
+            "proposed",
+            "unknown"
+          ]
+        },
+        "reviewState": {
+          "type": "string",
+          "enum": [
+            "unreviewed",
+            "accepted",
+            "rejected",
+            "superseded"
+          ]
+        },
+        "reviewedBy": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reviewedAt": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effectiveFrom": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effectiveTo": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "caseId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "stage": {
+          "type": "string",
+          "enum": [
+            "assessment",
+            "review-1",
+            "draft",
+            "review-2",
+            "published",
+            "returned",
+            "rejected"
+          ]
+        },
+        "assessment": {
+          "$ref": "#/$defs/Assessment"
+        },
+        "draft": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ProposalDraft"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "publishedAt": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "workbenchLogPosition": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "recordVersion",
+        "accessScope",
+        "evidenceClass",
+        "reviewState",
+        "reviewedBy",
+        "reviewedAt",
+        "effectiveFrom",
+        "effectiveTo",
+        "caseId",
+        "stage",
+        "assessment",
+        "draft",
+        "publishedAt",
+        "workbenchLogPosition"
+      ],
+      "additionalProperties": false
+    },
+    "Outcome": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recordVersion": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "accessScope": {
+          "type": "string",
+          "enum": [
+            "standard",
+            "restricted"
+          ]
+        },
+        "evidenceClass": {
+          "type": "string",
+          "enum": [
+            "documented",
+            "field-verified",
+            "inferred",
+            "illustrative",
+            "proposed",
+            "unknown"
+          ]
+        },
+        "reviewState": {
+          "type": "string",
+          "enum": [
+            "unreviewed",
+            "accepted",
+            "rejected",
+            "superseded"
+          ]
+        },
+        "reviewedBy": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "reviewedAt": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effectiveFrom": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effectiveTo": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "proposalId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string"
+        },
+        "result": {
+          "type": "string",
+          "enum": [
+            "succeeded",
+            "failed",
+            "partial",
+            "unknown"
+          ]
+        },
+        "lessonIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "recordedBy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "occurredAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+        },
+        "anchors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/AnchorLink"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "recordVersion",
+        "accessScope",
+        "evidenceClass",
+        "reviewState",
+        "reviewedBy",
+        "reviewedAt",
+        "effectiveFrom",
+        "effectiveTo",
+        "proposalId",
+        "description",
+        "result",
+        "lessonIds",
+        "recordedBy",
+        "occurredAt",
+        "anchors"
+      ],
+      "additionalProperties": false
+    },
+    "MemoryDataset": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Source"
+          }
+        },
+        "revisions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Revision"
+          }
+        },
+        "anchors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Anchor"
+          }
+        },
+        "episodes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Episode"
+          }
+        },
+        "entities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Entity"
+          }
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/EntityAlias"
+          }
+        },
+        "claims": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Claim"
+          }
+        },
+        "cases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Case"
+          }
+        },
+        "lessons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Lesson"
+          }
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Candidate"
+          }
+        },
+        "proposals": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Proposal"
+          }
+        },
+        "outcomes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Outcome"
+          }
+        }
+      },
+      "required": [
+        "label",
+        "sources",
+        "revisions",
+        "anchors",
+        "episodes",
+        "entities",
+        "aliases",
+        "claims",
+        "cases",
+        "lessons",
+        "candidates",
+        "proposals",
+        "outcomes"
+      ],
+      "additionalProperties": false
+    },
+    "MemoryEvent": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "record-added"
+            },
+            "recordType": {
+              "type": "string",
+              "const": "source"
+            },
+            "record": {
+              "$ref": "#/$defs/Source"
+            }
+          },
+          "required": [
+            "type",
+            "recordType",
+            "record"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "record-added"
+            },
+            "recordType": {
+              "type": "string",
+              "const": "revision"
+            },
+            "record": {
+              "$ref": "#/$defs/Revision"
+            }
+          },
+          "required": [
+            "type",
+            "recordType",
+            "record"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "record-added"
+            },
+            "recordType": {
+              "type": "string",
+              "const": "anchor"
+            },
+            "record": {
+              "$ref": "#/$defs/Anchor"
+            }
+          },
+          "required": [
+            "type",
+            "recordType",
+            "record"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "record-added"
+            },
+            "recordType": {
+              "type": "string",
+              "const": "episode"
+            },
+            "record": {
+              "$ref": "#/$defs/Episode"
+            }
+          },
+          "required": [
+            "type",
+            "recordType",
+            "record"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "record-added"
+            },
+            "recordType": {
+              "type": "string",
+              "const": "entity"
+            },
+            "record": {
+              "$ref": "#/$defs/Entity"
+            }
+          },
+          "required": [
+            "type",
+            "recordType",
+            "record"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "record-added"
+            },
+            "recordType": {
+              "type": "string",
+              "const": "entity-alias"
+            },
+            "record": {
+              "$ref": "#/$defs/EntityAlias"
+            }
+          },
+          "required": [
+            "type",
+            "recordType",
+            "record"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "record-added"
+            },
+            "recordType": {
+              "type": "string",
+              "const": "claim"
+            },
+            "record": {
+              "$ref": "#/$defs/Claim"
+            }
+          },
+          "required": [
+            "type",
+            "recordType",
+            "record"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "record-added"
+            },
+            "recordType": {
+              "type": "string",
+              "const": "case"
+            },
+            "record": {
+              "$ref": "#/$defs/Case"
+            }
+          },
+          "required": [
+            "type",
+            "recordType",
+            "record"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "record-added"
+            },
+            "recordType": {
+              "type": "string",
+              "const": "lesson"
+            },
+            "record": {
+              "$ref": "#/$defs/Lesson"
+            }
+          },
+          "required": [
+            "type",
+            "recordType",
+            "record"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "record-added"
+            },
+            "recordType": {
+              "type": "string",
+              "const": "candidate"
+            },
+            "record": {
+              "$ref": "#/$defs/Candidate"
+            }
+          },
+          "required": [
+            "type",
+            "recordType",
+            "record"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "record-added"
+            },
+            "recordType": {
+              "type": "string",
+              "const": "proposal"
+            },
+            "record": {
+              "$ref": "#/$defs/Proposal"
+            }
+          },
+          "required": [
+            "type",
+            "recordType",
+            "record"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "record-added"
+            },
+            "recordType": {
+              "type": "string",
+              "const": "outcome"
+            },
+            "record": {
+              "$ref": "#/$defs/Outcome"
+            }
+          },
+          "required": [
+            "type",
+            "recordType",
+            "record"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "record-superseded"
+            },
+            "recordType": {
+              "type": "string",
+              "const": "source"
+            },
+            "record": {
+              "$ref": "#/$defs/Source"
+            },
+            "basedOnVersion": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "recordType",
+            "record",
+            "basedOnVersion",
+            "reason"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "record-superseded"
+            },
+            "recordType": {
+              "type": "string",
+              "const": "revision"
+            },
+            "record": {
+              "$ref": "#/$defs/Revision"
+            },
+            "basedOnVersion": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "recordType",
+            "record",
+            "basedOnVersion",
+            "reason"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "record-superseded"
+            },
+            "recordType": {
+              "type": "string",
+              "const": "anchor"
+            },
+            "record": {
+              "$ref": "#/$defs/Anchor"
+            },
+            "basedOnVersion": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "recordType",
+            "record",
+            "basedOnVersion",
+            "reason"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "record-superseded"
+            },
+            "recordType": {
+              "type": "string",
+              "const": "episode"
+            },
+            "record": {
+              "$ref": "#/$defs/Episode"
+            },
+            "basedOnVersion": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "recordType",
+            "record",
+            "basedOnVersion",
+            "reason"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "record-superseded"
+            },
+            "recordType": {
+              "type": "string",
+              "const": "entity"
+            },
+            "record": {
+              "$ref": "#/$defs/Entity"
+            },
+            "basedOnVersion": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "recordType",
+            "record",
+            "basedOnVersion",
+            "reason"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "record-superseded"
+            },
+            "recordType": {
+              "type": "string",
+              "const": "entity-alias"
+            },
+            "record": {
+              "$ref": "#/$defs/EntityAlias"
+            },
+            "basedOnVersion": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "recordType",
+            "record",
+            "basedOnVersion",
+            "reason"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "record-superseded"
+            },
+            "recordType": {
+              "type": "string",
+              "const": "claim"
+            },
+            "record": {
+              "$ref": "#/$defs/Claim"
+            },
+            "basedOnVersion": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "recordType",
+            "record",
+            "basedOnVersion",
+            "reason"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "record-superseded"
+            },
+            "recordType": {
+              "type": "string",
+              "const": "case"
+            },
+            "record": {
+              "$ref": "#/$defs/Case"
+            },
+            "basedOnVersion": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "recordType",
+            "record",
+            "basedOnVersion",
+            "reason"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "record-superseded"
+            },
+            "recordType": {
+              "type": "string",
+              "const": "lesson"
+            },
+            "record": {
+              "$ref": "#/$defs/Lesson"
+            },
+            "basedOnVersion": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "recordType",
+            "record",
+            "basedOnVersion",
+            "reason"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "record-superseded"
+            },
+            "recordType": {
+              "type": "string",
+              "const": "candidate"
+            },
+            "record": {
+              "$ref": "#/$defs/Candidate"
+            },
+            "basedOnVersion": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "recordType",
+            "record",
+            "basedOnVersion",
+            "reason"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "record-superseded"
+            },
+            "recordType": {
+              "type": "string",
+              "const": "proposal"
+            },
+            "record": {
+              "$ref": "#/$defs/Proposal"
+            },
+            "basedOnVersion": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "recordType",
+            "record",
+            "basedOnVersion",
+            "reason"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "record-superseded"
+            },
+            "recordType": {
+              "type": "string",
+              "const": "outcome"
+            },
+            "record": {
+              "$ref": "#/$defs/Outcome"
+            },
+            "basedOnVersion": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "recordType",
+            "record",
+            "basedOnVersion",
+            "reason"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "claim-invalidated"
+            },
+            "claimId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "invalidatedAt": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            "reason": {
+              "type": "string"
+            },
+            "supersededByClaimId": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "type",
+            "claimId",
+            "invalidatedAt",
+            "reason",
+            "supersededByClaimId"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "claim-auto-accepted"
+            },
+            "claimId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "rule": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "claimId",
+            "rule"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "candidate-decided"
+            },
+            "candidateId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "decision": {
+              "type": "string",
+              "enum": [
+                "accepted",
+                "rejected"
+              ]
+            },
+            "reason": {
+              "type": "string"
+            },
+            "resultingId": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "type",
+            "candidateId",
+            "decision",
+            "reason",
+            "resultingId"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "review-recorded"
+            },
+            "proposalId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "gate": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "const": 1
+                },
+                {
+                  "type": "number",
+                  "const": 2
+                }
+              ]
+            },
+            "decision": {
+              "type": "string",
+              "enum": [
+                "approve",
+                "revise",
+                "reject"
+              ]
+            },
+            "notes": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "proposalId",
+            "gate",
+            "decision",
+            "notes"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "proposal-published"
+            },
+            "proposalId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "publishedAt": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+            },
+            "workbenchLogPosition": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 9007199254740991
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "type",
+            "proposalId",
+            "publishedAt",
+            "workbenchLogPosition"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "entities-merged"
+            },
+            "survivorId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "mergedId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "survivorId",
+            "mergedId",
+            "reason"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "const": "lesson-status-changed"
+            },
+            "lessonId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "candidate",
+                "reviewed",
+                "qualified",
+                "retired"
+              ]
+            },
+            "reason": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "lessonId",
+            "status",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "LoggedEvent": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "recordedAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+        },
+        "effectiveAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+        },
+        "actorId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "correlationId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "event": {
+          "$ref": "#/$defs/MemoryEvent"
+        }
+      },
+      "required": [
+        "position",
+        "recordedAt",
+        "effectiveAt",
+        "actorId",
+        "correlationId",
+        "event"
+      ],
+      "additionalProperties": false
+    },
+    "EventLog": {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "type": "number",
+          "const": 1
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/LoggedEvent"
+          }
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "events"
+      ],
+      "additionalProperties": false
+    },
+    "AppendEventRequest": {
+      "type": "object",
+      "properties": {
+        "event": {
+          "$ref": "#/$defs/MemoryEvent"
+        },
+        "actorId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "effectiveAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+        },
+        "correlationId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "event",
+        "actorId"
+      ],
+      "additionalProperties": false
+    },
+    "AppendEventResponse": {
+      "type": "object",
+      "properties": {
+        "position": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "recordedAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+        }
+      },
+      "required": [
+        "position",
+        "recordedAt"
+      ],
+      "additionalProperties": false
+    },
+    "SubmitChunksRequest": {
+      "type": "object",
+      "properties": {
+        "revisionId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "episodeId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "chunks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Chunk"
+          }
+        }
+      },
+      "required": [
+        "revisionId",
+        "episodeId",
+        "chunks"
+      ],
+      "additionalProperties": false
+    },
+    "SubmitChunksResponse": {
+      "type": "object",
+      "properties": {
+        "stored": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        }
+      },
+      "required": [
+        "stored"
+      ],
+      "additionalProperties": false
+    },
+    "SubmitCandidatesRequest": {
+      "type": "object",
+      "properties": {
+        "episode": {
+          "$ref": "#/$defs/Episode"
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Candidate"
+          }
+        },
+        "actorId": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "episode",
+        "candidates",
+        "actorId"
+      ],
+      "additionalProperties": false
+    },
+    "SubmitCandidatesResponse": {
+      "type": "object",
+      "properties": {
+        "episodePosition": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "autoAccepted": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "queued": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "episodePosition",
+        "autoAccepted",
+        "queued"
+      ],
+      "additionalProperties": false
+    },
+    "ApiError": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string"
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "message"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "error"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

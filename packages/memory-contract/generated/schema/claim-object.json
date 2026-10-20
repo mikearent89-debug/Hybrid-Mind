@@ -1,0 +1,49 @@
+{
+  "$id": "https://hybrid-mind.local/schema/claim-object.json",
+  "title": "claim-object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "entity"
+        },
+        "entityId": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "type",
+        "entityId"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "value"
+        },
+        "value": {
+          "type": "string"
+        },
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "type",
+        "value",
+        "unit"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

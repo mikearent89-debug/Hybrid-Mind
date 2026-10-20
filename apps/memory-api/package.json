@@ -1,0 +1,26 @@
+{
+  "name": "@hybrid/memory-api",
+  "version": "0.0.0",
+  "private": true,
+  "description": "The only process that writes to memory: an HTTP API (and, from M1, the MCP server) that validates every payload against the contract, appends events, applies the auto-accept rule, and answers reads through visibleMemory(principal).",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "tsx src/server.ts",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.19.9",
+    "@hybrid/memory-contract": "workspace:*",
+    "@hybrid/memory-domain": "workspace:*",
+    "@hybrid/memory-store": "workspace:*",
+    "hono": "^4.10.6",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.6",
+    "vitest": "^5.0.5"
+  }
+}

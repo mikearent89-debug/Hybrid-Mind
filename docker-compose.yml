@@ -1,0 +1,33 @@
+# Local stack for development and integration tests. Real portfolio data never goes anywhere else.
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: memory
+      POSTGRES_PASSWORD: memory
+      POSTGRES_DB: memory
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U memory']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  minio:
+    image: minio/minio:RELEASE.2025-09-07T16-13-09Z
+    command: server /data --console-address ':9001'
+    environment:
+      MINIO_ROOT_USER: memory
+      MINIO_ROOT_PASSWORD: memory-local
+    ports:
+      - '9000:9000'
+      - '9001:9001'
+    volumes:
+      - minio-data:/data
+
+volumes:
+  postgres-data:
+  minio-data:

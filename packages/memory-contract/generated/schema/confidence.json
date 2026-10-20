@@ -1,0 +1,24 @@
+{
+  "$id": "https://hybrid-mind.local/schema/confidence.json",
+  "title": "confidence",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "level": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "reasons": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "level",
+    "reasons"
+  ],
+  "additionalProperties": false
+}
