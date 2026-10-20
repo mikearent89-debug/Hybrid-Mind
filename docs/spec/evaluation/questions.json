@@ -1,0 +1,71 @@
+{
+  "label": "Evaluation seed against the synthetic fixture (grows to 30 in M1)",
+  "questions": [
+    {
+      "id": "Q01",
+      "principal": "u-jordan",
+      "question": "What firmware is INV-MR-03 running now, and since when?",
+      "expectedAnchors": ["anc-02"],
+      "expectedClaims": ["cl-02"],
+      "fixtureCase": "FX-M07"
+    },
+    {
+      "id": "Q02",
+      "principal": "u-jordan",
+      "question": "What was INV-MR-03 running before the upgrade?",
+      "expectedAnchors": ["anc-01"],
+      "expectedClaims": ["cl-01"],
+      "asOf": "2026-09-05T00:00:00Z",
+      "fixtureCase": "FX-M07"
+    },
+    {
+      "id": "Q03",
+      "principal": "u-jordan",
+      "question": "What firmware is INV-HP-02 running?",
+      "expectedAnchors": ["anc-03", "anc-04"],
+      "expectedClaims": ["cl-04", "cl-05"],
+      "mustDiscloseConflict": true,
+      "fixtureCase": "FX-M02"
+    },
+    {
+      "id": "Q04",
+      "principal": "u-jordan",
+      "question": "Did replacing the DC fuses on INV-MR-03 stop the trips?",
+      "expectedAnchors": ["anc-01"],
+      "expectedAnswerContains": ["failed"],
+      "fixtureCase": "FX-M01"
+    },
+    {
+      "id": "Q05",
+      "principal": "u-jordan",
+      "question": "Which cases look like the River Bend Helion X200 afternoon derate?",
+      "expectedCases": ["case-04", "case-01"],
+      "fixtureCase": "FX-M06"
+    },
+    {
+      "id": "Q06",
+      "principal": "u-jordan",
+      "question": "What is the Coastal Flats warranty dispute about?",
+      "expectedAnchors": [],
+      "mustNotCite": ["anc-05", "case-03", "cl-11"],
+      "fixtureCase": "FX-M03"
+    },
+    {
+      "id": "Q07",
+      "principal": "u-avery",
+      "question": "What is the Coastal Flats warranty dispute about?",
+      "expectedAnchors": ["anc-05"],
+      "expectedCases": ["case-03"],
+      "fixtureCase": "FX-M03"
+    },
+    {
+      "id": "Q08",
+      "principal": "u-jordan",
+      "question": "Does upgrading firmware fix hot-afternoon derates on Vantage C1500 units?",
+      "expectedAnchors": ["anc-10"],
+      "expectedCases": ["case-07"],
+      "expectedAnswerContains": ["did not", "counter-evidence"],
+      "fixtureCase": "FX-M08"
+    }
+  ]
+}

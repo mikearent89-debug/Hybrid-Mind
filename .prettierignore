@@ -1,0 +1,8 @@
+pnpm-lock.yaml
+uv.lock
+dist/
+.turbo/
+coverage/
+.venv/
+packages/memory-contract/generated/
+apps/memory-worker/

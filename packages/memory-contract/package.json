@@ -1,0 +1,24 @@
+{
+  "name": "@hybrid/memory-contract",
+  "version": "0.0.0",
+  "private": true,
+  "description": "The one contract both languages share: zod schemas for every memory record, event and API payload, exported as JSON Schema for the Python worker, plus the synthetic fixture as JSON.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "build": "tsx scripts/generate.ts",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@hybrid/memory-domain": "workspace:*",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.6",
+    "vitest": "^5.0.5"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "$id": "https://hybrid-mind.local/schema/submit-candidates-response.json",
+  "title": "submit-candidates-response",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "episodePosition": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991
+    },
+    "autoAccepted": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "queued": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "required": [
+    "episodePosition",
+    "autoAccepted",
+    "queued"
+  ],
+  "additionalProperties": false
+}

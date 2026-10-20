@@ -1,0 +1,18 @@
+{
+  "name": "@hybrid/memory-domain",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Memory domain model: records, the append-only event log, projections, access, the auto-accept rule, alias resolution, and the labeled synthetic fixture. Pure TypeScript, no I/O.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "vitest": "^5.0.5"
+  }
+}
