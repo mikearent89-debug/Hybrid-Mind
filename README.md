@@ -17,10 +17,45 @@ cd apps/memory-worker && uv sync && uv run pytest   # Python worker
 
 docker compose up -d postgres minio
 export DATABASE_URL=postgres://memory:memory@localhost:5432/memory
-pnpm --filter @hybrid/memory-store load-fixture
-pnpm --filter @hybrid/memory-api dev         # http://localhost:8787
-curl 'http://localhost:8787/memory?principal=u-jordan' | head -c 400
+pnpm --filter @hybrid/memory-store load-fixture   # fixture records + document chunks
+pnpm --filter @hybrid/memory-api dev              # http://localhost:8787
+curl 'http://localhost:8787/search?principal=u-jordan&q=INV-HP-02+firmware' | head -c 600
 ```
+
+The first search downloads the embedding model (`Xenova/bge-small-en-v1.5`, about 130 MB) into the transformers.js cache; set `EMBEDDING_MODEL=hash` to skip that with a dependency-free bag-of-words embedder.
+
+### Ingest a document
+
+```sh
+cd apps/memory-worker
+export MEMORY_API_URL=http://localhost:8787
+uv run memory-worker ingest ~/Downloads/WO-1001.pdf --kind work-order --site site-mesa-ridge --actor u-avery
+```
+
+The worker hashes the file into `~/.hybrid-mind/objects`, parses it (PDF, `.eml`, `.csv`, `.md`/`.txt`, photos), chunks and embeds it through the API, and submits it as source + revision + chunks. With `ANTHROPIC_API_KEY` set it then asks Claude to extract entities, claims and case matches; documented claims that meet the auto-accept rule are accepted at once, everything else lands in the review queue. `--no-extract` stores and chunks only.
+
+### Use it from Claude Desktop
+
+Add the stdio MCP server to `claude_desktop_config.json` (the HTTP API must be running for `ingest`; search works without it):
+
+```json
+{
+  "mcpServers": {
+    "portfolio-memory": {
+      "command": "pnpm",
+      "args": ["--filter", "@hybrid/memory-api", "mcp"],
+      "cwd": "/path/to/Hybrid-Mind",
+      "env": {
+        "DATABASE_URL": "postgres://memory:memory@localhost:5432/memory",
+        "MEMORY_API_URL": "http://localhost:8787",
+        "MEMORY_PRINCIPAL": "u-avery"
+      }
+    }
+  }
+}
+```
+
+Tools: `search`, `explain`, `get_case`, `queue`, `ingest`. Every tool runs as `MEMORY_PRINCIPAL` and sees only what that principal may see. Without `DATABASE_URL` the server serves the synthetic fixture from memory. The same tools are available over HTTP at `POST /mcp?principal=…` for remote clients.
 
 ## Layout
 

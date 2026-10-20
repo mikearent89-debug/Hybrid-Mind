@@ -1,5 +1,6 @@
 {
-  "label": "Evaluation seed against the synthetic fixture (grows to 30 in M1)",
+  "label": "Retrieval evaluation against the synthetic fixture (EVALUATION.md). Synthetic results do not establish operational readiness.",
+  "k": 5,
   "questions": [
     {
       "id": "Q01",
@@ -12,10 +13,9 @@
     {
       "id": "Q02",
       "principal": "u-jordan",
-      "question": "What was INV-MR-03 running before the upgrade?",
+      "question": "What firmware was INV-MR-03 on before the September upgrade?",
       "expectedAnchors": ["anc-01"],
       "expectedClaims": ["cl-01"],
-      "asOf": "2026-09-05T00:00:00Z",
       "fixtureCase": "FX-M07"
     },
     {
@@ -30,16 +30,17 @@
     {
       "id": "Q04",
       "principal": "u-jordan",
-      "question": "Did replacing the DC fuses on INV-MR-03 stop the trips?",
+      "question": "Did replacing the DC fuses on INV-MR-03 stop the nuisance trips?",
       "expectedAnchors": ["anc-01"],
-      "expectedAnswerContains": ["failed"],
+      "expectedCases": ["case-01"],
       "fixtureCase": "FX-M01"
     },
     {
       "id": "Q05",
       "principal": "u-jordan",
       "question": "Which cases look like the River Bend Helion X200 afternoon derate?",
-      "expectedCases": ["case-04", "case-01"],
+      "expectedAnchors": ["anc-08", "anc-09"],
+      "expectedCases": ["case-04", "case-05"],
       "fixtureCase": "FX-M06"
     },
     {
@@ -47,7 +48,7 @@
       "principal": "u-jordan",
       "question": "What is the Coastal Flats warranty dispute about?",
       "expectedAnchors": [],
-      "mustNotCite": ["anc-05", "case-03", "cl-11"],
+      "mustNotCite": ["anc-05", "rev-05", "case-03", "cl-11"],
       "fixtureCase": "FX-M03"
     },
     {
@@ -61,11 +62,173 @@
     {
       "id": "Q08",
       "principal": "u-jordan",
-      "question": "Does upgrading firmware fix hot-afternoon derates on Vantage C1500 units?",
+      "question": "Does a firmware upgrade fix hot-afternoon derates on Vantage C1500 units?",
       "expectedAnchors": ["anc-10"],
       "expectedCases": ["case-07"],
-      "expectedAnswerContains": ["did not", "counter-evidence"],
       "fixtureCase": "FX-M08"
+    },
+    {
+      "id": "Q09",
+      "principal": "u-jordan",
+      "question": "What changed in Helion firmware 3.2.0 that stopped the DC overcurrent trips?",
+      "expectedAnchors": ["anc-02"],
+      "fixtureCase": "FX-M01"
+    },
+    {
+      "id": "Q10",
+      "principal": "u-jordan",
+      "question": "How much did the INV-MR-03 firmware upgrade cost and how long was the unit down?",
+      "expectedAnchors": ["anc-02"],
+      "expectedCases": ["case-01"],
+      "fixtureCase": "FX-M01"
+    },
+    {
+      "id": "Q11",
+      "principal": "u-jordan",
+      "question": "Which service bulletin recommended upgrading Helion X200 units to 3.2.0?",
+      "expectedRevisions": ["rev-01", "rev-02"],
+      "fixtureCase": "FX-M01"
+    },
+    {
+      "id": "Q12",
+      "principal": "u-jordan",
+      "question": "Was the INV-HP-02 firmware upgrade on WO-1004 verified?",
+      "expectedAnchors": ["anc-04"],
+      "fixtureCase": "FX-M02"
+    },
+    {
+      "id": "Q13",
+      "principal": "u-jordan",
+      "question": "What did Morgan Hale see on the INV-HP-02 controller screen?",
+      "expectedAnchors": ["anc-03"],
+      "fixtureCase": "FX-M02"
+    },
+    {
+      "id": "Q14",
+      "principal": "u-jordan",
+      "question": "What caused the recurring ground fault on INV-RB-04 string 4?",
+      "expectedAnchors": ["anc-07", "anc-11"],
+      "expectedCases": ["case-06"],
+      "fixtureCase": "FX-M05"
+    },
+    {
+      "id": "Q15",
+      "principal": "u-jordan",
+      "question": "Was combiner box 4 at River Bend opened and photographed?",
+      "expectedAnchors": ["anc-11"],
+      "fixtureCase": "FX-M05"
+    },
+    {
+      "id": "Q16",
+      "principal": "u-jordan",
+      "question": "What firmware does INV-RB-01 run according to the September monitoring export?",
+      "expectedAnchors": ["anc-06"],
+      "expectedClaims": ["cl-06"],
+      "fixtureCase": "FX-M04"
+    },
+    {
+      "id": "Q17",
+      "principal": "u-jordan",
+      "question": "How many afternoon derate hours did INV-RB-01 log in September?",
+      "expectedAnchors": ["anc-06"],
+      "fixtureCase": "FX-M04"
+    },
+    {
+      "id": "Q18",
+      "principal": "u-jordan",
+      "question": "By how much did the High Plains afternoon derate fall after the fleet went to 3.2.0?",
+      "expectedAnchors": ["anc-08"],
+      "expectedCases": ["case-04"],
+      "fixtureCase": "FX-M06"
+    },
+    {
+      "id": "Q19",
+      "principal": "u-jordan",
+      "question": "At what ambient temperature do the Helion X200 units start derating?",
+      "expectedRevisions": ["rev-08", "rev-09"],
+      "fixtureCase": "FX-M06"
+    },
+    {
+      "id": "Q20",
+      "principal": "u-jordan",
+      "question": "Does humidity change the firmware derate result at Gulf coast sites?",
+      "expectedAnchors": ["anc-09", "anc-13"],
+      "fixtureCase": "FX-M09"
+    },
+    {
+      "id": "Q21",
+      "principal": "u-jordan",
+      "question": "What was recommended for INV-RB-01 and the enclosure filters?",
+      "expectedAnchors": ["anc-09"],
+      "expectedCases": ["case-05"],
+      "fixtureCase": "FX-M09"
+    },
+    {
+      "id": "Q22",
+      "principal": "u-jordan",
+      "question": "What was the outcome of the River Bend INV-RB-01 upgrade and filter cleaning?",
+      "expectedAnchors": ["anc-13"],
+      "fixtureCase": "FX-M09"
+    },
+    {
+      "id": "Q23",
+      "principal": "u-jordan",
+      "question": "Did the success criterion of afternoon derate below 10 % get met at River Bend?",
+      "expectedAnchors": ["anc-13"],
+      "fixtureCase": "FX-M09"
+    },
+    {
+      "id": "Q24",
+      "principal": "u-jordan",
+      "question": "What is Gridline's technician day rate under the services agreement?",
+      "expectedAnchors": ["anc-12"],
+      "fixtureCase": "FX-M09"
+    },
+    {
+      "id": "Q25",
+      "principal": "u-jordan",
+      "question": "How often has Gridline missed the P2 response-time target at River Bend this quarter?",
+      "expectedAnchors": ["anc-12"],
+      "expectedCases": ["case-12"],
+      "fixtureCase": "FX-M10"
+    },
+    {
+      "id": "Q26",
+      "principal": "u-jordan",
+      "question": "When is Gridline scheduled to visit River Bend for the INV-RB-01 firmware work?",
+      "expectedAnchors": ["anc-12"],
+      "fixtureCase": "FX-M09"
+    },
+    {
+      "id": "Q27",
+      "principal": "u-jordan",
+      "question": "Is Gridline Services LLC the same vendor as Gridline Services?",
+      "expectedAnchors": ["anc-14"],
+      "fixtureCase": "FX-M10"
+    },
+    {
+      "id": "Q28",
+      "principal": "u-jordan",
+      "question": "What happened when INV-MR-07 was upgraded to firmware 7.1.0?",
+      "expectedAnchors": ["anc-10"],
+      "expectedClaims": ["cl-10"],
+      "fixtureCase": "FX-M08"
+    },
+    {
+      "id": "Q29",
+      "principal": "u-jordan",
+      "question": "Which Coastal Flats unit had an IGBT failure and what firmware was it on?",
+      "expectedAnchors": [],
+      "mustNotCite": ["anc-05", "rev-05", "cl-11"],
+      "fixtureCase": "FX-M03"
+    },
+    {
+      "id": "Q30",
+      "principal": "u-avery",
+      "question": "Which Coastal Flats unit had an IGBT failure and what firmware was it on?",
+      "expectedAnchors": ["anc-05"],
+      "expectedClaims": ["cl-11"],
+      "fixtureCase": "FX-M03"
     }
   ]
 }

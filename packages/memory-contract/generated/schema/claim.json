@@ -111,8 +111,7 @@
           "required": [
             "type",
             "entityId"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -135,8 +134,7 @@
             "type",
             "value",
             "unit"
-          ],
-          "additionalProperties": false
+          ]
         }
       ]
     },
@@ -162,8 +160,7 @@
         "required": [
           "anchorId",
           "role"
-        ],
-        "additionalProperties": false
+        ]
       }
     },
     "episodeId": {
@@ -211,6 +208,5 @@
     "episodeId",
     "supersedesClaimId",
     "invalidatedAt"
-  ],
-  "additionalProperties": false
+  ]
 }

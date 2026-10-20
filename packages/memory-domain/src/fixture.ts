@@ -1,4 +1,5 @@
 import { AUTO_ACCEPT_RULE } from './autoAccept';
+import { QUOTES, spanOf } from './fixtureDocuments';
 import { EMPTY_LOG, appendEvent, projectMemory, type EventLog, type MemoryEvent } from './store';
 import type {
   Anchor,
@@ -222,12 +223,14 @@ const DOCS: Doc[] = [
       page: 2,
     },
   ),
-  doc(3, 'email', 'RE: High Plains INV-HP-02 still tripping', [SITE_HIGH], T(11), {
-    type: 'span',
-    start: 220,
-    end: 290,
-    quote: 'the unit is on 3.1.4, same as before the visit',
-  }),
+  doc(
+    3,
+    'email',
+    'RE: High Plains INV-HP-02 still tripping',
+    [SITE_HIGH],
+    T(11),
+    spanOf('src-03', QUOTES.HP02_STILL_314),
+  ),
   doc(4, 'work-order', 'WO-1004 High Plains INV-HP-02 firmware upgrade', [SITE_HIGH], T(10), {
     type: 'row',
     row: 7,
@@ -250,12 +253,14 @@ const DOCS: Doc[] = [
     row: 1,
     column: 'firmware',
   }),
-  doc(7, 'email', 'Fw: Rodent damage suspected at River Bend combiner 4', [SITE_RIVER], T(14), {
-    type: 'span',
-    start: 40,
-    end: 120,
-    quote: 'tech thinks it is rodents again but did not open the box',
-  }),
+  doc(
+    7,
+    'email',
+    'Fw: Rodent damage suspected at River Bend combiner 4',
+    [SITE_RIVER],
+    T(14),
+    spanOf('src-07', QUOTES.RODENTS_NOT_OPENED),
+  ),
   doc(8, 'report', 'High Plains derate investigation, Helion X200 fleet', [SITE_HIGH], T(16), {
     type: 'page',
     page: 4,

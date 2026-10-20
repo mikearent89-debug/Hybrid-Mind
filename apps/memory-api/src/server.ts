@@ -2,6 +2,7 @@ import { serve } from '@hono/node-server';
 import { FIXTURE_LABEL, PRINCIPALS } from '@hybrid/memory-domain';
 import { MemoryEventStore, PgEventStore, createPool, migrate } from '@hybrid/memory-store';
 import { createApp } from './app';
+import { createEmbedder } from './embedder';
 
 // Development server. With DATABASE_URL it runs on PostgreSQL; without, on an in-memory log that
 // is lost on exit. Principals come from the synthetic fixture until 1B replaces them with grants.
@@ -18,7 +19,10 @@ if (url) {
   store = new MemoryEventStore();
 }
 
-const app = createApp({ store, principals: PRINCIPALS, label: FIXTURE_LABEL });
+const embedder = createEmbedder();
+const app = createApp({ store, embedder, principals: PRINCIPALS, label: FIXTURE_LABEL });
 serve({ fetch: app.fetch, port }, () => {
-  console.log(`memory-api listening on http://localhost:${port} (${url ? 'postgres' : 'memory'})`);
+  console.log(
+    `memory-api listening on http://localhost:${port} (${url ? 'postgres' : 'memory'}, embeddings: ${embedder.model})`,
+  );
 });

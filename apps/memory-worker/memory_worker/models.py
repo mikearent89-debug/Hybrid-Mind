@@ -5,16 +5,7 @@
 
 from __future__ import annotations
 from typing import Any, Literal
-from pydantic import (
-    AwareDatetime,
-    BaseModel,
-    ConfigDict,
-    Field,
-    RootModel,
-    confloat,
-    conint,
-    constr,
-)
+from pydantic import AwareDatetime, BaseModel, Field, RootModel, confloat, conint, constr
 from enum import IntEnum, StrEnum
 from datetime import date as date_aliased
 
@@ -30,9 +21,6 @@ class Level(StrEnum):
 
 
 class Confidence(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     level: Level
     reasons: str
 
@@ -59,9 +47,6 @@ class ReviewState(StrEnum):
 
 
 class RecordBase(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     id: constr(min_length=1)
     recordVersion: conint(ge=1, le=9007199254740991)
     accessScope: AccessScope
@@ -74,9 +59,6 @@ class RecordBase(BaseModel):
 
 
 class Region(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     x: float
     y: float
     w: float
@@ -84,18 +66,12 @@ class Region(BaseModel):
 
 
 class Locator1(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["page"]
     page: conint(ge=1, le=9007199254740991)
     region: Region | None = None
 
 
 class Locator2(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["span"]
     start: conint(ge=0, le=9007199254740991)
     end: conint(ge=0, le=9007199254740991)
@@ -103,27 +79,18 @@ class Locator2(BaseModel):
 
 
 class Locator3(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["row"]
     row: conint(ge=0, le=9007199254740991)
     column: str | None = None
 
 
 class Locator4(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["time"]
     startSeconds: confloat(ge=0.0)
     endSeconds: confloat(ge=0.0)
 
 
 class Locator5(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["image-region"]
     x: float
     y: float
@@ -132,9 +99,6 @@ class Locator5(BaseModel):
 
 
 class Locator6(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["whole"]
 
 
@@ -143,33 +107,21 @@ class Locator(RootModel[Locator1 | Locator2 | Locator3 | Locator4 | Locator5 | L
 
 
 class Method(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     name: str
     version: str
 
 
 class ExternalRef(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     sourceSystem: str
     externalId: str
 
 
 class ClaimObject1(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["entity"]
     entityId: constr(min_length=1)
 
 
 class ClaimObject2(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["value"]
     value: str
     unit: str | None
@@ -187,9 +139,6 @@ class Role(StrEnum):
 
 
 class AnchorLink(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     anchorId: constr(min_length=1)
     role: Role
 
@@ -202,9 +151,6 @@ class Result(StrEnum):
 
 
 class ActionTried(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     description: str
     result: Result
     occurredAt: AwareDatetime | None
@@ -212,9 +158,6 @@ class ActionTried(BaseModel):
 
 
 class Assessment(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     similarCaseIds: list[constr(min_length=1)]
     keyDifferences: list[str]
     evidenceGaps: list[str]
@@ -224,17 +167,11 @@ class Assessment(BaseModel):
 
 
 class TargetDate(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     label: str
     date: date_aliased
 
 
 class CostBasi(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     description: str
     amount: float
     currency: constr(min_length=3, max_length=3)
@@ -242,9 +179,6 @@ class CostBasi(BaseModel):
 
 
 class ProposalDraft(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     scope: str
     ownerIds: list[constr(min_length=1)]
     targetDates: list[TargetDate]
@@ -255,9 +189,6 @@ class ProposalDraft(BaseModel):
 
 
 class Chunk(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     index: conint(ge=0, le=9007199254740991)
     text: str
     contextPrefix: str
@@ -277,9 +208,6 @@ class Kind(StrEnum):
 
 
 class Source(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     id: constr(min_length=1)
     recordVersion: conint(ge=1, le=9007199254740991)
     accessScope: AccessScope
@@ -297,9 +225,6 @@ class Source(BaseModel):
 
 
 class Revision(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     id: constr(min_length=1)
     recordVersion: conint(ge=1, le=9007199254740991)
     accessScope: AccessScope
@@ -318,9 +243,6 @@ class Revision(BaseModel):
 
 
 class Anchor(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     id: constr(min_length=1)
     recordVersion: conint(ge=1, le=9007199254740991)
     accessScope: AccessScope
@@ -335,9 +257,6 @@ class Anchor(BaseModel):
 
 
 class Episode(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     id: constr(min_length=1)
     recordVersion: conint(ge=1, le=9007199254740991)
     accessScope: AccessScope
@@ -367,9 +286,6 @@ class Kind1(StrEnum):
 
 
 class Entity(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     id: constr(min_length=1)
     recordVersion: conint(ge=1, le=9007199254740991)
     accessScope: AccessScope
@@ -392,9 +308,6 @@ class Origin(StrEnum):
 
 
 class EntityAlias(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     id: constr(min_length=1)
     recordVersion: conint(ge=1, le=9007199254740991)
     accessScope: AccessScope
@@ -410,9 +323,6 @@ class EntityAlias(BaseModel):
 
 
 class Claim(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     id: constr(min_length=1)
     recordVersion: conint(ge=1, le=9007199254740991)
     accessScope: AccessScope
@@ -432,34 +342,22 @@ class Claim(BaseModel):
 
 
 class Context(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     entityIds: list[constr(min_length=1)]
     conditions: list[str]
 
 
 class Investigation(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     hypotheses: list[str]
     diagnosticActions: list[str]
     unresolvedQuestions: list[str]
 
 
 class Cost(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     amount: float
     currency: constr(min_length=3, max_length=3)
 
 
 class Case(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     id: constr(min_length=1)
     recordVersion: conint(ge=1, le=9007199254740991)
     accessScope: AccessScope
@@ -494,9 +392,6 @@ class Status(StrEnum):
 
 
 class Lesson(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     id: constr(min_length=1)
     recordVersion: conint(ge=1, le=9007199254740991)
     accessScope: AccessScope
@@ -544,9 +439,6 @@ class Decision1(StrEnum):
 
 
 class Decision(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     decision: Decision1
     by: constr(min_length=1)
     at: AwareDatetime
@@ -555,9 +447,6 @@ class Decision(BaseModel):
 
 
 class Candidate(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     id: constr(min_length=1)
     recordVersion: conint(ge=1, le=9007199254740991)
     accessScope: AccessScope
@@ -589,9 +478,6 @@ class Stage(StrEnum):
 
 
 class Proposal(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     id: constr(min_length=1)
     recordVersion: conint(ge=1, le=9007199254740991)
     accessScope: AccessScope
@@ -610,9 +496,6 @@ class Proposal(BaseModel):
 
 
 class Outcome(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     id: constr(min_length=1)
     recordVersion: conint(ge=1, le=9007199254740991)
     accessScope: AccessScope
@@ -632,9 +515,6 @@ class Outcome(BaseModel):
 
 
 class MemoryDataset(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     label: str
     sources: list[Source]
     revisions: list[Revision]
@@ -651,117 +531,78 @@ class MemoryDataset(BaseModel):
 
 
 class MemoryEvent1(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["record-added"]
     recordType: Literal["source"]
     record: Source
 
 
 class MemoryEvent2(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["record-added"]
     recordType: Literal["revision"]
     record: Revision
 
 
 class MemoryEvent3(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["record-added"]
     recordType: Literal["anchor"]
     record: Anchor
 
 
 class MemoryEvent4(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["record-added"]
     recordType: Literal["episode"]
     record: Episode
 
 
 class MemoryEvent5(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["record-added"]
     recordType: Literal["entity"]
     record: Entity
 
 
 class MemoryEvent6(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["record-added"]
     recordType: Literal["entity-alias"]
     record: EntityAlias
 
 
 class MemoryEvent7(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["record-added"]
     recordType: Literal["claim"]
     record: Claim
 
 
 class MemoryEvent8(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["record-added"]
     recordType: Literal["case"]
     record: Case
 
 
 class MemoryEvent9(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["record-added"]
     recordType: Literal["lesson"]
     record: Lesson
 
 
 class MemoryEvent10(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["record-added"]
     recordType: Literal["candidate"]
     record: Candidate
 
 
 class MemoryEvent11(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["record-added"]
     recordType: Literal["proposal"]
     record: Proposal
 
 
 class MemoryEvent12(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["record-added"]
     recordType: Literal["outcome"]
     record: Outcome
 
 
 class MemoryEvent13(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["record-superseded"]
     recordType: Literal["source"]
     record: Source
@@ -770,9 +611,6 @@ class MemoryEvent13(BaseModel):
 
 
 class MemoryEvent14(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["record-superseded"]
     recordType: Literal["revision"]
     record: Revision
@@ -781,9 +619,6 @@ class MemoryEvent14(BaseModel):
 
 
 class MemoryEvent15(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["record-superseded"]
     recordType: Literal["anchor"]
     record: Anchor
@@ -792,9 +627,6 @@ class MemoryEvent15(BaseModel):
 
 
 class MemoryEvent16(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["record-superseded"]
     recordType: Literal["episode"]
     record: Episode
@@ -803,9 +635,6 @@ class MemoryEvent16(BaseModel):
 
 
 class MemoryEvent17(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["record-superseded"]
     recordType: Literal["entity"]
     record: Entity
@@ -814,9 +643,6 @@ class MemoryEvent17(BaseModel):
 
 
 class MemoryEvent18(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["record-superseded"]
     recordType: Literal["entity-alias"]
     record: EntityAlias
@@ -825,9 +651,6 @@ class MemoryEvent18(BaseModel):
 
 
 class MemoryEvent19(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["record-superseded"]
     recordType: Literal["claim"]
     record: Claim
@@ -836,9 +659,6 @@ class MemoryEvent19(BaseModel):
 
 
 class MemoryEvent20(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["record-superseded"]
     recordType: Literal["case"]
     record: Case
@@ -847,9 +667,6 @@ class MemoryEvent20(BaseModel):
 
 
 class MemoryEvent21(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["record-superseded"]
     recordType: Literal["lesson"]
     record: Lesson
@@ -858,9 +675,6 @@ class MemoryEvent21(BaseModel):
 
 
 class MemoryEvent22(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["record-superseded"]
     recordType: Literal["candidate"]
     record: Candidate
@@ -869,9 +683,6 @@ class MemoryEvent22(BaseModel):
 
 
 class MemoryEvent23(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["record-superseded"]
     recordType: Literal["proposal"]
     record: Proposal
@@ -880,9 +691,6 @@ class MemoryEvent23(BaseModel):
 
 
 class MemoryEvent24(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["record-superseded"]
     recordType: Literal["outcome"]
     record: Outcome
@@ -891,9 +699,6 @@ class MemoryEvent24(BaseModel):
 
 
 class MemoryEvent25(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["claim-invalidated"]
     claimId: constr(min_length=1)
     invalidatedAt: AwareDatetime
@@ -902,9 +707,6 @@ class MemoryEvent25(BaseModel):
 
 
 class MemoryEvent26(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["claim-auto-accepted"]
     claimId: constr(min_length=1)
     rule: str
@@ -916,9 +718,6 @@ class Decision2(StrEnum):
 
 
 class MemoryEvent27(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["candidate-decided"]
     candidateId: constr(min_length=1)
     decision: Decision2
@@ -938,9 +737,6 @@ class Decision3(StrEnum):
 
 
 class MemoryEvent28(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["review-recorded"]
     proposalId: constr(min_length=1)
     gate: Gate
@@ -949,9 +745,6 @@ class MemoryEvent28(BaseModel):
 
 
 class MemoryEvent29(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["proposal-published"]
     proposalId: constr(min_length=1)
     publishedAt: AwareDatetime
@@ -959,9 +752,6 @@ class MemoryEvent29(BaseModel):
 
 
 class MemoryEvent30(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["entities-merged"]
     survivorId: constr(min_length=1)
     mergedId: constr(min_length=1)
@@ -969,9 +759,6 @@ class MemoryEvent30(BaseModel):
 
 
 class MemoryEvent31(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     type: Literal["lesson-status-changed"]
     lessonId: constr(min_length=1)
     status: Status
@@ -1049,9 +836,6 @@ class MemoryEvent(
 
 
 class LoggedEvent(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     position: conint(ge=1, le=9007199254740991)
     recordedAt: AwareDatetime
     effectiveAt: AwareDatetime
@@ -1061,17 +845,11 @@ class LoggedEvent(BaseModel):
 
 
 class EventLog(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     schemaVersion: Literal[1]
     events: list[LoggedEvent]
 
 
 class AppendEventRequest(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     event: MemoryEvent
     actorId: constr(min_length=1)
     effectiveAt: AwareDatetime | None = None
@@ -1079,58 +857,110 @@ class AppendEventRequest(BaseModel):
 
 
 class AppendEventResponse(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     position: conint(ge=1, le=9007199254740991)
     recordedAt: AwareDatetime
 
 
 class SubmitChunksRequest(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     revisionId: constr(min_length=1)
     episodeId: constr(min_length=1)
     chunks: list[Chunk]
 
 
 class SubmitChunksResponse(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     stored: conint(ge=0, le=9007199254740991)
 
 
 class SubmitCandidatesRequest(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     episode: Episode
+    anchors: list[Anchor] | None = Field([], validate_default=True)
     candidates: list[Candidate]
     actorId: constr(min_length=1)
 
 
 class SubmitCandidatesResponse(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     episodePosition: conint(ge=1, le=9007199254740991)
     autoAccepted: list[constr(min_length=1)]
     queued: list[constr(min_length=1)]
 
 
+class SubmitIntakeRequest(BaseModel):
+    episode: Episode
+    source: Source
+    revision: Revision
+    chunks: list[Chunk]
+    actorId: constr(min_length=1)
+
+
+class SubmitIntakeResponse(BaseModel):
+    episodePosition: conint(ge=1, le=9007199254740991)
+    sourcePosition: conint(ge=1, le=9007199254740991)
+    revisionPosition: conint(ge=1, le=9007199254740991)
+    stored: conint(ge=0, le=9007199254740991)
+
+
+class EmbedRequest(BaseModel):
+    texts: list[str] = Field(..., max_length=256, min_length=1)
+
+
+class EmbedResponse(BaseModel):
+    model: str
+    dimensions: conint(ge=0, le=9007199254740991)
+    embeddings: list[list[float]]
+
+
+class SearchHit(BaseModel):
+    revisionId: constr(min_length=1)
+    sourceId: constr(min_length=1)
+    sourceTitle: str
+    sourceKind: str
+    locator: Locator
+    locatorText: str
+    contextPrefix: str
+    text: str
+    score: float
+    signals: dict[Literal["lexical", "vector"], conint(ge=1, le=9007199254740991)]
+    anchorIds: list[constr(min_length=1)]
+    claimIds: list[constr(min_length=1)]
+    caseIds: list[constr(min_length=1)]
+
+
+class Conflict(BaseModel):
+    claimId: constr(min_length=1)
+    conflictsWith: list[constr(min_length=1)]
+
+
+class SignalsRunEnum(StrEnum):
+    lexical = "lexical"
+    vector = "vector"
+
+
+class SearchResponse(BaseModel):
+    query: str
+    principalId: constr(min_length=1)
+    hits: list[SearchHit]
+    claims: list[Claim]
+    conflicts: list[Conflict]
+    signalsRun: list[SignalsRunEnum]
+
+
+class QueueResponse(BaseModel):
+    principalId: constr(min_length=1)
+    candidates: list[Candidate]
+
+
+class CaseResponse(BaseModel):
+    case: Case
+    claims: list[Claim]
+    anchors: list[Anchor]
+    sources: list[Source]
+
+
 class Issue(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     path: str
     message: str
 
 
 class ApiError(BaseModel):
-    model_config = ConfigDict(
-        extra="forbid",
-    )
     error: str
     issues: list[Issue] | None = None

@@ -28,6 +28,5 @@
     "episodePosition",
     "autoAccepted",
     "queued"
-  ],
-  "additionalProperties": false
+  ]
 }

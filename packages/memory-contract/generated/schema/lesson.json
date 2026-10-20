@@ -148,6 +148,5 @@
     "counterEvidenceCaseIds",
     "status",
     "ownerId"
-  ],
-  "additionalProperties": false
+  ]
 }

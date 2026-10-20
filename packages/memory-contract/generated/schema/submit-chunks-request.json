@@ -63,15 +63,13 @@
                       "y",
                       "w",
                       "h"
-                    ],
-                    "additionalProperties": false
+                    ]
                   }
                 },
                 "required": [
                   "type",
                   "page"
-                ],
-                "additionalProperties": false
+                ]
               },
               {
                 "type": "object",
@@ -99,8 +97,7 @@
                   "start",
                   "end",
                   "quote"
-                ],
-                "additionalProperties": false
+                ]
               },
               {
                 "type": "object",
@@ -121,8 +118,7 @@
                 "required": [
                   "type",
                   "row"
-                ],
-                "additionalProperties": false
+                ]
               },
               {
                 "type": "object",
@@ -144,8 +140,7 @@
                   "type",
                   "startSeconds",
                   "endSeconds"
-                ],
-                "additionalProperties": false
+                ]
               },
               {
                 "type": "object",
@@ -173,8 +168,7 @@
                   "y",
                   "w",
                   "h"
-                ],
-                "additionalProperties": false
+                ]
               },
               {
                 "type": "object",
@@ -186,8 +180,7 @@
                 },
                 "required": [
                   "type"
-                ],
-                "additionalProperties": false
+                ]
               }
             ]
           },
@@ -208,8 +201,7 @@
           "locator",
           "embedding",
           "embeddingModel"
-        ],
-        "additionalProperties": false
+        ]
       }
     }
   },
@@ -217,6 +209,5 @@
     "revisionId",
     "episodeId",
     "chunks"
-  ],
-  "additionalProperties": false
+  ]
 }

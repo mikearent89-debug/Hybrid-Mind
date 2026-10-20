@@ -8,6 +8,8 @@ import {
   type LoggedEvent,
   type MemoryEvent,
 } from '@hybrid/memory-domain';
+import { cosine, tokenize } from './embedding';
+import type { ChunkHit } from './search';
 
 /** Chunks arrive from the worker and are stored next to the revision they came from. */
 export interface StoredChunk {
@@ -34,6 +36,10 @@ export interface EventStore {
   ): Promise<LoggedEvent>;
   readLog(afterPosition?: number): Promise<EventLog>;
   storeChunks(chunks: StoredChunk[]): Promise<number>;
+  /** Top-k chunks by full-text match, best first. */
+  lexicalSearch(query: string, k: number): Promise<ChunkHit[]>;
+  /** Top-k chunks by vector similarity to the query embedding, best first. */
+  vectorSearch(embedding: number[], k: number): Promise<ChunkHit[]>;
   close(): Promise<void>;
 }
 
@@ -69,6 +75,34 @@ export class MemoryEventStore implements EventStore {
       else this.chunks.push(chunk);
     }
     return chunks.length;
+  }
+
+  async lexicalSearch(query: string, k: number): Promise<ChunkHit[]> {
+    const terms = new Set(tokenize(query));
+    if (terms.size === 0) return [];
+    const scored = this.chunks
+      .map((chunk) => {
+        const tokens = tokenize(`${chunk.contextPrefix} ${chunk.text}`);
+        const present = new Set(tokens);
+        let matched = 0;
+        for (const t of terms) if (present.has(t)) matched += 1;
+        // Fraction of query terms present, lightly favoring shorter chunks, like ts_rank_cd.
+        const score = matched === 0 ? 0 : matched / terms.size + 1 / (10 + tokens.length);
+        return { chunk, score };
+      })
+      .filter((h) => h.score > 0)
+      .sort((a, b) => b.score - a.score || a.chunk.revisionId.localeCompare(b.chunk.revisionId));
+    return scored.slice(0, k).map((h, i) => ({ ...h, rank: i + 1 }));
+  }
+
+  async vectorSearch(embedding: number[], k: number): Promise<ChunkHit[]> {
+    if (embedding.length === 0) return [];
+    return this.chunks
+      .filter((c) => c.embedding.length === embedding.length)
+      .map((chunk) => ({ chunk, score: cosine(embedding, chunk.embedding) }))
+      .sort((a, b) => b.score - a.score || a.chunk.revisionId.localeCompare(b.chunk.revisionId))
+      .slice(0, k)
+      .map((h, i) => ({ ...h, rank: i + 1 }));
   }
 
   async close(): Promise<void> {}

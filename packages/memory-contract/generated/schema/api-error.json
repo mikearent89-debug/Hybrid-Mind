@@ -22,13 +22,11 @@
         "required": [
           "path",
           "message"
-        ],
-        "additionalProperties": false
+        ]
       }
     }
   },
   "required": [
     "error"
-  ],
-  "additionalProperties": false
+  ]
 }

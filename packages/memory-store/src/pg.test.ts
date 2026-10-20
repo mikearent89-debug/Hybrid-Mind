@@ -1,6 +1,8 @@
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { FIXTURE, FIXTURE_LOG, projectMemory } from '@hybrid/memory-domain';
-import { loadLog } from './loadFixture';
+import { HashEmbedder } from './embedding';
+import { loadFixtureChunks, loadLog } from './loadFixture';
+import { fuseHits } from './search';
 import { PgEventStore, createPool, migrate, reset } from './pg';
 
 // Runs only against a real PostgreSQL with pgvector (docker compose up postgres; CI provides one).
@@ -50,6 +52,24 @@ describe.skipIf(!url)('PgEventStore', () => {
     );
   });
 
+  it('searches fixture chunks lexically and by vector', async () => {
+    const embedder = new HashEmbedder();
+    expect(await loadFixtureChunks(store!, embedder)).toBe(21);
+    const lexical = await store!.lexicalSearch('rodent damage combiner wiring', 5);
+    expect(lexical.map((h) => h.chunk.revisionId).slice(0, 2)).toEqual(
+      expect.arrayContaining(['rev-07']),
+    );
+    const [q] = await embedder.embed(['firmware 3.2.0 debounce INV-MR-03']);
+    const vector = await store!.vectorSearch(q!, 5);
+    expect(vector.length).toBe(5);
+    expect(vector[0]!.rank).toBe(1);
+    const fused = fuseHits({
+      lexical: await store!.lexicalSearch('firmware 3.2.0 debounce INV-MR-03', 10),
+      vector,
+    });
+    expect(fused[0]?.revisionId).toBe('rev-02');
+  });
+
   it('stores chunks with full-text search', async () => {
     await store!.storeChunks([
       {
@@ -66,6 +86,6 @@ describe.skipIf(!url)('PgEventStore', () => {
     const hit = await pool!.query<{ revision_id: string }>(
       "SELECT revision_id FROM chunk WHERE tsv @@ plainto_tsquery('english', 'fuses trips')",
     );
-    expect(hit.rows.map((r) => r.revision_id)).toEqual(['rev-01']);
+    expect(hit.rows.map((r) => r.revision_id)).toContain('rev-01');
   });
 });

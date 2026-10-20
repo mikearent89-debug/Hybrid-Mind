@@ -41,6 +41,5 @@
     "result",
     "occurredAt",
     "claimIds"
-  ],
-  "additionalProperties": false
+  ]
 }

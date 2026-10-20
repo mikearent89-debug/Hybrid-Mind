@@ -4,8 +4,10 @@ version = "0.0.0"
 description = "The Python side of Solar Portfolio Memory: parses documents, chunks and embeds them, asks Claude to extract candidates, and submits everything to memory-api. It never writes the database."
 requires-python = ">=3.13"
 dependencies = [
+    "anthropic>=1.15.0",
     "httpx>=0.28",
     "pydantic>=2.11",
+    "pypdf>=6.21.1",
 ]
 
 [dependency-groups]
@@ -14,6 +16,9 @@ dev = [
     "pytest>=8.3",
     "ruff>=0.12",
 ]
+
+[project.scripts]
+memory-worker = "memory_worker.cli:main"
 
 [build-system]
 requires = ["hatchling"]

@@ -150,16 +150,14 @@
             "originSystem",
             "externalId",
             "siteIds"
-          ],
-          "additionalProperties": false
+          ]
         }
       },
       "required": [
         "type",
         "recordType",
         "record"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -307,16 +305,14 @@
             "byteLength",
             "receivedAt",
             "supersedesRevisionId"
-          ],
-          "additionalProperties": false
+          ]
         }
       },
       "required": [
         "type",
         "recordType",
         "record"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -454,15 +450,13 @@
                         "y",
                         "w",
                         "h"
-                      ],
-                      "additionalProperties": false
+                      ]
                     }
                   },
                   "required": [
                     "type",
                     "page"
-                  ],
-                  "additionalProperties": false
+                  ]
                 },
                 {
                   "type": "object",
@@ -490,8 +484,7 @@
                     "start",
                     "end",
                     "quote"
-                  ],
-                  "additionalProperties": false
+                  ]
                 },
                 {
                   "type": "object",
@@ -512,8 +505,7 @@
                   "required": [
                     "type",
                     "row"
-                  ],
-                  "additionalProperties": false
+                  ]
                 },
                 {
                   "type": "object",
@@ -535,8 +527,7 @@
                     "type",
                     "startSeconds",
                     "endSeconds"
-                  ],
-                  "additionalProperties": false
+                  ]
                 },
                 {
                   "type": "object",
@@ -564,8 +555,7 @@
                     "y",
                     "w",
                     "h"
-                  ],
-                  "additionalProperties": false
+                  ]
                 },
                 {
                   "type": "object",
@@ -577,8 +567,7 @@
                   },
                   "required": [
                     "type"
-                  ],
-                  "additionalProperties": false
+                  ]
                 }
               ]
             }
@@ -595,16 +584,14 @@
             "effectiveTo",
             "revisionId",
             "locator"
-          ],
-          "additionalProperties": false
+          ]
         }
       },
       "required": [
         "type",
         "recordType",
         "record"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -725,8 +712,7 @@
               "required": [
                 "name",
                 "version"
-              ],
-              "additionalProperties": false
+              ]
             },
             "correlationId": {
               "type": "string"
@@ -754,16 +740,14 @@
             "method",
             "correlationId",
             "revisionIds"
-          ],
-          "additionalProperties": false
+          ]
         }
       },
       "required": [
         "type",
         "recordType",
         "record"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -903,8 +887,7 @@
                 "required": [
                   "sourceSystem",
                   "externalId"
-                ],
-                "additionalProperties": false
+                ]
               }
             }
           },
@@ -922,16 +905,14 @@
             "name",
             "attributes",
             "externalRefs"
-          ],
-          "additionalProperties": false
+          ]
         }
       },
       "required": [
         "type",
         "recordType",
         "record"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -1059,16 +1040,14 @@
             "entityId",
             "alias",
             "origin"
-          ],
-          "additionalProperties": false
+          ]
         }
       },
       "required": [
         "type",
         "recordType",
         "record"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -1191,8 +1170,7 @@
                   "required": [
                     "type",
                     "entityId"
-                  ],
-                  "additionalProperties": false
+                  ]
                 },
                 {
                   "type": "object",
@@ -1215,8 +1193,7 @@
                     "type",
                     "value",
                     "unit"
-                  ],
-                  "additionalProperties": false
+                  ]
                 }
               ]
             },
@@ -1242,8 +1219,7 @@
                 "required": [
                   "anchorId",
                   "role"
-                ],
-                "additionalProperties": false
+                ]
               }
             },
             "episodeId": {
@@ -1291,16 +1267,14 @@
             "episodeId",
             "supersedesClaimId",
             "invalidatedAt"
-          ],
-          "additionalProperties": false
+          ]
         }
       },
       "required": [
         "type",
         "recordType",
         "record"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -1425,8 +1399,7 @@
               "required": [
                 "entityIds",
                 "conditions"
-              ],
-              "additionalProperties": false
+              ]
             },
             "investigation": {
               "type": "object",
@@ -1454,8 +1427,7 @@
                 "hypotheses",
                 "diagnosticActions",
                 "unresolvedQuestions"
-              ],
-              "additionalProperties": false
+              ]
             },
             "actionsTried": {
               "type": "array",
@@ -1499,8 +1471,7 @@
                   "result",
                   "occurredAt",
                   "claimIds"
-                ],
-                "additionalProperties": false
+                ]
               }
             },
             "fix": {
@@ -1526,8 +1497,7 @@
                   "required": [
                     "amount",
                     "currency"
-                  ],
-                  "additionalProperties": false
+                  ]
                 },
                 {
                   "type": "null"
@@ -1590,8 +1560,7 @@
                 "required": [
                   "anchorId",
                   "role"
-                ],
-                "additionalProperties": false
+                ]
               }
             },
             "openedAt": {
@@ -1637,16 +1606,14 @@
             "anchors",
             "openedAt",
             "closedAt"
-          ],
-          "additionalProperties": false
+          ]
         }
       },
       "required": [
         "type",
         "recordType",
         "record"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -1806,16 +1773,14 @@
             "counterEvidenceCaseIds",
             "status",
             "ownerId"
-          ],
-          "additionalProperties": false
+          ]
         }
       },
       "required": [
         "type",
         "recordType",
         "record"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -1976,8 +1941,7 @@
               "required": [
                 "name",
                 "version"
-              ],
-              "additionalProperties": false
+              ]
             },
             "uncertainty": {
               "type": "object",
@@ -1997,8 +1961,7 @@
               "required": [
                 "level",
                 "reasons"
-              ],
-              "additionalProperties": false
+              ]
             },
             "episodeId": {
               "type": "string",
@@ -2046,8 +2009,7 @@
                     "at",
                     "reason",
                     "resultingId"
-                  ],
-                  "additionalProperties": false
+                  ]
                 },
                 {
                   "type": "null"
@@ -2074,16 +2036,14 @@
             "uncertainty",
             "episodeId",
             "decision"
-          ],
-          "additionalProperties": false
+          ]
         }
       },
       "required": [
         "type",
         "recordType",
         "record"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -2244,8 +2204,7 @@
                   "required": [
                     "level",
                     "reasons"
-                  ],
-                  "additionalProperties": false
+                  ]
                 },
                 "nextStepConfidence": {
                   "type": "object",
@@ -2265,8 +2224,7 @@
                   "required": [
                     "level",
                     "reasons"
-                  ],
-                  "additionalProperties": false
+                  ]
                 }
               },
               "required": [
@@ -2276,8 +2234,7 @@
                 "nextSteps",
                 "causeConfidence",
                 "nextStepConfidence"
-              ],
-              "additionalProperties": false
+              ]
             },
             "draft": {
               "anyOf": [
@@ -2311,8 +2268,7 @@
                         "required": [
                           "label",
                           "date"
-                        ],
-                        "additionalProperties": false
+                        ]
                       }
                     },
                     "dependencies": {
@@ -2347,8 +2303,7 @@
                           "amount",
                           "currency",
                           "anchorId"
-                        ],
-                        "additionalProperties": false
+                        ]
                       }
                     },
                     "successCriteria": {
@@ -2379,8 +2334,7 @@
                         "required": [
                           "anchorId",
                           "role"
-                        ],
-                        "additionalProperties": false
+                        ]
                       }
                     }
                   },
@@ -2392,8 +2346,7 @@
                     "costBasis",
                     "successCriteria",
                     "anchors"
-                  ],
-                  "additionalProperties": false
+                  ]
                 },
                 {
                   "type": "null"
@@ -2441,16 +2394,14 @@
             "draft",
             "publishedAt",
             "workbenchLogPosition"
-          ],
-          "additionalProperties": false
+          ]
         }
       },
       "required": [
         "type",
         "recordType",
         "record"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -2603,8 +2554,7 @@
                 "required": [
                   "anchorId",
                   "role"
-                ],
-                "additionalProperties": false
+                ]
               }
             }
           },
@@ -2625,16 +2575,14 @@
             "recordedBy",
             "occurredAt",
             "anchors"
-          ],
-          "additionalProperties": false
+          ]
         }
       },
       "required": [
         "type",
         "recordType",
         "record"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -2783,8 +2731,7 @@
             "originSystem",
             "externalId",
             "siteIds"
-          ],
-          "additionalProperties": false
+          ]
         },
         "basedOnVersion": {
           "type": "integer",
@@ -2801,8 +2748,7 @@
         "record",
         "basedOnVersion",
         "reason"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -2950,8 +2896,7 @@
             "byteLength",
             "receivedAt",
             "supersedesRevisionId"
-          ],
-          "additionalProperties": false
+          ]
         },
         "basedOnVersion": {
           "type": "integer",
@@ -2968,8 +2913,7 @@
         "record",
         "basedOnVersion",
         "reason"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -3107,15 +3051,13 @@
                         "y",
                         "w",
                         "h"
-                      ],
-                      "additionalProperties": false
+                      ]
                     }
                   },
                   "required": [
                     "type",
                     "page"
-                  ],
-                  "additionalProperties": false
+                  ]
                 },
                 {
                   "type": "object",
@@ -3143,8 +3085,7 @@
                     "start",
                     "end",
                     "quote"
-                  ],
-                  "additionalProperties": false
+                  ]
                 },
                 {
                   "type": "object",
@@ -3165,8 +3106,7 @@
                   "required": [
                     "type",
                     "row"
-                  ],
-                  "additionalProperties": false
+                  ]
                 },
                 {
                   "type": "object",
@@ -3188,8 +3128,7 @@
                     "type",
                     "startSeconds",
                     "endSeconds"
-                  ],
-                  "additionalProperties": false
+                  ]
                 },
                 {
                   "type": "object",
@@ -3217,8 +3156,7 @@
                     "y",
                     "w",
                     "h"
-                  ],
-                  "additionalProperties": false
+                  ]
                 },
                 {
                   "type": "object",
@@ -3230,8 +3168,7 @@
                   },
                   "required": [
                     "type"
-                  ],
-                  "additionalProperties": false
+                  ]
                 }
               ]
             }
@@ -3248,8 +3185,7 @@
             "effectiveTo",
             "revisionId",
             "locator"
-          ],
-          "additionalProperties": false
+          ]
         },
         "basedOnVersion": {
           "type": "integer",
@@ -3266,8 +3202,7 @@
         "record",
         "basedOnVersion",
         "reason"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -3388,8 +3323,7 @@
               "required": [
                 "name",
                 "version"
-              ],
-              "additionalProperties": false
+              ]
             },
             "correlationId": {
               "type": "string"
@@ -3417,8 +3351,7 @@
             "method",
             "correlationId",
             "revisionIds"
-          ],
-          "additionalProperties": false
+          ]
         },
         "basedOnVersion": {
           "type": "integer",
@@ -3435,8 +3368,7 @@
         "record",
         "basedOnVersion",
         "reason"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -3576,8 +3508,7 @@
                 "required": [
                   "sourceSystem",
                   "externalId"
-                ],
-                "additionalProperties": false
+                ]
               }
             }
           },
@@ -3595,8 +3526,7 @@
             "name",
             "attributes",
             "externalRefs"
-          ],
-          "additionalProperties": false
+          ]
         },
         "basedOnVersion": {
           "type": "integer",
@@ -3613,8 +3543,7 @@
         "record",
         "basedOnVersion",
         "reason"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -3742,8 +3671,7 @@
             "entityId",
             "alias",
             "origin"
-          ],
-          "additionalProperties": false
+          ]
         },
         "basedOnVersion": {
           "type": "integer",
@@ -3760,8 +3688,7 @@
         "record",
         "basedOnVersion",
         "reason"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -3884,8 +3811,7 @@
                   "required": [
                     "type",
                     "entityId"
-                  ],
-                  "additionalProperties": false
+                  ]
                 },
                 {
                   "type": "object",
@@ -3908,8 +3834,7 @@
                     "type",
                     "value",
                     "unit"
-                  ],
-                  "additionalProperties": false
+                  ]
                 }
               ]
             },
@@ -3935,8 +3860,7 @@
                 "required": [
                   "anchorId",
                   "role"
-                ],
-                "additionalProperties": false
+                ]
               }
             },
             "episodeId": {
@@ -3984,8 +3908,7 @@
             "episodeId",
             "supersedesClaimId",
             "invalidatedAt"
-          ],
-          "additionalProperties": false
+          ]
         },
         "basedOnVersion": {
           "type": "integer",
@@ -4002,8 +3925,7 @@
         "record",
         "basedOnVersion",
         "reason"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -4128,8 +4050,7 @@
               "required": [
                 "entityIds",
                 "conditions"
-              ],
-              "additionalProperties": false
+              ]
             },
             "investigation": {
               "type": "object",
@@ -4157,8 +4078,7 @@
                 "hypotheses",
                 "diagnosticActions",
                 "unresolvedQuestions"
-              ],
-              "additionalProperties": false
+              ]
             },
             "actionsTried": {
               "type": "array",
@@ -4202,8 +4122,7 @@
                   "result",
                   "occurredAt",
                   "claimIds"
-                ],
-                "additionalProperties": false
+                ]
               }
             },
             "fix": {
@@ -4229,8 +4148,7 @@
                   "required": [
                     "amount",
                     "currency"
-                  ],
-                  "additionalProperties": false
+                  ]
                 },
                 {
                   "type": "null"
@@ -4293,8 +4211,7 @@
                 "required": [
                   "anchorId",
                   "role"
-                ],
-                "additionalProperties": false
+                ]
               }
             },
             "openedAt": {
@@ -4340,8 +4257,7 @@
             "anchors",
             "openedAt",
             "closedAt"
-          ],
-          "additionalProperties": false
+          ]
         },
         "basedOnVersion": {
           "type": "integer",
@@ -4358,8 +4274,7 @@
         "record",
         "basedOnVersion",
         "reason"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -4519,8 +4434,7 @@
             "counterEvidenceCaseIds",
             "status",
             "ownerId"
-          ],
-          "additionalProperties": false
+          ]
         },
         "basedOnVersion": {
           "type": "integer",
@@ -4537,8 +4451,7 @@
         "record",
         "basedOnVersion",
         "reason"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -4699,8 +4612,7 @@
               "required": [
                 "name",
                 "version"
-              ],
-              "additionalProperties": false
+              ]
             },
             "uncertainty": {
               "type": "object",
@@ -4720,8 +4632,7 @@
               "required": [
                 "level",
                 "reasons"
-              ],
-              "additionalProperties": false
+              ]
             },
             "episodeId": {
               "type": "string",
@@ -4769,8 +4680,7 @@
                     "at",
                     "reason",
                     "resultingId"
-                  ],
-                  "additionalProperties": false
+                  ]
                 },
                 {
                   "type": "null"
@@ -4797,8 +4707,7 @@
             "uncertainty",
             "episodeId",
             "decision"
-          ],
-          "additionalProperties": false
+          ]
         },
         "basedOnVersion": {
           "type": "integer",
@@ -4815,8 +4724,7 @@
         "record",
         "basedOnVersion",
         "reason"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -4977,8 +4885,7 @@
                   "required": [
                     "level",
                     "reasons"
-                  ],
-                  "additionalProperties": false
+                  ]
                 },
                 "nextStepConfidence": {
                   "type": "object",
@@ -4998,8 +4905,7 @@
                   "required": [
                     "level",
                     "reasons"
-                  ],
-                  "additionalProperties": false
+                  ]
                 }
               },
               "required": [
@@ -5009,8 +4915,7 @@
                 "nextSteps",
                 "causeConfidence",
                 "nextStepConfidence"
-              ],
-              "additionalProperties": false
+              ]
             },
             "draft": {
               "anyOf": [
@@ -5044,8 +4949,7 @@
                         "required": [
                           "label",
                           "date"
-                        ],
-                        "additionalProperties": false
+                        ]
                       }
                     },
                     "dependencies": {
@@ -5080,8 +4984,7 @@
                           "amount",
                           "currency",
                           "anchorId"
-                        ],
-                        "additionalProperties": false
+                        ]
                       }
                     },
                     "successCriteria": {
@@ -5112,8 +5015,7 @@
                         "required": [
                           "anchorId",
                           "role"
-                        ],
-                        "additionalProperties": false
+                        ]
                       }
                     }
                   },
@@ -5125,8 +5027,7 @@
                     "costBasis",
                     "successCriteria",
                     "anchors"
-                  ],
-                  "additionalProperties": false
+                  ]
                 },
                 {
                   "type": "null"
@@ -5174,8 +5075,7 @@
             "draft",
             "publishedAt",
             "workbenchLogPosition"
-          ],
-          "additionalProperties": false
+          ]
         },
         "basedOnVersion": {
           "type": "integer",
@@ -5192,8 +5092,7 @@
         "record",
         "basedOnVersion",
         "reason"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -5346,8 +5245,7 @@
                 "required": [
                   "anchorId",
                   "role"
-                ],
-                "additionalProperties": false
+                ]
               }
             }
           },
@@ -5368,8 +5266,7 @@
             "recordedBy",
             "occurredAt",
             "anchors"
-          ],
-          "additionalProperties": false
+          ]
         },
         "basedOnVersion": {
           "type": "integer",
@@ -5386,8 +5283,7 @@
         "record",
         "basedOnVersion",
         "reason"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -5426,8 +5322,7 @@
         "invalidatedAt",
         "reason",
         "supersededByClaimId"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -5448,8 +5343,7 @@
         "type",
         "claimId",
         "rule"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -5490,8 +5384,7 @@
         "decision",
         "reason",
         "resultingId"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -5534,8 +5427,7 @@
         "gate",
         "decision",
         "notes"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -5571,8 +5463,7 @@
         "proposalId",
         "publishedAt",
         "workbenchLogPosition"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -5598,8 +5489,7 @@
         "survivorId",
         "mergedId",
         "reason"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -5630,8 +5520,7 @@
         "lessonId",
         "status",
         "reason"
-      ],
-      "additionalProperties": false
+      ]
     }
   ]
 }

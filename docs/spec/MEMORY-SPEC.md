@@ -1,6 +1,6 @@
 # Solar Portfolio Memory — Specification
 
-## v0.2, October 20, 2026. Status: **approved plan, M0 in review**
+## v0.3, October 20, 2026. Status: **approved plan; M0 merged, M1 in review**
 
 This document specifies the memory system; it does not report implemented software beyond what [README.md](../../README.md) lists as complete. Section references to DATA-SPEC are to the Portfolio World Workbench (EAM_MA) data specification v1.1; [DATA-SPEC-MAPPING.md](DATA-SPEC-MAPPING.md) maps each memory record to its Workbench counterpart. [EVALUATION.md](EVALUATION.md) holds the pass criteria per milestone.
 
@@ -99,7 +99,7 @@ The acceptance is three events by the actor `system:auto-accept` (`record-added`
 2. **Extraction (worker):** Claude proposes entities, claims and case matches, each with anchors and described uncertainty → `SubmitCandidatesRequest`.
 3. **Arrival (API):** the episode and candidates are appended; each "add claim" candidate is tested by the auto-accept rule; the rest queue for review.
 4. **Entity resolution:** `resolveEntity()` matches an exact name or seeded alias without review; a fuzzy match is a suggestion that becomes a `merge` candidate.
-5. **Retrieval (M1):** full-text + vector + graph neighborhood + time filter → rerank → answer with anchors. Similar cases combine structured conditions (model, firmware, region, vendor) with text similarity and list key differences.
+5. **Retrieval:** full-text (`tsvector`) and vector (`pgvector`) candidates fused by reciprocal rank; chunks of revisions the principal may not see are dropped before ranking; each hit carries its source, locator, the anchors on it, the claims those anchors support and the cases that cite them; conflicts among the attached claims are listed. Graph-neighborhood expansion, time filters and reranking follow in M2. Similar cases (M2) combine structured conditions (model, firmware, region, vendor) with text similarity and list key differences.
 6. **Review:** gate 1 on the assessment, gate 2 on the draft; both are `review-recorded` events.
 7. **Publish (M4):** accepted cases, lessons and proposals go to the Workbench as knowledge case, evidence links and decision records through its access policy, with the log position recorded on both sides.
 8. **Outcome and reflect (M3):** outcomes are recorded against proposals; a nightly job proposes lesson strengthen / qualify / retire, duplicate cases and stale claims as candidates only.
@@ -137,8 +137,9 @@ The acceptance is three events by the actor `system:auto-accept` (`record-added`
 
 ## 12. Interfaces
 
-- HTTP API (`apps/memory-api`): `POST /events`, `POST /candidates`, `POST /chunks`, `GET /memory?principal=&asOfPosition=`, `GET /log?after=`, `GET /health`. Payloads are the contract's `AppendEventRequest`, `SubmitCandidatesRequest`, `SubmitChunksRequest`.
-- MCP server (M1, same process): `ingest`, `search`, `get_case`, `similar_cases`, `explain`, `propose`, `review`, `publish`, `record_outcome`, `export_markdown`.
+- HTTP API (`apps/memory-api`): writes `POST /events`, `POST /intake` (episode + source + revision + chunks, idempotent by ID), `POST /candidates` (anchors + candidates; the auto-accept rule runs on arrival), `POST /chunks`; reads `GET /search?principal=&q=&k=`, `GET /cases/:id`, `GET /queue`, `GET /memory?principal=&asOfPosition=`, `GET /log?after=`; `POST /embed` (the one embedding model); `POST /mcp?principal=` (MCP over HTTP). Payloads are the contract's `SubmitIntakeRequest`, `SubmitCandidatesRequest`, `SearchResponse`, and so on.
+- MCP server (`pnpm --filter @hybrid/memory-api mcp`, stdio, acting as `MEMORY_PRINCIPAL`): `search`, `explain`, `get_case`, `queue`, `ingest` (hands the file to the worker). M2 adds `similar_cases`, `propose`, `review`, `publish`, `record_outcome`, `export_markdown`.
+- Worker CLI (`memory-worker ingest`): parses PDF, `.eml`, `.csv`, `.md`/`.txt` and photos into segments with page, span, row or image locators; keeps the original under its content hash; embeds through `POST /embed`; extracts with Claude using structured output, a cached system prompt and a cached, byte-stable entity context; `memory_worker/batch.py` runs the same requests through the Message Batches API for backlogs.
 - Workbench publish (M4): a spec-first change in EAM_MA adding knowledge case, decision and richer evidence reference types, new `WorkbenchEvent` variants and a `knowledge-cases` view.
 
 ## 13. Milestones

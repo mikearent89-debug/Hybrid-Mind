@@ -1,5 +1,6 @@
 import { FIXTURE_LABEL } from '@hybrid/memory-domain';
-import { loadLog } from './loadFixture';
+import { HashEmbedder } from './embedding';
+import { loadFixtureChunks, loadLog } from './loadFixture';
 import { PgEventStore, createPool, migrate } from './pg';
 
 const command = process.argv[2];
@@ -11,8 +12,10 @@ try {
     console.log(ran.length ? `applied ${ran.join(', ')}` : 'nothing to apply');
   } else if (command === 'load-fixture') {
     await migrate(pool);
-    const n = await loadLog(new PgEventStore(pool));
-    console.log(`loaded ${n} events of "${FIXTURE_LABEL}"`);
+    const store = new PgEventStore(pool);
+    const n = await loadLog(store);
+    const chunks = await loadFixtureChunks(store, new HashEmbedder());
+    console.log(`loaded ${n} events and ${chunks} chunks of "${FIXTURE_LABEL}"`);
   } else {
     console.error('usage: cli.ts migrate | load-fixture');
     process.exitCode = 1;

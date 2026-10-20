@@ -18,8 +18,7 @@
       "required": [
         "type",
         "entityId"
-      ],
-      "additionalProperties": false
+      ]
     },
     {
       "type": "object",
@@ -42,8 +41,7 @@
         "type",
         "value",
         "unit"
-      ],
-      "additionalProperties": false
+      ]
     }
   ]
 }

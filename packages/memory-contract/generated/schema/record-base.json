@@ -98,6 +98,5 @@
     "reviewedAt",
     "effectiveFrom",
     "effectiveTo"
-  ],
-  "additionalProperties": false
+  ]
 }

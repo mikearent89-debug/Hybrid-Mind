@@ -141,8 +141,7 @@
         "required": [
           "anchorId",
           "role"
-        ],
-        "additionalProperties": false
+        ]
       }
     }
   },
@@ -163,6 +162,5 @@
     "recordedBy",
     "occurredAt",
     "anchors"
-  ],
-  "additionalProperties": false
+  ]
 }

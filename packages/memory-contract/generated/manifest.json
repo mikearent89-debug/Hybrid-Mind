@@ -9,10 +9,13 @@
     "assessment",
     "candidate",
     "case",
+    "case-response",
     "chunk",
     "claim",
     "claim-object",
     "confidence",
+    "embed-request",
+    "embed-response",
     "entity",
     "entity-alias",
     "episode",
@@ -27,13 +30,18 @@
     "outcome",
     "proposal",
     "proposal-draft",
+    "queue-response",
     "record-base",
     "revision",
+    "search-hit",
+    "search-response",
     "source",
     "submit-candidates-request",
     "submit-candidates-response",
     "submit-chunks-request",
-    "submit-chunks-response"
+    "submit-chunks-response",
+    "submit-intake-request",
+    "submit-intake-response"
   ],
   "fixtureLabel": "Sunbelt Solar Portfolio memory (synthetic)"
 }

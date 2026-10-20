@@ -4,14 +4,15 @@ Replaces "test before selecting the stack" with pass criteria that run in CI aga
 
 ## Question set (M1)
 
-`evaluation/questions.json` holds 30 questions, each with the expected anchor(s) and, where the answer is a fact, the expected claim. A run scores:
+`evaluation/questions.json` holds 30 questions, each tied to a fixture case, with the expected anchor(s) or revision(s) and, where the answer is a fact, the expected claims and cases. `apps/memory-api/src/evaluation.test.ts` runs them in CI through `search()` with k = 5 on the in-memory store and the hash embedder, and scores:
 
-- **Anchor hit rate:** the answer cites at least one expected anchor. Pass ≥ 90 %.
-- **Unanchored answers:** any answer that states a fact without an anchor. Pass = 0.
-- **Access leaks:** any answer for `u-jordan` that cites a restricted record. Pass = 0.
-- **Conflict disclosure:** a question whose fact is disputed (FX-M02) is answered with the conflict, not one side. Pass = all such questions.
+- **Anchor hit rate:** an expected anchor (or revision) is among the top-k hits. Pass ≥ 90 %.
+- **Located results:** every hit carries a revision and a locator; a result without a place in a document cannot be returned. Pass = all.
+- **Access leaks:** a question asked as `u-jordan` never cites a restricted record (anchor, revision, claim or case). Pass = 0.
+- **Conflict disclosure:** a question whose fact is disputed (FX-M02) returns the conflict between the expected claims. Pass = all such questions.
+- **Case recall:** an expected case is cited by a hit on at least 80 % of case questions.
 
-The seed below is the first 8 questions; the set grows to 30 with M1 and with every real case added in deployment (owner's data stays in the owner's deployment).
+What CI cannot score is the written answer: whether Claude, given these results, states only anchored facts and discloses the conflict in prose. That is checked by hand from Claude Desktop with the same questions, and against the owner's own data in the owner's deployment. The set grows with every real case added there.
 
 ## Similar-case search (M2)
 
