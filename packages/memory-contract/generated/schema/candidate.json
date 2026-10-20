@@ -149,8 +149,7 @@
       "required": [
         "name",
         "version"
-      ],
-      "additionalProperties": false
+      ]
     },
     "uncertainty": {
       "type": "object",
@@ -170,8 +169,7 @@
       "required": [
         "level",
         "reasons"
-      ],
-      "additionalProperties": false
+      ]
     },
     "episodeId": {
       "type": "string",
@@ -219,8 +217,7 @@
             "at",
             "reason",
             "resultingId"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "null"
@@ -247,6 +244,5 @@
     "uncertainty",
     "episodeId",
     "decision"
-  ],
-  "additionalProperties": false
+  ]
 }

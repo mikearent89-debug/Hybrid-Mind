@@ -116,6 +116,5 @@
     "entityId",
     "alias",
     "origin"
-  ],
-  "additionalProperties": false
+  ]
 }

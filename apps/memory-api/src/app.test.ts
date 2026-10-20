@@ -51,7 +51,7 @@ const candidate = (id: string, claim: Claim): Candidate => ({
 describe('memory-api', () => {
   it('reports health', async () => {
     const { app } = build();
-    expect(await (await app.request('/health')).json()).toEqual({ ok: true });
+    expect(await (await app.request('/health')).json()).toMatchObject({ ok: true });
   });
 
   it('appends a validated event and rejects an invalid one', async () => {
@@ -162,6 +162,73 @@ describe('memory-api', () => {
       'worker:intake',
       'worker:intake',
     ]);
+  });
+
+  it('accepts an intake idempotently and stores its chunks', async () => {
+    const { app, store } = build();
+    const source = { ...FIXTURE.sources[0]!, id: 'src-90', title: 'WO-1090 test' };
+    const revision = { ...FIXTURE.revisions[0]!, id: 'rev-90', sourceId: 'src-90' };
+    const body = json({
+      episode,
+      source,
+      revision,
+      chunks: [
+        {
+          index: 0,
+          text: 'Replaced fuses',
+          contextPrefix: 'WO-1090, page 1',
+          locator: { type: 'page', page: 1 },
+          embedding: [],
+          embeddingModel: 'none',
+        },
+      ],
+      actorId: 'worker:intake',
+    });
+    const first = await app.request('/intake', body);
+    expect(first.status).toBe(201);
+    const positions = (await first.json()) as Record<string, number>;
+    expect(positions.stored).toBe(1);
+    const again = await app.request('/intake', body);
+    expect(await again.json()).toEqual(positions);
+    const after = projectMemory(await store.readLog());
+    expect(findRecord(after, 'source', 'src-90')?.title).toBe('WO-1090 test');
+    expect((await store.readLog()).events).toHaveLength(FIXTURE_LOG.events.length + 3);
+    const mismatch = await app.request(
+      '/intake',
+      json({
+        episode,
+        source,
+        revision: { ...revision, sourceId: 'src-01' },
+        chunks: [],
+        actorId: 'w',
+      }),
+    );
+    expect(mismatch.status).toBe(400);
+  });
+
+  it('appends anchors submitted with candidates before the claims that cite them', async () => {
+    const { app, store } = build();
+    const anchor = { ...FIXTURE.anchors[5]!, id: 'anc-90' };
+    const claim: Claim = {
+      ...baseClaim,
+      id: 'cl-93',
+      anchors: [{ anchorId: 'anc-90', role: 'supporting' }],
+      reviewState: 'unreviewed',
+      reviewedBy: null,
+      reviewedAt: null,
+      episodeId: episode.id,
+    };
+    const res = await app.request(
+      '/candidates',
+      json({
+        episode,
+        anchors: [anchor],
+        candidates: [candidate('cand-93', claim)],
+        actorId: 'worker:intake',
+      }),
+    );
+    expect(((await res.json()) as { autoAccepted: string[] }).autoAccepted).toEqual(['cand-93']);
+    expect(findRecord(projectMemory(await store.readLog()), 'anchor', 'anc-90')).toBeDefined();
   });
 
   it('stores chunks against a revision', async () => {

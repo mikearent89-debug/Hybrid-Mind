@@ -18,6 +18,5 @@
   "required": [
     "position",
     "recordedAt"
-  ],
-  "additionalProperties": false
+  ]
 }

@@ -21,8 +21,7 @@
       "required": [
         "level",
         "reasons"
-      ],
-      "additionalProperties": false
+      ]
     },
     "RecordBase": {
       "type": "object",
@@ -121,8 +120,7 @@
         "reviewedAt",
         "effectiveFrom",
         "effectiveTo"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Locator": {
       "oneOf": [
@@ -159,15 +157,13 @@
                 "y",
                 "w",
                 "h"
-              ],
-              "additionalProperties": false
+              ]
             }
           },
           "required": [
             "type",
             "page"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -195,8 +191,7 @@
             "start",
             "end",
             "quote"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -217,8 +212,7 @@
           "required": [
             "type",
             "row"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -240,8 +234,7 @@
             "type",
             "startSeconds",
             "endSeconds"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -269,8 +262,7 @@
             "y",
             "w",
             "h"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -282,8 +274,7 @@
           },
           "required": [
             "type"
-          ],
-          "additionalProperties": false
+          ]
         }
       ]
     },
@@ -300,8 +291,7 @@
       "required": [
         "name",
         "version"
-      ],
-      "additionalProperties": false
+      ]
     },
     "ExternalRef": {
       "type": "object",
@@ -316,8 +306,7 @@
       "required": [
         "sourceSystem",
         "externalId"
-      ],
-      "additionalProperties": false
+      ]
     },
     "ClaimObject": {
       "oneOf": [
@@ -336,8 +325,7 @@
           "required": [
             "type",
             "entityId"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -360,8 +348,7 @@
             "type",
             "value",
             "unit"
-          ],
-          "additionalProperties": false
+          ]
         }
       ]
     },
@@ -385,8 +372,7 @@
       "required": [
         "anchorId",
         "role"
-      ],
-      "additionalProperties": false
+      ]
     },
     "ActionTried": {
       "type": "object",
@@ -428,8 +414,7 @@
         "result",
         "occurredAt",
         "claimIds"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Assessment": {
       "type": "object",
@@ -473,8 +458,7 @@
         "nextSteps",
         "causeConfidence",
         "nextStepConfidence"
-      ],
-      "additionalProperties": false
+      ]
     },
     "ProposalDraft": {
       "type": "object",
@@ -506,8 +490,7 @@
             "required": [
               "label",
               "date"
-            ],
-            "additionalProperties": false
+            ]
           }
         },
         "dependencies": {
@@ -542,8 +525,7 @@
               "amount",
               "currency",
               "anchorId"
-            ],
-            "additionalProperties": false
+            ]
           }
         },
         "successCriteria": {
@@ -567,8 +549,7 @@
         "costBasis",
         "successCriteria",
         "anchors"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Chunk": {
       "type": "object",
@@ -604,8 +585,7 @@
         "locator",
         "embedding",
         "embeddingModel"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Source": {
       "type": "object",
@@ -743,8 +723,7 @@
         "originSystem",
         "externalId",
         "siteIds"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Revision": {
       "type": "object",
@@ -881,8 +860,7 @@
         "byteLength",
         "receivedAt",
         "supersedesRevisionId"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Anchor": {
       "type": "object",
@@ -990,8 +968,7 @@
         "effectiveTo",
         "revisionId",
         "locator"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Episode": {
       "type": "object",
@@ -1117,8 +1094,7 @@
         "method",
         "correlationId",
         "revisionIds"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Entity": {
       "type": "object",
@@ -1253,8 +1229,7 @@
         "name",
         "attributes",
         "externalRefs"
-      ],
-      "additionalProperties": false
+      ]
     },
     "EntityAlias": {
       "type": "object",
@@ -1371,8 +1346,7 @@
         "entityId",
         "alias",
         "origin"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Claim": {
       "type": "object",
@@ -1521,8 +1495,7 @@
         "episodeId",
         "supersedesClaimId",
         "invalidatedAt"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Case": {
       "type": "object",
@@ -1636,8 +1609,7 @@
           "required": [
             "entityIds",
             "conditions"
-          ],
-          "additionalProperties": false
+          ]
         },
         "investigation": {
           "type": "object",
@@ -1665,8 +1637,7 @@
             "hypotheses",
             "diagnosticActions",
             "unresolvedQuestions"
-          ],
-          "additionalProperties": false
+          ]
         },
         "actionsTried": {
           "type": "array",
@@ -1697,8 +1668,7 @@
               "required": [
                 "amount",
                 "currency"
-              ],
-              "additionalProperties": false
+              ]
             },
             {
               "type": "null"
@@ -1788,8 +1758,7 @@
         "anchors",
         "openedAt",
         "closedAt"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Lesson": {
       "type": "object",
@@ -1938,8 +1907,7 @@
         "counterEvidenceCaseIds",
         "status",
         "ownerId"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Candidate": {
       "type": "object",
@@ -2128,8 +2096,7 @@
                 "at",
                 "reason",
                 "resultingId"
-              ],
-              "additionalProperties": false
+              ]
             },
             {
               "type": "null"
@@ -2156,8 +2123,7 @@
         "uncertainty",
         "episodeId",
         "decision"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Proposal": {
       "type": "object",
@@ -2315,8 +2281,7 @@
         "draft",
         "publishedAt",
         "workbenchLogPosition"
-      ],
-      "additionalProperties": false
+      ]
     },
     "Outcome": {
       "type": "object",
@@ -2460,8 +2425,7 @@
         "recordedBy",
         "occurredAt",
         "anchors"
-      ],
-      "additionalProperties": false
+      ]
     },
     "MemoryDataset": {
       "type": "object",
@@ -2556,8 +2520,7 @@
         "candidates",
         "proposals",
         "outcomes"
-      ],
-      "additionalProperties": false
+      ]
     },
     "MemoryEvent": {
       "anyOf": [
@@ -2580,8 +2543,7 @@
             "type",
             "recordType",
             "record"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -2602,8 +2564,7 @@
             "type",
             "recordType",
             "record"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -2624,8 +2585,7 @@
             "type",
             "recordType",
             "record"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -2646,8 +2606,7 @@
             "type",
             "recordType",
             "record"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -2668,8 +2627,7 @@
             "type",
             "recordType",
             "record"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -2690,8 +2648,7 @@
             "type",
             "recordType",
             "record"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -2712,8 +2669,7 @@
             "type",
             "recordType",
             "record"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -2734,8 +2690,7 @@
             "type",
             "recordType",
             "record"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -2756,8 +2711,7 @@
             "type",
             "recordType",
             "record"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -2778,8 +2732,7 @@
             "type",
             "recordType",
             "record"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -2800,8 +2753,7 @@
             "type",
             "recordType",
             "record"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -2822,8 +2774,7 @@
             "type",
             "recordType",
             "record"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -2854,8 +2805,7 @@
             "record",
             "basedOnVersion",
             "reason"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -2886,8 +2836,7 @@
             "record",
             "basedOnVersion",
             "reason"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -2918,8 +2867,7 @@
             "record",
             "basedOnVersion",
             "reason"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -2950,8 +2898,7 @@
             "record",
             "basedOnVersion",
             "reason"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -2982,8 +2929,7 @@
             "record",
             "basedOnVersion",
             "reason"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -3014,8 +2960,7 @@
             "record",
             "basedOnVersion",
             "reason"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -3046,8 +2991,7 @@
             "record",
             "basedOnVersion",
             "reason"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -3078,8 +3022,7 @@
             "record",
             "basedOnVersion",
             "reason"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -3110,8 +3053,7 @@
             "record",
             "basedOnVersion",
             "reason"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -3142,8 +3084,7 @@
             "record",
             "basedOnVersion",
             "reason"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -3174,8 +3115,7 @@
             "record",
             "basedOnVersion",
             "reason"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -3206,8 +3146,7 @@
             "record",
             "basedOnVersion",
             "reason"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -3246,8 +3185,7 @@
             "invalidatedAt",
             "reason",
             "supersededByClaimId"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -3268,8 +3206,7 @@
             "type",
             "claimId",
             "rule"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -3310,8 +3247,7 @@
             "decision",
             "reason",
             "resultingId"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -3354,8 +3290,7 @@
             "gate",
             "decision",
             "notes"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -3391,8 +3326,7 @@
             "proposalId",
             "publishedAt",
             "workbenchLogPosition"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -3418,8 +3352,7 @@
             "survivorId",
             "mergedId",
             "reason"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "object",
@@ -3450,8 +3383,7 @@
             "lessonId",
             "status",
             "reason"
-          ],
-          "additionalProperties": false
+          ]
         }
       ]
     },
@@ -3494,8 +3426,7 @@
         "actorId",
         "correlationId",
         "event"
-      ],
-      "additionalProperties": false
+      ]
     },
     "EventLog": {
       "type": "object",
@@ -3514,8 +3445,7 @@
       "required": [
         "schemaVersion",
         "events"
-      ],
-      "additionalProperties": false
+      ]
     },
     "AppendEventRequest": {
       "type": "object",
@@ -3539,8 +3469,7 @@
       "required": [
         "event",
         "actorId"
-      ],
-      "additionalProperties": false
+      ]
     },
     "AppendEventResponse": {
       "type": "object",
@@ -3559,8 +3488,7 @@
       "required": [
         "position",
         "recordedAt"
-      ],
-      "additionalProperties": false
+      ]
     },
     "SubmitChunksRequest": {
       "type": "object",
@@ -3584,8 +3512,7 @@
         "revisionId",
         "episodeId",
         "chunks"
-      ],
-      "additionalProperties": false
+      ]
     },
     "SubmitChunksResponse": {
       "type": "object",
@@ -3598,14 +3525,20 @@
       },
       "required": [
         "stored"
-      ],
-      "additionalProperties": false
+      ]
     },
     "SubmitCandidatesRequest": {
       "type": "object",
       "properties": {
         "episode": {
           "$ref": "#/$defs/Episode"
+        },
+        "anchors": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Anchor"
+          }
         },
         "candidates": {
           "type": "array",
@@ -3622,8 +3555,7 @@
         "episode",
         "candidates",
         "actorId"
-      ],
-      "additionalProperties": false
+      ]
     },
     "SubmitCandidatesResponse": {
       "type": "object",
@@ -3652,8 +3584,313 @@
         "episodePosition",
         "autoAccepted",
         "queued"
-      ],
-      "additionalProperties": false
+      ]
+    },
+    "SubmitIntakeRequest": {
+      "type": "object",
+      "properties": {
+        "episode": {
+          "$ref": "#/$defs/Episode"
+        },
+        "source": {
+          "$ref": "#/$defs/Source"
+        },
+        "revision": {
+          "$ref": "#/$defs/Revision"
+        },
+        "chunks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Chunk"
+          }
+        },
+        "actorId": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "episode",
+        "source",
+        "revision",
+        "chunks",
+        "actorId"
+      ]
+    },
+    "SubmitIntakeResponse": {
+      "type": "object",
+      "properties": {
+        "episodePosition": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "sourcePosition": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "revisionPosition": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "stored": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        }
+      },
+      "required": [
+        "episodePosition",
+        "sourcePosition",
+        "revisionPosition",
+        "stored"
+      ]
+    },
+    "EmbedRequest": {
+      "type": "object",
+      "properties": {
+        "texts": {
+          "minItems": 1,
+          "maxItems": 256,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "texts"
+      ]
+    },
+    "EmbedResponse": {
+      "type": "object",
+      "properties": {
+        "model": {
+          "type": "string"
+        },
+        "dimensions": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "embeddings": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          }
+        }
+      },
+      "required": [
+        "model",
+        "dimensions",
+        "embeddings"
+      ]
+    },
+    "SearchHit": {
+      "type": "object",
+      "properties": {
+        "revisionId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceTitle": {
+          "type": "string"
+        },
+        "sourceKind": {
+          "type": "string"
+        },
+        "locator": {
+          "$ref": "#/$defs/Locator"
+        },
+        "locatorText": {
+          "type": "string"
+        },
+        "contextPrefix": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "score": {
+          "type": "number"
+        },
+        "signals": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "enum": [
+              "lexical",
+              "vector"
+            ]
+          },
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9007199254740991
+          }
+        },
+        "anchorIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "claimIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "caseIds": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "revisionId",
+        "sourceId",
+        "sourceTitle",
+        "sourceKind",
+        "locator",
+        "locatorText",
+        "contextPrefix",
+        "text",
+        "score",
+        "signals",
+        "anchorIds",
+        "claimIds",
+        "caseIds"
+      ]
+    },
+    "SearchResponse": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string"
+        },
+        "principalId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/SearchHit"
+          }
+        },
+        "claims": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Claim"
+          }
+        },
+        "conflicts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "claimId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "conflictsWith": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "required": [
+              "claimId",
+              "conflictsWith"
+            ]
+          }
+        },
+        "signalsRun": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "lexical",
+              "vector"
+            ]
+          }
+        }
+      },
+      "required": [
+        "query",
+        "principalId",
+        "hits",
+        "claims",
+        "conflicts",
+        "signalsRun"
+      ]
+    },
+    "QueueResponse": {
+      "type": "object",
+      "properties": {
+        "principalId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Candidate"
+          }
+        }
+      },
+      "required": [
+        "principalId",
+        "candidates"
+      ]
+    },
+    "CaseResponse": {
+      "type": "object",
+      "properties": {
+        "case": {
+          "$ref": "#/$defs/Case"
+        },
+        "claims": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Claim"
+          }
+        },
+        "anchors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Anchor"
+          }
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Source"
+          }
+        }
+      },
+      "required": [
+        "case",
+        "claims",
+        "anchors",
+        "sources"
+      ]
     },
     "ApiError": {
       "type": "object",
@@ -3676,15 +3913,13 @@
             "required": [
               "path",
               "message"
-            ],
-            "additionalProperties": false
+            ]
           }
         }
       },
       "required": [
         "error"
-      ],
-      "additionalProperties": false
+      ]
     }
   }
 }

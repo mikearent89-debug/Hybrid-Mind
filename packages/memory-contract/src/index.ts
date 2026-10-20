@@ -10,5 +10,13 @@ export {
   SubmitChunksResponse,
   SubmitCandidatesRequest,
   SubmitCandidatesResponse,
+  SubmitIntakeRequest,
+  SubmitIntakeResponse,
+  EmbedRequest,
+  EmbedResponse,
+  SearchHit,
+  SearchResponse,
+  QueueResponse,
+  CaseResponse,
   ApiError,
 } from './api';

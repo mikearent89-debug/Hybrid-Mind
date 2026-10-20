@@ -145,8 +145,7 @@
           "originSystem",
           "externalId",
           "siteIds"
-        ],
-        "additionalProperties": false
+        ]
       }
     },
     "revisions": {
@@ -286,8 +285,7 @@
           "byteLength",
           "receivedAt",
           "supersedesRevisionId"
-        ],
-        "additionalProperties": false
+        ]
       }
     },
     "anchors": {
@@ -417,15 +415,13 @@
                       "y",
                       "w",
                       "h"
-                    ],
-                    "additionalProperties": false
+                    ]
                   }
                 },
                 "required": [
                   "type",
                   "page"
-                ],
-                "additionalProperties": false
+                ]
               },
               {
                 "type": "object",
@@ -453,8 +449,7 @@
                   "start",
                   "end",
                   "quote"
-                ],
-                "additionalProperties": false
+                ]
               },
               {
                 "type": "object",
@@ -475,8 +470,7 @@
                 "required": [
                   "type",
                   "row"
-                ],
-                "additionalProperties": false
+                ]
               },
               {
                 "type": "object",
@@ -498,8 +492,7 @@
                   "type",
                   "startSeconds",
                   "endSeconds"
-                ],
-                "additionalProperties": false
+                ]
               },
               {
                 "type": "object",
@@ -527,8 +520,7 @@
                   "y",
                   "w",
                   "h"
-                ],
-                "additionalProperties": false
+                ]
               },
               {
                 "type": "object",
@@ -540,8 +532,7 @@
                 },
                 "required": [
                   "type"
-                ],
-                "additionalProperties": false
+                ]
               }
             ]
           }
@@ -558,8 +549,7 @@
           "effectiveTo",
           "revisionId",
           "locator"
-        ],
-        "additionalProperties": false
+        ]
       }
     },
     "episodes": {
@@ -672,8 +662,7 @@
             "required": [
               "name",
               "version"
-            ],
-            "additionalProperties": false
+            ]
           },
           "correlationId": {
             "type": "string"
@@ -701,8 +690,7 @@
           "method",
           "correlationId",
           "revisionIds"
-        ],
-        "additionalProperties": false
+        ]
       }
     },
     "entities": {
@@ -834,8 +822,7 @@
               "required": [
                 "sourceSystem",
                 "externalId"
-              ],
-              "additionalProperties": false
+              ]
             }
           }
         },
@@ -853,8 +840,7 @@
           "name",
           "attributes",
           "externalRefs"
-        ],
-        "additionalProperties": false
+        ]
       }
     },
     "aliases": {
@@ -974,8 +960,7 @@
           "entityId",
           "alias",
           "origin"
-        ],
-        "additionalProperties": false
+        ]
       }
     },
     "claims": {
@@ -1090,8 +1075,7 @@
                 "required": [
                   "type",
                   "entityId"
-                ],
-                "additionalProperties": false
+                ]
               },
               {
                 "type": "object",
@@ -1114,8 +1098,7 @@
                   "type",
                   "value",
                   "unit"
-                ],
-                "additionalProperties": false
+                ]
               }
             ]
           },
@@ -1141,8 +1124,7 @@
               "required": [
                 "anchorId",
                 "role"
-              ],
-              "additionalProperties": false
+              ]
             }
           },
           "episodeId": {
@@ -1190,8 +1172,7 @@
           "episodeId",
           "supersedesClaimId",
           "invalidatedAt"
-        ],
-        "additionalProperties": false
+        ]
       }
     },
     "cases": {
@@ -1308,8 +1289,7 @@
             "required": [
               "entityIds",
               "conditions"
-            ],
-            "additionalProperties": false
+            ]
           },
           "investigation": {
             "type": "object",
@@ -1337,8 +1317,7 @@
               "hypotheses",
               "diagnosticActions",
               "unresolvedQuestions"
-            ],
-            "additionalProperties": false
+            ]
           },
           "actionsTried": {
             "type": "array",
@@ -1382,8 +1361,7 @@
                 "result",
                 "occurredAt",
                 "claimIds"
-              ],
-              "additionalProperties": false
+              ]
             }
           },
           "fix": {
@@ -1409,8 +1387,7 @@
                 "required": [
                   "amount",
                   "currency"
-                ],
-                "additionalProperties": false
+                ]
               },
               {
                 "type": "null"
@@ -1473,8 +1450,7 @@
               "required": [
                 "anchorId",
                 "role"
-              ],
-              "additionalProperties": false
+              ]
             }
           },
           "openedAt": {
@@ -1520,8 +1496,7 @@
           "anchors",
           "openedAt",
           "closedAt"
-        ],
-        "additionalProperties": false
+        ]
       }
     },
     "lessons": {
@@ -1673,8 +1648,7 @@
           "counterEvidenceCaseIds",
           "status",
           "ownerId"
-        ],
-        "additionalProperties": false
+        ]
       }
     },
     "candidates": {
@@ -1827,8 +1801,7 @@
             "required": [
               "name",
               "version"
-            ],
-            "additionalProperties": false
+            ]
           },
           "uncertainty": {
             "type": "object",
@@ -1848,8 +1821,7 @@
             "required": [
               "level",
               "reasons"
-            ],
-            "additionalProperties": false
+            ]
           },
           "episodeId": {
             "type": "string",
@@ -1897,8 +1869,7 @@
                   "at",
                   "reason",
                   "resultingId"
-                ],
-                "additionalProperties": false
+                ]
               },
               {
                 "type": "null"
@@ -1925,8 +1896,7 @@
           "uncertainty",
           "episodeId",
           "decision"
-        ],
-        "additionalProperties": false
+        ]
       }
     },
     "proposals": {
@@ -2079,8 +2049,7 @@
                 "required": [
                   "level",
                   "reasons"
-                ],
-                "additionalProperties": false
+                ]
               },
               "nextStepConfidence": {
                 "type": "object",
@@ -2100,8 +2069,7 @@
                 "required": [
                   "level",
                   "reasons"
-                ],
-                "additionalProperties": false
+                ]
               }
             },
             "required": [
@@ -2111,8 +2079,7 @@
               "nextSteps",
               "causeConfidence",
               "nextStepConfidence"
-            ],
-            "additionalProperties": false
+            ]
           },
           "draft": {
             "anyOf": [
@@ -2146,8 +2113,7 @@
                       "required": [
                         "label",
                         "date"
-                      ],
-                      "additionalProperties": false
+                      ]
                     }
                   },
                   "dependencies": {
@@ -2182,8 +2148,7 @@
                         "amount",
                         "currency",
                         "anchorId"
-                      ],
-                      "additionalProperties": false
+                      ]
                     }
                   },
                   "successCriteria": {
@@ -2214,8 +2179,7 @@
                       "required": [
                         "anchorId",
                         "role"
-                      ],
-                      "additionalProperties": false
+                      ]
                     }
                   }
                 },
@@ -2227,8 +2191,7 @@
                   "costBasis",
                   "successCriteria",
                   "anchors"
-                ],
-                "additionalProperties": false
+                ]
               },
               {
                 "type": "null"
@@ -2276,8 +2239,7 @@
           "draft",
           "publishedAt",
           "workbenchLogPosition"
-        ],
-        "additionalProperties": false
+        ]
       }
     },
     "outcomes": {
@@ -2422,8 +2384,7 @@
               "required": [
                 "anchorId",
                 "role"
-              ],
-              "additionalProperties": false
+              ]
             }
           }
         },
@@ -2444,8 +2405,7 @@
           "recordedBy",
           "occurredAt",
           "anchors"
-        ],
-        "additionalProperties": false
+        ]
       }
     }
   },
@@ -2463,6 +2423,5 @@
     "candidates",
     "proposals",
     "outcomes"
-  ],
-  "additionalProperties": false
+  ]
 }

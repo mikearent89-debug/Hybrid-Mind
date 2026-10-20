@@ -113,8 +113,7 @@
       "required": [
         "entityIds",
         "conditions"
-      ],
-      "additionalProperties": false
+      ]
     },
     "investigation": {
       "type": "object",
@@ -142,8 +141,7 @@
         "hypotheses",
         "diagnosticActions",
         "unresolvedQuestions"
-      ],
-      "additionalProperties": false
+      ]
     },
     "actionsTried": {
       "type": "array",
@@ -187,8 +185,7 @@
           "result",
           "occurredAt",
           "claimIds"
-        ],
-        "additionalProperties": false
+        ]
       }
     },
     "fix": {
@@ -214,8 +211,7 @@
           "required": [
             "amount",
             "currency"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "null"
@@ -278,8 +274,7 @@
         "required": [
           "anchorId",
           "role"
-        ],
-        "additionalProperties": false
+        ]
       }
     },
     "openedAt": {
@@ -325,6 +320,5 @@
     "anchors",
     "openedAt",
     "closedAt"
-  ],
-  "additionalProperties": false
+  ]
 }

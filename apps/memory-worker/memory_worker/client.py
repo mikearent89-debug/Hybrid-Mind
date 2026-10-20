@@ -42,8 +42,22 @@ class MemoryApiClient:
     def append_event(self, request: models.AppendEventRequest) -> models.AppendEventResponse:
         return self._post("/events", request, models.AppendEventResponse)
 
+    def submit_intake(self, request: models.SubmitIntakeRequest) -> models.SubmitIntakeResponse:
+        return self._post("/intake", request, models.SubmitIntakeResponse)
+
+    def embed(self, texts: list[str]) -> models.EmbedResponse:
+        return self._post("/embed", models.EmbedRequest(texts=texts), models.EmbedResponse)
+
+    def memory(self, principal: str) -> models.MemoryDataset:
+        response = self._http.get("/memory", params={"principal": principal})
+        if response.status_code >= 400:
+            raise MemoryApiError(response.status_code, response.json())
+        return models.MemoryDataset.model_validate(response.json())
+
     def _post[T](self, path: str, request: object, response_type: type[T]) -> T:
-        body = request.model_dump(mode="json", exclude_none=False)  # type: ignore[attr-defined]
+        # Unset optional fields are left out (the API applies its defaults); explicit nulls stay,
+        # because the API distinguishes "no decision" from a missing field.
+        body = request.model_dump(mode="json", exclude_unset=True)  # type: ignore[attr-defined]
         response = self._http.post(path, json=body)
         if response.status_code >= 400:
             raise MemoryApiError(response.status_code, response.json())

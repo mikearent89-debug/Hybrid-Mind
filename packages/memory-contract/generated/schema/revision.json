@@ -136,6 +136,5 @@
     "byteLength",
     "receivedAt",
     "supersedesRevisionId"
-  ],
-  "additionalProperties": false
+  ]
 }

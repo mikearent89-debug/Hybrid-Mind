@@ -112,8 +112,7 @@
           "required": [
             "name",
             "version"
-          ],
-          "additionalProperties": false
+          ]
         },
         "correlationId": {
           "type": "string"
@@ -141,8 +140,272 @@
         "method",
         "correlationId",
         "revisionIds"
-      ],
-      "additionalProperties": false
+      ]
+    },
+    "anchors": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "recordVersion": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9007199254740991
+          },
+          "accessScope": {
+            "type": "string",
+            "enum": [
+              "standard",
+              "restricted"
+            ]
+          },
+          "evidenceClass": {
+            "type": "string",
+            "enum": [
+              "documented",
+              "field-verified",
+              "inferred",
+              "illustrative",
+              "proposed",
+              "unknown"
+            ]
+          },
+          "reviewState": {
+            "type": "string",
+            "enum": [
+              "unreviewed",
+              "accepted",
+              "rejected",
+              "superseded"
+            ]
+          },
+          "reviewedBy": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "reviewedAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "effectiveFrom": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "effectiveTo": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "revisionId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "locator": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "const": "page"
+                  },
+                  "page": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 9007199254740991
+                  },
+                  "region": {
+                    "type": "object",
+                    "properties": {
+                      "x": {
+                        "type": "number"
+                      },
+                      "y": {
+                        "type": "number"
+                      },
+                      "w": {
+                        "type": "number"
+                      },
+                      "h": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "x",
+                      "y",
+                      "w",
+                      "h"
+                    ]
+                  }
+                },
+                "required": [
+                  "type",
+                  "page"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "const": "span"
+                  },
+                  "start": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "end": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "quote": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "start",
+                  "end",
+                  "quote"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "const": "row"
+                  },
+                  "row": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "column": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "row"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "const": "time"
+                  },
+                  "startSeconds": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "endSeconds": {
+                    "type": "number",
+                    "minimum": 0
+                  }
+                },
+                "required": [
+                  "type",
+                  "startSeconds",
+                  "endSeconds"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "const": "image-region"
+                  },
+                  "x": {
+                    "type": "number"
+                  },
+                  "y": {
+                    "type": "number"
+                  },
+                  "w": {
+                    "type": "number"
+                  },
+                  "h": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "type",
+                  "x",
+                  "y",
+                  "w",
+                  "h"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "const": "whole"
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              }
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "recordVersion",
+          "accessScope",
+          "evidenceClass",
+          "reviewState",
+          "reviewedBy",
+          "reviewedAt",
+          "effectiveFrom",
+          "effectiveTo",
+          "revisionId",
+          "locator"
+        ]
+      }
     },
     "candidates": {
       "type": "array",
@@ -294,8 +557,7 @@
             "required": [
               "name",
               "version"
-            ],
-            "additionalProperties": false
+            ]
           },
           "uncertainty": {
             "type": "object",
@@ -315,8 +577,7 @@
             "required": [
               "level",
               "reasons"
-            ],
-            "additionalProperties": false
+            ]
           },
           "episodeId": {
             "type": "string",
@@ -364,8 +625,7 @@
                   "at",
                   "reason",
                   "resultingId"
-                ],
-                "additionalProperties": false
+                ]
               },
               {
                 "type": "null"
@@ -392,8 +652,7 @@
           "uncertainty",
           "episodeId",
           "decision"
-        ],
-        "additionalProperties": false
+        ]
       }
     },
     "actorId": {
@@ -405,6 +664,5 @@
     "episode",
     "candidates",
     "actorId"
-  ],
-  "additionalProperties": false
+  ]
 }

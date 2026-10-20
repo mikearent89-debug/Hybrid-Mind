@@ -42,6 +42,14 @@ const named: Record<string, z.ZodType> = {
   'submit-chunks-response': api.SubmitChunksResponse,
   'submit-candidates-request': api.SubmitCandidatesRequest,
   'submit-candidates-response': api.SubmitCandidatesResponse,
+  'submit-intake-request': api.SubmitIntakeRequest,
+  'submit-intake-response': api.SubmitIntakeResponse,
+  'embed-request': api.EmbedRequest,
+  'embed-response': api.EmbedResponse,
+  'search-hit': api.SearchHit,
+  'search-response': api.SearchResponse,
+  'queue-response': api.QueueResponse,
+  'case-response': api.CaseResponse,
   'api-error': api.ApiError,
 };
 
@@ -49,7 +57,11 @@ const write = (name: string, value: unknown) =>
   writeFileSync(join(out, name), JSON.stringify(value, null, 2) + '\n');
 
 for (const [name, schema] of Object.entries(named)) {
-  const json = z.toJSONSchema(schema, { target: 'draft-2020-12', unrepresentable: 'any' });
+  const json = z.toJSONSchema(schema, {
+    target: 'draft-2020-12',
+    unrepresentable: 'any',
+    io: 'input',
+  });
   write(join('schema', `${name}.json`), {
     $id: `https://hybrid-mind.local/schema/${name}.json`,
     title: name,
@@ -64,6 +76,7 @@ for (const [name, schema] of Object.entries(named))
 const registry = z.toJSONSchema(z.globalRegistry, {
   target: 'draft-2020-12',
   unrepresentable: 'any',
+  io: 'input',
   uri: (id) => `#/$defs/${id}`,
 });
 write('contract.json', {

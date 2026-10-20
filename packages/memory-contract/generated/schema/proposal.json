@@ -149,8 +149,7 @@
           "required": [
             "level",
             "reasons"
-          ],
-          "additionalProperties": false
+          ]
         },
         "nextStepConfidence": {
           "type": "object",
@@ -170,8 +169,7 @@
           "required": [
             "level",
             "reasons"
-          ],
-          "additionalProperties": false
+          ]
         }
       },
       "required": [
@@ -181,8 +179,7 @@
         "nextSteps",
         "causeConfidence",
         "nextStepConfidence"
-      ],
-      "additionalProperties": false
+      ]
     },
     "draft": {
       "anyOf": [
@@ -216,8 +213,7 @@
                 "required": [
                   "label",
                   "date"
-                ],
-                "additionalProperties": false
+                ]
               }
             },
             "dependencies": {
@@ -252,8 +248,7 @@
                   "amount",
                   "currency",
                   "anchorId"
-                ],
-                "additionalProperties": false
+                ]
               }
             },
             "successCriteria": {
@@ -284,8 +279,7 @@
                 "required": [
                   "anchorId",
                   "role"
-                ],
-                "additionalProperties": false
+                ]
               }
             }
           },
@@ -297,8 +291,7 @@
             "costBasis",
             "successCriteria",
             "anchors"
-          ],
-          "additionalProperties": false
+          ]
         },
         {
           "type": "null"
@@ -346,6 +339,5 @@
     "draft",
     "publishedAt",
     "workbenchLogPosition"
-  ],
-  "additionalProperties": false
+  ]
 }

@@ -1920,8 +1920,8 @@
           "revisionId": "rev-03",
           "locator": {
             "type": "span",
-            "start": 220,
-            "end": 290,
+            "start": 293,
+            "end": 339,
             "quote": "the unit is on 3.1.4, same as before the visit"
           }
         }
@@ -2032,8 +2032,8 @@
           "revisionId": "rev-07",
           "locator": {
             "type": "span",
-            "start": 40,
-            "end": 120,
+            "start": 89,
+            "end": 145,
             "quote": "tech thinks it is rodents again but did not open the box"
           }
         }

@@ -31,8 +31,7 @@
         "required": [
           "label",
           "date"
-        ],
-        "additionalProperties": false
+        ]
       }
     },
     "dependencies": {
@@ -67,8 +66,7 @@
           "amount",
           "currency",
           "anchorId"
-        ],
-        "additionalProperties": false
+        ]
       }
     },
     "successCriteria": {
@@ -99,8 +97,7 @@
         "required": [
           "anchorId",
           "role"
-        ],
-        "additionalProperties": false
+        ]
       }
     }
   },
@@ -112,6 +109,5 @@
     "costBasis",
     "successCriteria",
     "anchors"
-  ],
-  "additionalProperties": false
+  ]
 }

@@ -18,6 +18,7 @@ import {
 } from '@hybrid/memory-domain';
 import pg from 'pg';
 import type { EventStore, StoredChunk } from './eventStore';
+import type { ChunkHit } from './search';
 
 const MIGRATIONS_DIR = join(import.meta.dirname, '..', 'migrations');
 
@@ -89,6 +90,28 @@ type Row = {
   correlation_id: string | null;
   event: MemoryEvent;
 };
+
+type ChunkRow = {
+  revision_id: string;
+  episode_id: string;
+  chunk_index: number;
+  text: string;
+  context_prefix: string;
+  locator: unknown;
+  embedding_model: string;
+};
+
+/** Search results carry no embedding back; the vector stays in the database. */
+const toChunk = (r: ChunkRow): StoredChunk => ({
+  revisionId: r.revision_id,
+  episodeId: r.episode_id,
+  index: r.chunk_index,
+  text: r.text,
+  contextPrefix: r.context_prefix,
+  locator: r.locator,
+  embedding: [],
+  embeddingModel: r.embedding_model,
+});
 
 const iso = (d: Date): Instant => d.toISOString().replace(/\.000Z$/, 'Z');
 
@@ -273,6 +296,37 @@ export class PgEventStore implements EventStore {
     } finally {
       client.release();
     }
+  }
+
+  async lexicalSearch(query: string, k: number): Promise<ChunkHit[]> {
+    const result = await this.pool.query<ChunkRow & { score: number }>(
+      `SELECT revision_id, episode_id, chunk_index, text, context_prefix, locator, embedding_model,
+              ts_rank_cd(tsv, q) AS score
+         FROM chunk, plainto_tsquery('english', $1) q
+        WHERE tsv @@ q
+        ORDER BY score DESC, revision_id, chunk_index
+        LIMIT $2`,
+      [query, k],
+    );
+    return result.rows.map((r, i) => ({ chunk: toChunk(r), rank: i + 1, score: Number(r.score) }));
+  }
+
+  async vectorSearch(embedding: number[], k: number): Promise<ChunkHit[]> {
+    if (embedding.length === 0) return [];
+    const result = await this.pool.query<ChunkRow & { distance: number }>(
+      `SELECT revision_id, episode_id, chunk_index, text, context_prefix, locator, embedding_model,
+              embedding <=> $1::vector AS distance
+         FROM chunk
+        WHERE embedding IS NOT NULL AND vector_dims(embedding) = $3
+        ORDER BY distance, revision_id, chunk_index
+        LIMIT $2`,
+      [`[${embedding.join(',')}]`, k, embedding.length],
+    );
+    return result.rows.map((r, i) => ({
+      chunk: toChunk(r),
+      rank: i + 1,
+      score: 1 - Number(r.distance),
+    }));
   }
 
   /** The current projection as rows, for checks that the tables agree with the log. */

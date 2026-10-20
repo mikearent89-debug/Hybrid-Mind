@@ -47,8 +47,7 @@
       "required": [
         "level",
         "reasons"
-      ],
-      "additionalProperties": false
+      ]
     },
     "nextStepConfidence": {
       "type": "object",
@@ -68,8 +67,7 @@
       "required": [
         "level",
         "reasons"
-      ],
-      "additionalProperties": false
+      ]
     }
   },
   "required": [
@@ -79,6 +77,5 @@
     "nextSteps",
     "causeConfidence",
     "nextStepConfidence"
-  ],
-  "additionalProperties": false
+  ]
 }
